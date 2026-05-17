@@ -48,114 +48,169 @@ Phase 1 provides Solution Architects with:
 
 ---
 
-## Phase 2: Deep Analysis 📋
+## Phase 2: Capability Building 🌱
 
-**Goal:** Add tools for deep codebase analysis, system mapping, and complex migrations.
+**Goal:** Build organizational learning capabilities and team-level architectural thinking that compounds over time.
 
-**Target:** Q3 2026
+**Tagline:** "Building teams that build better architecture"
 
-**Status:** 📋 Planned
+**Target:** Q3-Q4 2026
 
-### Planned Skills
+**Status:** 🔄 Redesigned with Residuality Focus
 
-#### 1. Tech Debt Analyzer 📋
+**Philosophy Shift:** Phase 1 builds individual architect capabilities. Phase 2 builds **team and organizational meta-capabilities** that enable continuous improvement and learning.
 
-**Purpose:** Analyze codebases for technical debt and architectural anti-patterns.
+### Redesigned Skills
 
-**Capabilities:**
-- Scan code for anti-patterns
-- Identify architectural violations
-- Detect code smells at scale
-- Measure coupling and cohesion
-- Generate tech debt report with priorities
-- Suggest refactoring strategies
+#### 1. Architecture Learning Analyzer 🎓
+
+**Purpose:** Help organizations learn systematically from their architectural history and decisions.
+
+**Capability Being Built:**
+- Organizational learning from past decisions
+- Pattern recognition across projects
+- Feedback loop creation
+- Knowledge compounding
+
+**What It Does:**
+- Reviews past ADRs and outcomes
+- Identifies patterns in successful vs failed decisions
+- Extracts learnings from architectural evolution
+- Creates organizational pattern library
+- Tracks decision outcomes over time
+- Generates "What We've Learned" reports
 
 **Commands:**
 ```bash
-/tech-debt analyze              # Analyze entire codebase
-/tech-debt focus <component>    # Analyze specific component
-/tech-debt compare <baseline>   # Compare against baseline
-/tech-debt report               # Generate comprehensive report
+/arch-learning analyze          # Analyze architectural decision history
+/arch-learning patterns         # Extract patterns from decisions
+/arch-learning outcomes         # Review decision outcomes
+/arch-learning retrospective    # Guided architectural retrospective
+/arch-learning lessons          # Generate lessons learned
+/arch-learning trends           # Identify trends in decisions
 ```
 
-**Value:** Quantify technical debt, prioritize refactoring efforts, track improvements over time.
+**Residuality Goal:** Organizations that systematically learn from decisions and build institutional knowledge that persists beyond individual architects.
 
 ---
 
-#### 2. System Mapper 📋
+#### 2. Team Capability Assessor 📊
 
-**Purpose:** Visualize system dependencies, data flows, and component relationships.
+**Purpose:** Assess and develop team architectural capability maturity systematically.
 
-**Capabilities:**
-- Generate component diagrams
-- Map data flow between services
-- Identify integration points
-- Create dependency graphs
-- Export diagrams in multiple formats
-- Highlight architectural boundaries
+**Capability Being Built:**
+- Self-awareness of capability levels
+- Growth mindset and continuous improvement
+- Targeted skill development
+- Team-level architectural excellence
+
+**What It Does:**
+- Assesses team architectural maturity across 6 dimensions
+- Identifies capability gaps and strengths
+- Creates development roadmaps for teams
+- Tracks capability growth over time
+- Suggests learning paths and exercises
+- Facilitates team architectural skill-building
 
 **Commands:**
 ```bash
-/system-map components          # Component relationship map
-/system-map data-flow           # Data flow diagram
-/system-map dependencies        # Dependency graph
-/system-map integrations        # Integration point map
-/system-map export <format>     # Export (Mermaid, PlantUML, etc.)
+/team-capability assess         # Assess team capability maturity
+/team-capability gaps           # Identify capability gaps
+/team-capability roadmap        # Generate development roadmap
+/team-capability track          # Track growth over time
+/team-capability exercises      # Suggest capability-building exercises
+/team-capability compare        # Compare against benchmarks
 ```
 
-**Value:** Understand complex systems quickly, identify hidden dependencies, communicate architecture visually.
+**Capability Dimensions:**
+1. Decision-Making Quality
+2. Documentation Clarity
+3. Technology Evaluation
+4. Design Quality
+5. Evolutionary Thinking
+6. Learning Culture
+
+**Maturity Levels:** Ad-hoc → Aware → Defined → Managed → Optimizing
+
+**Residuality Goal:** Teams that continuously assess and improve their architectural capabilities, creating a culture of growth and excellence.
 
 ---
 
-#### 3. Migration Planner 📋
+#### 3. Pattern Extractor & Institutionalizer 🧩
 
-**Purpose:** Create comprehensive migration strategies for legacy systems.
+**Purpose:** Extract architectural patterns from accumulated knowledge and institutionalize them.
 
-**Capabilities:**
-- Analyze current system architecture
-- Identify migration challenges
-- Design phased migration approach
-- Estimate effort and timeline
-- Risk assessment and mitigation
-- Generate migration runbooks
-- Parallel run strategies
+**Capability Being Built:**
+- Pattern recognition across projects
+- Knowledge codification
+- Institutional memory
+- Context-aware guidance
+
+**What It Does:**
+- Analyzes codebase, decisions, and documentation
+- Extracts recurring architectural patterns
+- Documents organization-specific patterns and anti-patterns
+- Creates pattern catalog with context and trade-offs
+- Suggests patterns for new situations
+- Tracks pattern effectiveness over time
 
 **Commands:**
 ```bash
-/migrate analyze <source>       # Analyze source system
-/migrate plan <target>          # Create migration plan
-/migrate phase <number>         # Detail specific phase
-/migrate risks                  # Risk assessment
-/migrate rollback               # Rollback strategy
+/patterns extract               # Extract patterns from codebase/decisions
+/patterns catalog               # View pattern catalog
+/patterns suggest <scenario>    # Suggest patterns for situation
+/patterns effectiveness         # Track pattern success
+/patterns anti-patterns         # Document what doesn't work
+/patterns evolve                # Update patterns based on learning
 ```
 
-**Value:** Reduce migration risks, create realistic plans, ensure smooth transitions.
+**Pattern Types:**
+- Architectural Patterns (system design)
+- Decision Patterns (how you decide)
+- Technology Patterns (what works for you)
+- Anti-Patterns (what to avoid)
+- Context Patterns (when each applies)
+
+**Residuality Goal:** Organizations with rich, context-specific pattern libraries that represent accumulated wisdom and guide future decisions.
 
 ---
 
-#### 4. API Designer 📋
+#### 4. Evolutionary Architecture Coach 🔄
 
-**Purpose:** Design and validate APIs following best practices.
+**Purpose:** Build capability to design and maintain evolutionary architectures that accommodate change gracefully.
 
-**Capabilities:**
-- Generate OpenAPI/Swagger specs
-- Design REST APIs following best practices
-- GraphQL schema design
-- API versioning strategies
-- Contract validation
-- Mock server generation
-- API documentation
+**Capability Being Built:**
+- Design for change mindset
+- Fitness function thinking
+- Continuous architecture improvement
+- Technical agility
+
+**What It Does:**
+- Teaches evolutionary architecture principles
+- Helps define architectural fitness functions
+- Guides incremental architecture improvements
+- Identifies brittle areas requiring flexibility
+- Suggests refactoring strategies for evolvability
+- Tracks architectural health over time
 
 **Commands:**
 ```bash
-/api design <endpoint>          # Design new API
-/api validate <spec>            # Validate existing API
-/api document                   # Generate API documentation
-/api mock                       # Generate mock server
-/api version <strategy>         # Versioning approach
+/evolve assess                  # Assess evolutionary readiness
+/evolve fitness-functions       # Define/review fitness functions
+/evolve brittleness             # Identify brittle areas
+/evolve increment               # Plan incremental improvements
+/evolve health                  # Track architectural health
+/evolve coach                   # Guided evolutionary thinking
 ```
 
-**Value:** Consistent API design, automated documentation, contract-first development.
+**Key Concepts Taught:**
+- Fitness Functions (automated governance)
+- Incremental Change (small, safe improvements)
+- Reversible Decisions (designing for optionality)
+- Architectural Seams (where to allow flexibility)
+- Strategic vs Tactical Debt Management
+
+**Residuality Goal:** Teams that naturally design for change and maintain healthy, evolvable architectures without major rewrites.
 
 ---
 
@@ -163,11 +218,45 @@ Phase 1 provides Solution Architects with:
 
 | Quarter | Milestone |
 |---------|-----------|
-| Q3 2026 | Tech Debt Analyzer development |
-| Q3 2026 | System Mapper development |
-| Q4 2026 | Migration Planner development |
-| Q4 2026 | API Designer development |
+| Q3 2026 | Architecture Learning Analyzer |
+| Q3 2026 | Team Capability Assessor |
+| Q4 2026 | Pattern Extractor & Institutionalizer |
+| Q4 2026 | Evolutionary Architecture Coach |
 | Q4 2026 | Phase 2 release |
+
+### Why This Redesign?
+
+**Old Phase 2 Plan (Tool-Centric):**
+- Tech Debt Analyzer - finds issues
+- System Mapper - visualizes complexity
+- Migration Planner - reduces risk
+- API Designer - generates code
+
+**Problem:** Tools that DO FOR you, building dependency rather than capability.
+
+**New Phase 2 Plan (Capability-Centric):**
+- Learning Analyzer - builds organizational learning
+- Capability Assessor - enables team growth
+- Pattern Extractor - institutionalizes knowledge
+- Evolutionary Coach - enables continuous improvement
+
+**Advantage:** Builds **meta-capabilities** that enable continuous organizational improvement and learning - true residuality at scale.
+
+### Integration with Phase 1
+
+**Phase 1:** Individual architect capabilities (decision-making, documentation, evaluation, review)  
+**Phase 2:** Organizational capabilities (learning, improvement, pattern recognition, evolution)
+
+**Together:** Individual excellence + organizational learning = compounding value over time.
+
+### Success Metrics
+
+Phase 2 is successful when:
+- Organizations learn systematically from architectural decisions
+- Teams self-assess and improve capabilities proactively
+- Pattern libraries become central to decision-making
+- Architecture evolves incrementally rather than through rewrites
+- **Ultimate:** Skills used less because capabilities internalized
 
 ---
 
