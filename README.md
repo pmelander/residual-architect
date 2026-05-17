@@ -16,17 +16,18 @@ This toolkit provides specialized skills for architecture design, documentation,
 
 ## Phases
 
-### Phase 1: Immediate Impact (In Progress)
+### Phase 1: Immediate Impact (Complete) ✅
 - ✅ `arch-decision-record` - Document architectural decisions
-- 🔄 `solution-doc-generator` - Generate comprehensive documentation
-- 🔄 `tech-stack-advisor` - Technology selection support
-- 🔄 `design-review` - Validate architecture choices
+- ✅ `solution-doc-generator` - Generate comprehensive documentation
+- ✅ `tech-stack-advisor` - Technology selection support
+- ✅ `design-review` - Validate architecture choices
+- ✅ `stressor-analysis` - Stress-test architecture for antifragility
 
 ### Phase 2: Deep Analysis (Planned)
-- `tech-debt-analyzer` - Analyze technical debt
-- `system-mapper` - Visualize system dependencies
-- `migration-planner` - Plan legacy modernization
-- `api-designer` - Design and validate APIs
+- `learning-analyzer` - Build organizational learning capability
+- `capability-assessor` - Assess and grow team maturity
+- `pattern-extractor` - Institutionalize architectural knowledge
+- `evolutionary-coach` - Enable continuous architecture evolution
 
 ### Phase 3: Specialized (Planned)
 - `cloud-architect` - Infrastructure as code generation
