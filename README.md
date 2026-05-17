@@ -2,6 +2,14 @@
 
 A comprehensive collection of skills and agents designed to enhance Solution Architect capabilities when using Claude Code.
 
+## 🚀 Quick Links
+
+- **[Getting Started Guide](GETTING_STARTED.md)** - Get up and running in 5 minutes
+- **[Quick Reference](QUICKREF.md)** - All commands and workflows at a glance
+- **[Installation Guide](docs/INSTALLATION.md)** - Detailed installation instructions
+- **[Usage Guide](docs/USAGE.md)** - Comprehensive examples and best practices
+- **[Roadmap](ROADMAP.md)** - Future development plans
+
 ## Overview
 
 This toolkit provides specialized skills for architecture design, documentation, analysis, and implementation guidance. Built as Claude Code skills, these tools integrate seamlessly into your architecture workflow.
@@ -26,25 +34,41 @@ This toolkit provides specialized skills for architecture design, documentation,
 - `capacity-planner` - Resource and scaling planning
 - `risk-assessor` - Risk management and mitigation
 
-## Installation
+## ⚡ Quick Install
 
-1. Clone this repository to your Claude Code skills directory:
-   ```bash
-   cd ~/.claude/skills
-   git clone <repo-url> solution-architect-toolkit
-   ```
+```bash
+git clone <repo-url> solution-architect-toolkit
+cd solution-architect-toolkit
+cp skills/phase-1/*.md ~/.claude/skills/
+```
 
-2. Skills will be automatically available in Claude Code
+**That's it!** Open Claude Code and type `/` to see your new skills.
 
-## Usage
+📖 See [Installation Guide](docs/INSTALLATION.md) for detailed instructions and troubleshooting.
 
-Each skill can be invoked using the `/` command in Claude Code:
-- `/adr` - Architecture Decision Records
-- `/solution-doc` - Solution Documentation
-- `/tech-stack` - Technology Stack Advisor
-- `/design-review` - Design Review
+## 📖 Usage
 
-See individual skill documentation for detailed usage.
+### Available Commands
+
+| Skill | Command | Description |
+|-------|---------|-------------|
+| 📋 ADR | `/adr create <title>` | Create Architecture Decision Records |
+| 📄 Docs | `/solution-doc hld` | Generate comprehensive documentation |
+| 🔧 Tech | `/tech-stack recommend` | Get technology recommendations |
+| ✅ Review | `/design-review complete` | Comprehensive architecture review |
+
+### Quick Example
+
+```
+You: /adr create Use PostgreSQL for database
+
+Claude asks questions and generates:
+docs/adr/ADR-001-use-postgresql-for-database.md
+
+Complete with context, decision rationale, trade-offs, and alternatives!
+```
+
+📖 See [Usage Guide](docs/USAGE.md) for detailed examples and best practices.
 
 ## Project Structure
 
@@ -59,10 +83,52 @@ See individual skill documentation for detailed usage.
 └── docs/            # Documentation
 ```
 
-## Contributing
+## 🤝 Contributing
 
-This toolkit is designed to evolve with Solution Architect needs. Contributions welcome!
+We welcome contributions! Whether it's:
+- 🆕 New skills for Phase 2 or 3
+- 🐛 Bug fixes
+- 📝 Documentation improvements
+- 💡 Feature suggestions
 
-## License
+See [Contributing Guide](CONTRIBUTING.md) for details.
 
-MIT
+## 📚 Documentation
+
+- **[Getting Started](GETTING_STARTED.md)** - New user guide (start here!)
+- **[Quick Reference](QUICKREF.md)** - Command cheatsheet
+- **[Usage Guide](docs/USAGE.md)** - Comprehensive examples
+- **[Installation](docs/INSTALLATION.md)** - Setup instructions
+- **[Roadmap](ROADMAP.md)** - Future plans
+- **[Project Summary](PROJECT_SUMMARY.md)** - Complete overview
+- **[Contributing](CONTRIBUTING.md)** - How to contribute
+- **[Claude.md](CLAUDE.md)** - Development guide
+
+## 📊 Project Status
+
+| Phase | Status | Skills | Timeline |
+|-------|--------|--------|----------|
+| Phase 1 | ✅ Complete | 4 skills | Q2 2026 |
+| Phase 2 | 📋 Planned | 4 skills | Q3-Q4 2026 |
+| Phase 3 | 💡 Planned | 4 skills | Q1-Q2 2027 |
+
+**Current Release:** Phase 1 - Released 2026-05-17
+
+## ⭐ Star This Repository
+
+If you find this toolkit useful, please star it! It helps others discover it.
+
+## 📞 Support
+
+- 📖 Check the [documentation](docs/)
+- 💬 Start a [discussion](../../discussions)
+- 🐛 Report [issues](../../issues)
+- 💡 Request [features](../../issues/new)
+
+## 📄 License
+
+MIT License - See [LICENSE](LICENSE) for details.
+
+---
+
+**Built with ❤️ for Solution Architects using Claude Code**
