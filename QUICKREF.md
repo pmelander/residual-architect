@@ -48,6 +48,16 @@ cp solution-architect-toolkit/skills/phase-1/*.md ~/.claude/skills/
 /design-review complete      # Comprehensive review
 ```
 
+#### Stressor Analysis
+```bash
+/stressor generate [count]        # Generate creative stressors
+/stressor analyze                 # Map impacts to components
+/stressor vulnerabilities         # Identify high-impact areas
+/stressor residues                # Suggest improvements
+/stressor iterate                 # Re-analyze after changes
+/stressor workshop                # Facilitate team workshop
+```
+
 ## Common Workflows
 
 ### Starting New Project
@@ -55,8 +65,9 @@ cp solution-architect-toolkit/skills/phase-1/*.md ~/.claude/skills/
 1. /tech-stack recommend
 2. /adr create [for major decisions]
 3. /solution-doc hld
-4. /design-review architecture
-5. /solution-doc deployment
+4. /stressor analyze [stress-test design]
+5. /design-review architecture
+6. /solution-doc deployment
 ```
 
 ### Pre-Production Review
@@ -86,22 +97,26 @@ As-needed: /adr update [when decisions change]
 
 ```
 docs/
-  adr/              # Architecture Decision Records
+  adr/                    # Architecture Decision Records
     ADR-001-*.md
     ADR-002-*.md
-  architecture/     # Architecture docs
+  architecture/           # Architecture docs
     HLD.md
     LLD-*.md
-  deployment/       # Deployment guides
+  deployment/             # Deployment guides
     DEPLOYMENT.md
-  operations/       # Operations docs
+  operations/             # Operations docs
     RUNBOOK.md
-  reviews/          # Review reports
+  reviews/                # Review reports
     architecture-review-*.md
     api-review-*.md
-  technology/       # Technology docs
+  technology/             # Technology docs
     tech-stack-recommendation.md
     tech-comparison-*.md
+  stressor-analysis/      # Stressor analysis results
+    stressor-matrix-*.md
+    impact-analysis-*.md
+    residue-recommendations-*.md
 ```
 
 ## Best Practices
@@ -168,12 +183,13 @@ In Claude Code:
 - Solution Documentation
 - Technology Stack Advisor
 - Design Review
+- Stressor Analysis
 
-**Phase 2** 🔄 - Deep Analysis (Coming Soon)
-- Tech Debt Analyzer
-- System Mapper
-- Migration Planner
-- API Designer
+**Phase 2** 🔄 - Organizational Capabilities (Coming Soon)
+- Learning Analyzer
+- Capability Assessor
+- Pattern Extractor
+- Evolutionary Coach
 
 **Phase 3** 🔄 - Specialized (Planned)
 - Cloud Architect
@@ -219,6 +235,19 @@ Claude analyzes:
 - And 4 more dimensions
 
 Provides scored assessment with recommendations
+```
+
+### Stress-Test Your System
+```
+/stressor analyze
+
+Claude guides you through:
+- Generating diverse stressors (including absurd ones!)
+- Mapping impacts to architecture components
+- Identifying vulnerabilities
+- Recommending high-leverage improvements
+
+Build antifragile systems that benefit from stress 🐉
 ```
 
 ---

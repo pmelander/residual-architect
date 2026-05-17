@@ -27,6 +27,7 @@ Open Claude Code and type `/` - you should see:
 - `/solution-doc`
 - `/tech-stack`
 - `/design-review`
+- `/stressor`
 
 ✅ If you see these, installation successful!
 
@@ -50,7 +51,7 @@ Answer the questions, and Claude generates a complete ADR saved to `docs/adr/ADR
 
 ---
 
-## Next Steps (30 Minutes)
+## Next Steps (40 Minutes)
 
 ### Try All Phase 1 Skills
 
@@ -72,7 +73,16 @@ Generate architecture documentation:
 
 Claude analyzes your system and generates comprehensive High-Level Design documentation.
 
-#### 3. Design Review (15 minutes)
+#### 3. Stressor Analysis (10 minutes)
+
+Stress-test your architecture:
+```
+/stressor analyze
+```
+
+Generate diverse stressors (including absurd ones!), map impacts to components, and identify high-leverage improvements to build antifragile systems.
+
+#### 4. Design Review (15 minutes)
 
 Review your architecture:
 ```
@@ -91,7 +101,7 @@ Get a comprehensive review with:
 
 ### Task 1: Document a New Project
 
-**Time: 20-30 minutes**
+**Time: 30-40 minutes**
 
 1. **Choose your stack:**
    ```
@@ -110,12 +120,18 @@ Get a comprehensive review with:
    /solution-doc hld
    ```
 
-4. **Review your design:**
+4. **Stress-test your design:**
+   ```
+   /stressor analyze
+   ```
+   Generate stressors, identify vulnerabilities, add resilience patterns
+
+5. **Review your design:**
    ```
    /design-review architecture
    ```
 
-**Result:** Complete architecture documentation for your new project!
+**Result:** Complete architecture documentation with stress-tested resilience!
 
 ---
 
@@ -189,6 +205,10 @@ docs/
     architecture-review-*.md
   technology/                   # Technology reports
     tech-stack-recommendation.md
+  stressor-analysis/            # Stressor analysis results
+    stressor-matrix-*.md
+    impact-analysis-*.md
+    residue-recommendations-*.md
 ```
 
 ### Output Quality
@@ -208,6 +228,7 @@ Don't try to use all skills at once. Pick one based on your current need:
 - Need to make a decision? → `/adr`
 - Need documentation? → `/solution-doc`
 - Choosing technologies? → `/tech-stack`
+- Stress-testing resilience? → `/stressor`
 - Need validation? → `/design-review`
 
 ### 2. Iterate
@@ -324,6 +345,14 @@ Share your success story by opening a discussion!
    /tech-stack evaluate <tech> Evaluate technology
    /tech-stack compare <A> vs <B> Compare options
 
+🐉 Stressor Analysis
+   /stressor generate         Generate stressors
+   /stressor analyze          Map impacts
+   /stressor vulnerabilities  Find high-impact areas
+   /stressor residues         Suggest improvements
+   /stressor iterate          Re-analyze after changes
+   /stressor workshop         Team workshop
+
 ✅ Design Review
    /design-review complete    Full review
    /design-review security    Security review
@@ -339,6 +368,7 @@ Share your success story by opening a discussion!
 - [ ] Create your first ADR
 - [ ] Generate a tech stack recommendation
 - [ ] Create architecture documentation
+- [ ] Run a stressor analysis (embrace the absurd!)
 - [ ] Run a design review
 - [ ] Read the [Usage Guide](docs/USAGE.md)
 - [ ] Bookmark the [Quick Reference](QUICKREF.md)
