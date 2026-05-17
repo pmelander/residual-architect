@@ -11,6 +11,8 @@ Welcome! This guide will get you up and running with the Solution Architect Tool
 git clone <repository-url> solution-architect-toolkit
 cd solution-architect-toolkit
 cp skills/phase-1/*.md ~/.claude/skills/
+cp skills/utilities/*.md ~/.claude/skills/
+pip install -r requirements.txt
 ```
 
 **Windows:**
@@ -18,6 +20,8 @@ cp skills/phase-1/*.md ~/.claude/skills/
 git clone <repository-url> solution-architect-toolkit
 cd solution-architect-toolkit
 Copy-Item -Path "skills\phase-1\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
+Copy-Item -Path "skills\utilities\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
+pip install -r requirements.txt
 ```
 
 ### Step 2: Verify (1 minute)
@@ -28,8 +32,11 @@ Open Claude Code and type `/` - you should see:
 - `/tech-stack`
 - `/design-review`
 - `/stressor`
+- `/excel`
 
 ✅ If you see these, installation successful!
+
+**Note:** Excel reading requires Python and openpyxl. If `/excel` commands fail, run: `pip install -r requirements.txt`
 
 ### Step 3: Try Your First Command (3 minutes)
 

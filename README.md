@@ -23,7 +23,10 @@ This toolkit provides specialized skills for architecture design, documentation,
 - ✅ `design-review` - Validate architecture choices
 - ✅ `stressor-analysis` - Stress-test architecture for antifragility
 
-### Phase 2: Deep Analysis (Planned)
+### Utilities: Infrastructure Skills ✅
+- ✅ `excel-reader` - Read Excel/CSV files, import to markdown
+
+### Phase 2: Organizational Capabilities (Planned)
 - `learning-analyzer` - Build organizational learning capability
 - `capability-assessor` - Assess and grow team maturity
 - `pattern-extractor` - Institutionalize architectural knowledge
@@ -41,6 +44,8 @@ This toolkit provides specialized skills for architecture design, documentation,
 git clone <repo-url> solution-architect-toolkit
 cd solution-architect-toolkit
 cp skills/phase-1/*.md ~/.claude/skills/
+cp skills/utilities/*.md ~/.claude/skills/
+pip install -r requirements.txt  # For Excel reading support
 ```
 
 **That's it!** Open Claude Code and type `/` to see your new skills.
@@ -57,6 +62,8 @@ cp skills/phase-1/*.md ~/.claude/skills/
 | 📄 Docs | `/solution-doc hld` | Generate comprehensive documentation |
 | 🔧 Tech | `/tech-stack recommend` | Get technology recommendations |
 | ✅ Review | `/design-review complete` | Comprehensive architecture review |
+| 🐉 Stressor | `/stressor analyze` | Stress-test for antifragility |
+| 📊 Excel | `/excel read <file>` | Import Excel/CSV to markdown |
 
 ### Quick Example
 
@@ -76,9 +83,11 @@ Complete with context, decision rationale, trade-offs, and alternatives!
 ```
 .
 ├── skills/           # Claude Code skills
-│   ├── phase-1/     # Immediate impact tools
-│   ├── phase-2/     # Deep analysis tools
-│   └── phase-3/     # Specialized tools
+│   ├── phase-1/     # Capability-building skills
+│   ├── phase-2/     # Organizational capabilities (planned)
+│   ├── phase-3/     # Specialized tools (planned)
+│   └── utilities/   # Infrastructure skills (Excel reader, etc.)
+├── helpers/          # Python utilities
 ├── templates/        # Document templates
 ├── examples/         # Example outputs
 └── docs/            # Documentation

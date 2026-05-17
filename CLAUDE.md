@@ -13,18 +13,25 @@ This is the **Solution Architect Toolkit** - a comprehensive collection of Claud
 ```
 .
 ├── skills/           # Claude Code skills (*.md files)
-│   ├── phase-1/     # Immediate impact tools (✅ Complete)
+│   ├── phase-1/     # Capability-building skills (✅ Complete)
 │   │   ├── adr.md                  # Architecture Decision Records
 │   │   ├── solution-doc.md         # Solution Documentation Generator
 │   │   ├── tech-stack.md           # Technology Stack Advisor
-│   │   └── design-review.md        # Design Review
-│   ├── phase-2/     # Deep analysis tools (🔄 Planned)
+│   │   ├── design-review.md        # Design Review
+│   │   └── stressor-analysis.md    # Stressor Analysis
+│   ├── utilities/   # Infrastructure skills (✅ Complete)
+│   │   └── excel-reader.md         # Excel/CSV Reader
+│   ├── phase-2/     # Organizational capabilities (🔄 Planned)
 │   └── phase-3/     # Specialized tools (🔄 Planned)
+├── helpers/          # Python utilities
+│   └── read_spreadsheet.py         # Excel/CSV reading helper
 ├── templates/        # Document templates
 │   ├── adr-template.md
 │   ├── hld-template.md
-│   └── tech-comparison-template.md
+│   ├── tech-comparison-template.md
+│   └── stressor-analysis-template.md
 ├── examples/         # Example outputs
+├── requirements.txt  # Python dependencies
 └── docs/            # Generated documentation location
 ```
 
@@ -112,6 +119,35 @@ git push origin feature/new-skill-name
 /design-review complete      # Comprehensive review
 ```
 
+**Stressor Analysis**
+```bash
+/stressor generate [count]        # Generate creative stressors
+/stressor analyze                 # Map impacts to components
+/stressor vulnerabilities         # Identify high-impact areas
+/stressor residues                # Suggest improvements
+/stressor iterate                 # Re-analyze after changes
+/stressor workshop                # Facilitate team workshop
+/stressor import <file> [sheet]   # Import from Excel/CSV
+```
+
+### Utility Skills (Available Now)
+
+**Excel Reader**
+```bash
+/excel read <file> [sheet]        # Read spreadsheet as markdown
+/excel preview <file> [rows]      # Preview first N rows
+/excel sheets <file>              # List available sheets
+/excel convert <file> [sheet]     # Save to docs/imports/
+```
+
+**Helper Script** (advanced usage):
+```bash
+python helpers/read_spreadsheet.py data.xlsx
+python helpers/read_spreadsheet.py data.xlsx --sheet "Sheet2"
+python helpers/read_spreadsheet.py data.xlsx --rows 10
+python helpers/read_spreadsheet.py data.xlsx --list-sheets
+```
+
 ## Key Principles
 
 ### For Solution Architect Work
@@ -139,11 +175,15 @@ Users can install these skills by:
 1. **Symlink Method** (for development):
    ```bash
    ln -s /path/to/this/repo/skills/phase-1/*.md ~/.claude/skills/
+   ln -s /path/to/this/repo/skills/utilities/*.md ~/.claude/skills/
+   pip install -r requirements.txt
    ```
 
 2. **Copy Method** (for stable use):
    ```bash
    cp /path/to/this/repo/skills/phase-1/*.md ~/.claude/skills/
+   cp /path/to/this/repo/skills/utilities/*.md ~/.claude/skills/
+   pip install -r requirements.txt
    ```
 
 3. **Git Clone Method**:

@@ -56,6 +56,15 @@ cp solution-architect-toolkit/skills/phase-1/*.md ~/.claude/skills/
 /stressor residues                # Suggest improvements
 /stressor iterate                 # Re-analyze after changes
 /stressor workshop                # Facilitate team workshop
+/stressor import <file> [sheet]   # Import from Excel/CSV
+```
+
+#### Excel Reader (Utility)
+```bash
+/excel read <file> [sheet]        # Read spreadsheet as markdown
+/excel preview <file> [rows]      # Preview first N rows
+/excel sheets <file>              # List available sheets
+/excel convert <file> [sheet]     # Save to docs/imports/
 ```
 
 ## Common Workflows
@@ -184,6 +193,9 @@ In Claude Code:
 - Technology Stack Advisor
 - Design Review
 - Stressor Analysis
+
+**Utilities** ✅ - Infrastructure
+- Excel Reader (import spreadsheets)
 
 **Phase 2** 🔄 - Organizational Capabilities (Coming Soon)
 - Learning Analyzer

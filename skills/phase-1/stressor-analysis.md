@@ -87,13 +87,34 @@ Re-run analysis after adding residues.
 **Capability Focus:** Demonstrates compound effect of iterative hardening.
 
 ### `/stressor workshop`
-**NEW:** Facilitate a stressor analysis workshop.
+Facilitate a stressor analysis workshop.
 - Guide team through brainstorming stressors
 - Help map impacts collaboratively
 - Facilitate residue identification
 - Create shared understanding of system vulnerabilities
 
 **Capability Focus:** Builds team-level resilience thinking and shared mental models.
+
+### `/stressor import <file> [sheet]`
+Import a stressor matrix from Excel or CSV.
+- Read spreadsheet using excel-reader utility
+- Validate matrix format (Stressor column + component columns)
+- Convert to stressor analysis format
+- Save to docs/stressor-analysis/
+
+**Expected format:**
+- First column: Stressor names or descriptions
+- Remaining columns: Component names (binary 0/1 values for impact)
+- Header row with component names
+
+**Usage:**
+```
+/stressor import stressor-matrix.xlsx
+/stressor import stressor-matrix.xlsx "Impact Matrix"
+/stressor import stressor-data.csv
+```
+
+**Capability Focus:** Enables importing existing analyses, collaboration with Excel users.
 
 ## Stressor Analysis Matrix Format
 
@@ -345,13 +366,20 @@ Step 7: Let's prioritize and create action items!
 - **Design Review** - Review resilience and antifragility
 - **Tech Stack** - Evaluate technologies for resilience properties
 - **Solution Doc** - Document stressor analysis results and residues
+- **Excel Reader** - Import existing stressor matrices from Excel/CSV
 
 **Workflow:**
-1. Run stressor analysis
+1. Run stressor analysis (or `/stressor import` from Excel)
 2. Identify critical residues needed
 3. Document via ADR (`/adr create Add circuit breakers for resilience`)
 4. Update architecture docs with new residues
 5. Re-run stressor analysis to validate improvement
+
+**Excel Import Workflow:**
+1. `/excel sheets stressor-data.xlsx` (see available sheets)
+2. `/excel preview stressor-data.xlsx "Impact Matrix"` (validate format)
+3. `/stressor import stressor-data.xlsx "Impact Matrix"` (import to stressor analysis)
+4. Continue with standard stressor analysis commands
 
 ## Output Location
 

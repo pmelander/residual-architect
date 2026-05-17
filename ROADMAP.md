@@ -15,7 +15,7 @@ This roadmap outlines the planned development of the Solution Architect Toolkit 
 
 ## Phase 1: Immediate Impact ✅
 
-**Goal:** Provide foundational tools that deliver immediate value to Solution Architects.
+**Goal:** Build individual architect capabilities through residuality-focused skills.
 
 **Status:** ✅ Complete (2026-05-17)
 
@@ -23,28 +23,53 @@ This roadmap outlines the planned development of the Solution Architect Toolkit 
 
 | Skill | Status | Description |
 |-------|--------|-------------|
-| Architecture Decision Records | ✅ | Create and manage ADRs following standard formats |
-| Solution Documentation Generator | ✅ | Generate HLD, LLD, deployment guides, and runbooks |
-| Technology Stack Advisor | ✅ | Recommend and evaluate technology choices |
-| Design Review | ✅ | Comprehensive architecture reviews |
+| Architecture Decision Records | ✅ | Build decision-making capability through structured ADRs |
+| Solution Documentation Generator | ✅ | Build systems thinking and communication capability |
+| Technology Stack Advisor | ✅ | Build strategic thinking and evaluation capability |
+| Design Review | ✅ | Build self-assessment and pattern recognition capability |
+| Stressor Analysis | ✅ | Build antifragility thinking and resilience capability |
 
 ### Deliverables ✅
 
-- [x] Four core skills implemented
-- [x] Document templates (ADR, HLD, tech comparison)
-- [x] Example documents
+- [x] Five capability-building skills implemented
+- [x] Refactored with residuality principles (reflection prompts, learning capture)
+- [x] Document templates (ADR, HLD, tech comparison, stressor matrix)
+- [x] Example documents (including banking stressor analysis)
 - [x] Installation guide
 - [x] Usage documentation
 - [x] Quick reference guide
 - [x] Contributing guidelines
+- [x] Three ADRs documenting strategic decisions
 
 ### Impact
 
 Phase 1 provides Solution Architects with:
-- Structured decision documentation
-- Automated documentation generation
-- Technology evaluation frameworks
-- Systematic design review processes
+- **Decision-making capability** - Make better architectural decisions independently
+- **Systems thinking** - Naturally think in components, interactions, trade-offs
+- **Evaluation capability** - Assess technologies without hype or bias
+- **Self-review capability** - Spot issues before external review
+- **Antifragility thinking** - Design for unknown unknowns, benefit from stress
+
+**Residuality Success:** Architects use tools less as capabilities transfer. Tool Independence Score approaches 1.0.
+
+---
+
+## Utilities: Infrastructure Skills ✅
+
+**Goal:** Provide infrastructure that enables capability-building skills.
+
+**Status:** ✅ Established (2026-05-17)
+
+| Skill | Status | Description |
+|-------|--------|-------------|
+| Excel Reader | ✅ | Read Excel/CSV files, import to markdown (bridges Excel → markdown workflows) |
+
+**Philosophy:** Utilities provide tooling, not capability-building. Success = seamless integration and workflow efficiency.
+
+**Future Utilities:**
+- 📋 Diagram Generator (convert markdown → diagrams)
+- 📋 Template Manager (custom org templates)
+- 📋 Doc Search (semantic search across architecture docs)
 
 ---
 
