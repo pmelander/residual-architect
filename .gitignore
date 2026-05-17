@@ -17,8 +17,8 @@ desktop.ini
 *.bak
 
 # Generated documentation (can be regenerated)
-docs/adr/*.md
-!docs/adr/.gitkeep
+# Note: Project's own ADRs (ADR-001-*.md etc) are tracked
+# User-generated ADRs can be excluded with: docs/adr/ADR-*-user-*.md
 docs/architecture/*.md
 !docs/architecture/.gitkeep
 docs/deployment/*.md
