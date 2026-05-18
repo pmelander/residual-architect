@@ -77,6 +77,36 @@ cp solution-architect-toolkit/skills/phase-1/*.md ~/.claude/skills/
 /arch-learning trends             # Identify trends
 ```
 
+#### Team Capability Assessor (Phase 2)
+```bash
+/capability-assessor assess       # Assess team maturity
+/capability-assessor gaps         # Identify capability gaps
+/capability-assessor roadmap      # Create development plan
+/capability-assessor track        # Track growth over time
+/capability-assessor exercises    # Get capability-building activities
+/capability-assessor compare      # Compare to benchmarks
+```
+
+#### Pattern Extractor (Phase 2)
+```bash
+/patterns extract                 # Extract patterns from knowledge
+/patterns catalog                 # View pattern library
+/patterns suggest <scenario>      # Get pattern recommendations
+/patterns effectiveness           # Track pattern success
+/patterns anti-patterns           # Document what doesn't work
+/patterns evolve                  # Update patterns based on learning
+```
+
+#### Evolutionary Architecture Coach (Phase 2)
+```bash
+/evolve assess                    # Assess evolutionary readiness
+/evolve fitness-functions         # Define fitness functions
+/evolve brittleness               # Identify brittle areas
+/evolve increment                 # Plan incremental improvements
+/evolve health                    # Track architectural health
+/evolve coach                     # Interactive coaching
+```
+
 ## Common Workflows
 
 ### Starting New Project
@@ -112,6 +142,56 @@ As-needed: /adr update [when decisions change]
            /solution-doc update [keep docs current]
 ```
 
+### Building Organizational Capabilities (Phase 2)
+
+#### Initial Team Assessment
+```bash
+1. /capability-assessor assess     # Understand current maturity
+2. /capability-assessor gaps       # Identify priorities
+3. /capability-assessor roadmap    # Create 3-6 month plan
+4. /capability-assessor exercises  # Start capability building
+```
+
+#### Pattern Library Creation
+```bash
+1. /patterns extract               # Extract patterns from ADRs/code
+2. /patterns catalog               # Review extracted patterns
+3. /patterns anti-patterns         # Document what doesn't work
+4. /patterns suggest <scenario>    # Test pattern recommendations
+```
+
+#### Evolutionary Architecture Setup
+```bash
+1. /evolve assess                  # Assess current readiness
+2. /evolve fitness-functions       # Define 5-10 key functions
+3. /evolve brittleness             # Identify improvement areas
+4. /evolve increment               # Plan first improvements
+```
+
+#### Organizational Learning Practice
+```bash
+1. /arch-learning analyze          # Analyze decision history
+2. /arch-learning patterns         # Extract decision patterns
+3. /arch-learning outcomes         # Track what worked
+4. /arch-learning lessons          # Generate lessons report
+```
+
+#### Quarterly Review Rhythm (Phase 2)
+```bash
+Month 1-2: Execute improvement roadmaps
+Month 3 (mid-cycle):
+  - /capability-assessor track
+  - /patterns effectiveness
+  - /evolve health
+  
+Month 6 (end of cycle):
+  - /capability-assessor assess [reassess]
+  - /capability-assessor roadmap [next quarter]
+  - /arch-learning retrospective
+  - /patterns evolve [update patterns]
+  - /evolve assess [measure improvement]
+```
+
 ## Output Locations
 
 ```
@@ -127,6 +207,35 @@ docs/
   operations/             # Operations docs
     RUNBOOK.md
   reviews/                # Review reports
+    design-review-*.md
+    tech-evaluation-*.md
+  stressor-analysis/      # Stressor analyses
+    stressor-*.md
+  imports/                # Imported Excel/CSV data
+    *.md
+  arch-learning/          # Organizational learning (Phase 2)
+    adr-analysis-*.md
+    pattern-catalog.md
+    learning-session-*.md
+  capability-assessments/ # Team maturity (Phase 2)
+    assessment-*.md
+    gap-analysis-*.md
+    roadmap-*.md
+    growth-tracking.md
+  patterns/               # Pattern library (Phase 2)
+    pattern-catalog.md
+    architectural/*.md
+    decision/*.md
+    technology/*.md
+    anti-patterns/*.md
+    pattern-effectiveness.md
+  evolutionary-architecture/ # Evolutionary practices (Phase 2)
+    assessment-*.md
+    fitness-functions.md
+    brittleness-analysis-*.md
+    incremental-plan-*.md
+    health-dashboard.md
+```
     architecture-review-*.md
     api-review-*.md
   technology/             # Technology docs
@@ -162,6 +271,44 @@ docs/
 - ✅ Review early and often
 - ✅ Address critical issues immediately
 - ✅ Track moderate issues
+- ✅ Learn from review findings
+
+### Stressor Analysis
+- ✅ Be creative with stressors
+- ✅ Include unknown unknowns
+- ✅ Map impacts honestly
+- ✅ Iterate after improvements
+- ✅ Facilitate as team exercise
+
+### Phase 2: Organizational Capabilities
+
+#### Capability Development
+- ✅ Focus on 1-2 dimensions at a time
+- ✅ Practice on real work, not toy problems
+- ✅ Track progress quarterly
+- ✅ Celebrate improvements
+- ✅ Integrate with daily work
+
+#### Pattern Management
+- ✅ Start with 10-15 high-value patterns
+- ✅ Include real examples from your codebase
+- ✅ Document context (when to use/not use)
+- ✅ Track effectiveness over time
+- ✅ Evolve patterns based on outcomes
+
+#### Evolutionary Architecture
+- ✅ Define 5-10 critical fitness functions first
+- ✅ Automate fitness function checks
+- ✅ Make architectural changes incrementally
+- ✅ Design for reversibility
+- ✅ Track evolutionary readiness quarterly
+
+#### Organizational Learning
+- ✅ Review ADR outcomes regularly
+- ✅ Extract patterns from successful decisions
+- ✅ Document failures as anti-patterns
+- ✅ Share learnings across team
+- ✅ Build institutional memory
 - ✅ Share findings with team
 
 ## Tips

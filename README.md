@@ -26,11 +26,11 @@ This toolkit provides specialized skills for architecture design, documentation,
 ### Utilities: Infrastructure Skills ✅
 - ✅ `excel-reader` - Read Excel/CSV files, import to markdown
 
-### Phase 2: Organizational Capabilities (In Progress) 🔄
+### Phase 2: Organizational Capabilities (Complete) ✅
 - ✅ `arch-learning` - Build organizational learning capability (analyze decisions, extract patterns, track outcomes)
-- 📋 `capability-assessor` - Assess and grow team maturity
-- 📋 `pattern-extractor` - Institutionalize architectural knowledge
-- 📋 `evolutionary-coach` - Enable continuous architecture evolution
+- ✅ `capability-assessor` - Assess and grow team architectural maturity
+- ✅ `pattern-extractor` - Extract and institutionalize architectural patterns
+- ✅ `evolutionary-coach` - Enable continuous architecture evolution
 
 ### Phase 3: Specialized (Planned)
 - `cloud-architect` - Infrastructure as code generation
@@ -66,6 +66,9 @@ pip install -r requirements.txt  # For Excel reading support
 | 🐉 Stressor | `/stressor analyze` | Stress-test for antifragility |
 | 📊 Excel | `/excel read <file>` | Import Excel/CSV to markdown |
 | 🎓 Learning | `/arch-learning analyze` | Learn from architectural history |
+| 📈 Capability | `/capability-assessor assess` | Assess team architectural maturity |
+| 🧩 Patterns | `/patterns extract` | Extract and institutionalize patterns |
+| 🔄 Evolve | `/evolve assess` | Assess evolutionary readiness |
 
 ### Quick Example
 
@@ -120,11 +123,11 @@ See [Contributing Guide](CONTRIBUTING.md) for details.
 
 | Phase | Status | Skills | Timeline |
 |-------|--------|--------|----------|
-| Phase 1 | ✅ Complete | 4 skills | Q2 2026 |
-| Phase 2 | 📋 Planned | 4 skills | Q3-Q4 2026 |
-| Phase 3 | 💡 Planned | 4 skills | Q1-Q2 2027 |
+| Phase 1 | ✅ Complete | 5 skills | Q2 2026 |
+| Phase 2 | ✅ Complete | 4 skills | Q2 2026 |
+| Phase 3 | 💡 Planned | 4 skills | Q3-Q4 2026 |
 
-**Current Release:** Phase 1 - Released 2026-05-17
+**Current Release:** Phase 2 - Released 2026-05-18
 
 ## ⭐ Star This Repository
 
