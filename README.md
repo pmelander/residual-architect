@@ -26,11 +26,11 @@ This toolkit provides specialized skills for architecture design, documentation,
 ### Utilities: Infrastructure Skills ✅
 - ✅ `excel-reader` - Read Excel/CSV files, import to markdown
 
-### Phase 2: Organizational Capabilities (Planned)
-- `learning-analyzer` - Build organizational learning capability
-- `capability-assessor` - Assess and grow team maturity
-- `pattern-extractor` - Institutionalize architectural knowledge
-- `evolutionary-coach` - Enable continuous architecture evolution
+### Phase 2: Organizational Capabilities (In Progress) 🔄
+- ✅ `arch-learning` - Build organizational learning capability (analyze decisions, extract patterns, track outcomes)
+- 📋 `capability-assessor` - Assess and grow team maturity
+- 📋 `pattern-extractor` - Institutionalize architectural knowledge
+- 📋 `evolutionary-coach` - Enable continuous architecture evolution
 
 ### Phase 3: Specialized (Planned)
 - `cloud-architect` - Infrastructure as code generation
@@ -44,6 +44,7 @@ This toolkit provides specialized skills for architecture design, documentation,
 git clone <repo-url> solution-architect-toolkit
 cd solution-architect-toolkit
 cp skills/phase-1/*.md ~/.claude/skills/
+cp skills/phase-2/*.md ~/.claude/skills/  # NEW: Phase 2 organizational capabilities
 cp skills/utilities/*.md ~/.claude/skills/
 pip install -r requirements.txt  # For Excel reading support
 ```
@@ -64,6 +65,7 @@ pip install -r requirements.txt  # For Excel reading support
 | ✅ Review | `/design-review complete` | Comprehensive architecture review |
 | 🐉 Stressor | `/stressor analyze` | Stress-test for antifragility |
 | 📊 Excel | `/excel read <file>` | Import Excel/CSV to markdown |
+| 🎓 Learning | `/arch-learning analyze` | Learn from architectural history |
 
 ### Quick Example
 
@@ -84,7 +86,7 @@ Complete with context, decision rationale, trade-offs, and alternatives!
 .
 ├── skills/           # Claude Code skills
 │   ├── phase-1/     # Capability-building skills
-│   ├── phase-2/     # Organizational capabilities (planned)
+│   ├── phase-2/     # Organizational capabilities (IN PROGRESS)
 │   ├── phase-3/     # Specialized tools (planned)
 │   └── utilities/   # Infrastructure skills (Excel reader, etc.)
 ├── helpers/          # Python utilities

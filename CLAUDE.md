@@ -19,9 +19,10 @@ This is the **Solution Architect Toolkit** - a comprehensive collection of Claud
 │   │   ├── tech-stack.md           # Technology Stack Advisor
 │   │   ├── design-review.md        # Design Review
 │   │   └── stressor-analysis.md    # Stressor Analysis
+│   ├── phase-2/     # Organizational capabilities (🔄 In Progress)
+│   │   └── arch-learning.md        # Architecture Learning Analyzer
 │   ├── utilities/   # Infrastructure skills (✅ Complete)
 │   │   └── excel-reader.md         # Excel/CSV Reader
-│   ├── phase-2/     # Organizational capabilities (🔄 Planned)
 │   └── phase-3/     # Specialized tools (🔄 Planned)
 ├── helpers/          # Python utilities
 │   └── read_spreadsheet.py         # Excel/CSV reading helper
@@ -33,6 +34,9 @@ This is the **Solution Architect Toolkit** - a comprehensive collection of Claud
 ├── examples/         # Example outputs
 ├── requirements.txt  # Python dependencies
 └── docs/            # Generated documentation location
+    ├── adr/         # Architecture Decision Records
+    ├── arch-learning/ # Learning analysis outputs
+    └── ...
 ```
 
 ### Skill Development Pattern
@@ -148,6 +152,20 @@ python helpers/read_spreadsheet.py data.xlsx --rows 10
 python helpers/read_spreadsheet.py data.xlsx --list-sheets
 ```
 
+### Phase 2 Skills (Available Now)
+
+**Architecture Learning Analyzer**
+```bash
+/arch-learning analyze            # Analyze ADR history
+/arch-learning patterns           # Extract patterns from decisions
+/arch-learning outcomes           # Review decision outcomes
+/arch-learning retrospective      # Facilitate team retrospective
+/arch-learning lessons            # Generate lessons learned report
+/arch-learning trends             # Identify trends over time
+```
+
+**Capability:** Builds organizational learning from architectural history, extracts patterns, tracks outcomes, creates feedback loops
+
 ## Key Principles
 
 ### For Solution Architect Work
@@ -175,6 +193,7 @@ Users can install these skills by:
 1. **Symlink Method** (for development):
    ```bash
    ln -s /path/to/this/repo/skills/phase-1/*.md ~/.claude/skills/
+   ln -s /path/to/this/repo/skills/phase-2/*.md ~/.claude/skills/
    ln -s /path/to/this/repo/skills/utilities/*.md ~/.claude/skills/
    pip install -r requirements.txt
    ```
@@ -182,6 +201,7 @@ Users can install these skills by:
 2. **Copy Method** (for stable use):
    ```bash
    cp /path/to/this/repo/skills/phase-1/*.md ~/.claude/skills/
+   cp /path/to/this/repo/skills/phase-2/*.md ~/.claude/skills/
    cp /path/to/this/repo/skills/utilities/*.md ~/.claude/skills/
    pip install -r requirements.txt
    ```

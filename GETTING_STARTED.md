@@ -11,6 +11,7 @@ Welcome! This guide will get you up and running with the Solution Architect Tool
 git clone <repository-url> solution-architect-toolkit
 cd solution-architect-toolkit
 cp skills/phase-1/*.md ~/.claude/skills/
+cp skills/phase-2/*.md ~/.claude/skills/
 cp skills/utilities/*.md ~/.claude/skills/
 pip install -r requirements.txt
 ```
@@ -20,6 +21,7 @@ pip install -r requirements.txt
 git clone <repository-url> solution-architect-toolkit
 cd solution-architect-toolkit
 Copy-Item -Path "skills\phase-1\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
+Copy-Item -Path "skills\phase-2\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
 Copy-Item -Path "skills\utilities\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
 pip install -r requirements.txt
 ```
@@ -33,6 +35,7 @@ Open Claude Code and type `/` - you should see:
 - `/design-review`
 - `/stressor`
 - `/excel`
+- `/arch-learning` (NEW!)
 
 ✅ If you see these, installation successful!
 
@@ -101,6 +104,15 @@ Get a comprehensive review with:
 - Identified issues (critical, moderate, improvements)
 - Prioritized recommendations
 - Best practices validation
+
+#### 5. Architecture Learning (10 minutes) - NEW!
+
+Learn from your decisions:
+```
+/arch-learning analyze
+```
+
+Analyze your ADRs, extract patterns, track outcomes. Build organizational learning capability.
 
 ---
 

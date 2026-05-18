@@ -73,7 +73,7 @@ Phase 1 provides Solution Architects with:
 
 ---
 
-## Phase 2: Capability Building 🌱
+## Phase 2: Organizational Capabilities 🌱
 
 **Goal:** Build organizational learning capabilities and team-level architectural thinking that compounds over time.
 
@@ -81,13 +81,15 @@ Phase 1 provides Solution Architects with:
 
 **Target:** Q3-Q4 2026
 
-**Status:** 🔄 Redesigned with Residuality Focus
+**Status:** 🔄 In Progress (1 of 4 complete)
 
 **Philosophy Shift:** Phase 1 builds individual architect capabilities. Phase 2 builds **team and organizational meta-capabilities** that enable continuous improvement and learning.
 
-### Redesigned Skills
+### Skills
 
-#### 1. Architecture Learning Analyzer 🎓
+#### 1. Architecture Learning Analyzer 🎓 ✅
+
+**Status:** ✅ Complete (2026-05-18)
 
 **Purpose:** Help organizations learn systematically from their architectural history and decisions.
 
@@ -98,12 +100,13 @@ Phase 1 provides Solution Architects with:
 - Knowledge compounding
 
 **What It Does:**
-- Reviews past ADRs and outcomes
+- Analyzes past ADRs and outcomes
 - Identifies patterns in successful vs failed decisions
 - Extracts learnings from architectural evolution
 - Creates organizational pattern library
 - Tracks decision outcomes over time
 - Generates "What We've Learned" reports
+- Facilitates team retrospectives
 
 **Commands:**
 ```bash
@@ -115,11 +118,19 @@ Phase 1 provides Solution Architects with:
 /arch-learning trends           # Identify trends in decisions
 ```
 
+**Enhancements:**
+- Extended ADR template with outcome tracking (Implementation Status, Review Date, Outcome section)
+- Learning capture template for session notes
+- Capability rubric (Novice → Expert)
+- Integration with Phase 1 skills
+
 **Residuality Goal:** Organizations that systematically learn from decisions and build institutional knowledge that persists beyond individual architects.
 
 ---
 
 #### 2. Team Capability Assessor 📊
+
+**Status:** 📋 Planned
 
 **Purpose:** Assess and develop team architectural capability maturity systematically.
 
@@ -241,13 +252,13 @@ Phase 1 provides Solution Architects with:
 
 ### Phase 2 Timeline
 
-| Quarter | Milestone |
-|---------|-----------|
-| Q3 2026 | Architecture Learning Analyzer |
-| Q3 2026 | Team Capability Assessor |
-| Q4 2026 | Pattern Extractor & Institutionalizer |
-| Q4 2026 | Evolutionary Architecture Coach |
-| Q4 2026 | Phase 2 release |
+| Quarter | Milestone | Status |
+|---------|-----------|--------|
+| Q2 2026 | Architecture Learning Analyzer | ✅ Complete |
+| Q3 2026 | Team Capability Assessor | 📋 Planned |
+| Q3 2026 | Pattern Extractor & Institutionalizer | 📋 Planned |
+| Q4 2026 | Evolutionary Architecture Coach | 📋 Planned |
+| Q4 2026 | Phase 2 release | 📋 Planned |
 
 ### Why This Redesign?
 

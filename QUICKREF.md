@@ -67,6 +67,16 @@ cp solution-architect-toolkit/skills/phase-1/*.md ~/.claude/skills/
 /excel convert <file> [sheet]     # Save to docs/imports/
 ```
 
+#### Architecture Learning (Phase 2)
+```bash
+/arch-learning analyze            # Analyze ADR history
+/arch-learning patterns           # Extract patterns
+/arch-learning outcomes           # Review outcomes
+/arch-learning retrospective      # Facilitate retro
+/arch-learning lessons            # Generate lessons learned
+/arch-learning trends             # Identify trends
+```
+
 ## Common Workflows
 
 ### Starting New Project
@@ -197,11 +207,11 @@ In Claude Code:
 **Utilities** ✅ - Infrastructure
 - Excel Reader (import spreadsheets)
 
-**Phase 2** 🔄 - Organizational Capabilities (Coming Soon)
-- Learning Analyzer
-- Capability Assessor
-- Pattern Extractor
-- Evolutionary Coach
+**Phase 2** 🔄 - Organizational Capabilities (In Progress)
+- ✅ Architecture Learning Analyzer
+- 📋 Team Capability Assessor
+- 📋 Pattern Extractor
+- 📋 Evolutionary Coach
 
 **Phase 3** 🔄 - Specialized (Planned)
 - Cloud Architect
