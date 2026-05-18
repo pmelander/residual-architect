@@ -2,9 +2,9 @@
 
 Welcome! This guide will get you up and running in under 5 minutes.
 
-## Quick Start
+---
 
-### Step 1: Install
+## Step 1: Install
 
 **Linux/Mac:**
 ```bash
@@ -28,174 +28,175 @@ Copy-Item -Path "skills\utilities\*.md" -Destination "$env:USERPROFILE\.claude\s
 pip install -r requirements.txt
 ```
 
-### Step 2: Verify
+> **Note:** Excel reading requires Python and openpyxl. If `/excel` commands fail, run: `pip install -r requirements.txt`
+
+---
+
+## Step 2: Verify
 
 Open Claude Code and type `/` — you should see:
 
 **Phase 1 — Individual Capabilities:**
-- `/adr`
-- `/solution-doc`
-- `/tech-stack`
-- `/design-review`
-- `/stressor`
+`/adr` `/solution-doc` `/tech-stack` `/design-review` `/stressor`
 
 **Phase 2 — Organisational Capabilities:**
-- `/arch-learning`
-- `/capability-assessor`
-- `/patterns`
-- `/evolve`
+`/arch-learning` `/capability-assessor` `/patterns` `/evolve`
 
 **Phase 3 — Specialised Tools:**
-- `/cloud`
-- `/capacity`
+`/journey` `/discover` `/cloud` `/capacity`
 
 **Utilities:**
-- `/excel`
+`/excel`
 
-✅ If you see these, installation was successful!
-
-> **Note:** Excel reading requires Python and openpyxl. If `/excel` commands fail, run: `pip install -r requirements.txt`
-
-### Step 3: Try Your First Command
-
-Let's create your first Architecture Decision Record:
-
-```
-/adr create Use PostgreSQL for database
-```
-
-Claude will ask you questions, then generate a complete ADR saved to `docs/adr/ADR-001-use-postgresql-for-database.md`.
-
-**Congratulations!** 🎉 You've just documented your first architecture decision.
+✅ If you see these, installation was successful.
 
 ---
 
-## Your First Hour
+## Step 3: Start Your Journey
 
-### Start with Phase 1 — Individual Capabilities
+The first thing to do with any new engagement isn't to open a specific skill — it's to understand where you are and what the terrain demands.
 
-#### 1. Technology Stack Advisor (5 min)
 ```
-/tech-stack recommend
+/journey start
 ```
-Answer questions about what you're building, get a complete stack recommendation with justification.
 
-#### 2. Solution Documentation (10 min)
-```
-/solution-doc hld
-```
-Generate a comprehensive High-Level Design for your system.
+Tell Claude about the system you're working on — what you're trying to achieve, what exists today, and any constraints. It will assess the terrain and map your recommended skill sequence from there.
 
-#### 3. Stressor Analysis (10 min)
-```
-/stressor walk checkout        # map your primary path — actors and intentions
-/stressor generate             # generate diverse stressors including absurd ones
-/stressor analyze              # build the impact matrix
-/stressor residues             # identify high-leverage residuals
-```
-Walk your primary path to map actors and intentions, then stress-test it. Identify vulnerabilities and residuals — new actors, intentions, or paths that make your system antifragile.
-
-#### 4. Design Review (10 min)
-```
-/design-review complete
-```
-Get a scored review across 8 dimensions with prioritised recommendations.
-
-### Explore Phase 2 — Organisational Capabilities
-
-#### Assess your team (5 min)
-```
-/capability-assessor assess
-```
-Understand where your team's architectural maturity is today and where to focus.
-
-#### Extract patterns from your decisions (5 min)
-```
-/patterns extract
-```
-Build a pattern library from your ADRs and codebase.
-
-### Try Phase 3 — Specialised Tools
-
-#### Design a cloud architecture (10 min)
-```
-/cloud design <your system>
-```
-Get a cloud-native architecture with Well-Architected review across all 6 pillars.
-
-#### Plan capacity (5 min)
-```
-/capacity estimate
-```
-Translate user and load requirements into concrete resource estimates.
+**New to Residuality Theory?** Read the [Introduction to Residuality Theory](RESIDUALITY.md) first — it explains the philosophy behind the toolkit and the vocabulary all the skills share.
 
 ---
 
-## Common First Tasks
+## The Three Terrains
 
-### Document a New Project (30-40 min)
+The journey looks different depending on what you're walking into:
 
-```
-/tech-stack recommend
-/adr create Use Node.js for backend
-/adr create Use PostgreSQL for database
-/solution-doc hld
-/stressor walk                 # walk your primary paths first
-/stressor generate             # generate stressors
-/stressor analyze              # build impact matrix
-/stressor residues             # identify residuals
-/design-review architecture
-```
-
-**Result:** Complete architecture documentation with stress-tested resilience.
-
-### Review an Existing System (15-20 min)
+### Greenfield — blank canvas
+You have an aspiration and nothing yet exists. You design the paths, then walk and stress them.
 
 ```
-/design-review complete
-/design-review security    # if security was flagged
-/solution-doc runbook
-/solution-doc deployment
+/journey start
+→ /tech-stack → /adr → /solution-doc hld
+→ /stressor walk → /stressor generate → /stressor analyze → /stressor residues
+→ [iterate until impact sufficiently low]
+→ /adr → /design-review → /solution-doc deployment
 ```
 
-**Result:** Full picture of strengths and improvement areas.
-
-### Plan a Cloud Migration (20-30 min)
-
-```
-/cloud migrate to AWS
-/cloud design <target architecture>
-/cloud review
-/cloud iac terraform
-/cloud dr
-```
-
-**Result:** Migration strategy, target architecture, IaC, and DR plan.
-
-### Run a Compliance-Aware Stressor Analysis
+### Brownfield — existing system
+Something is already there. You need to discover it before you can change it.
 
 ```
-/stressor compliance gdpr     # inject GDPR stressors (when pack available)
-/stressor walk                # walk your paths under the compliance stressors
-/stressor analyze             # build impact matrix
-/stressor residues            # residuals address compliance structurally
-/adr create [document key residuals]
+/journey start
+→ /discover paths → /discover actor → /discover organisation → /discover confidence
+→ /stressor walk → /stressor generate → /stressor analyze → /stressor residues
+→ [iterate until impact sufficiently low]
+→ /adr → /design-review → /solution-doc
 ```
 
-**Result:** Compliance requirements addressed as architectural residues — not a checklist.
+### Minefield — high fragility, high complexity
+An existing system with fragile dependencies, unclear paths, and organisational resistance. Discover extensively before touching anything.
+
+```
+/journey start
+→ /discover paths → /discover actor → /discover intentions → /discover gaps
+→ /discover organisation → /discover confidence
+→ [if not confident — keep discovering]
+→ /stressor walk → /stressor generate → /stressor analyze → /stressor residues
+→ [iterate more cycles than brownfield]
+→ /adr → /design-review → /solution-doc
+```
+
+---
+
+## The Stressor Iteration Loop
+
+At the heart of every journey is a loop, not a straight line:
+
+```
+walk paths → generate stressors → build matrix → find residuals
+     ↑                                                  ↓
+  re-walk ←← implement residuals ←← impact low enough? ←←
+```
+
+You keep iterating until the system's vulnerability is **sufficiently low** — not zero, but low enough given the aspiration and the cost of further improvement. Use `/journey iterate` to make that judgment explicitly rather than by instinct.
+
+---
+
+## Mid-Journey? Start Here
+
+Already mid-project and not sure which skill to reach for next?
+
+```
+/journey where
+```
+
+Describe what you've done so far. Claude will tell you where you are, what's been skipped, and what comes next.
+
+---
+
+## The Skills at a Glance
+
+### The Journey Orchestrator
+| Skill | When to use |
+|-------|------------|
+| `/journey start` | Beginning any new engagement |
+| `/journey where` | Mid-project, unsure what's next |
+| `/journey iterate` | After stressor analysis — proceed or loop? |
+| `/journey review` | Health check — what's been missed? |
+| `/journey cadence` | Establishing rhythm for a live system |
+
+### Discovery (Brownfield / Minefield)
+| Skill | When to use |
+|-------|------------|
+| `/discover paths` | Map what's actually in an existing system |
+| `/discover actor` | Confirm what an actor actually does |
+| `/discover intentions` | Trace how a signal propagates |
+| `/discover gaps` | Prioritise what's still unknown |
+| `/discover organisation` | Map resistance patterns as stressors |
+| `/discover confidence` | Are you ready to walk? |
+
+### Stressor Analysis (every journey)
+| Skill | When to use |
+|-------|------------|
+| `/stressor walk` | Traverse a path — the foundational step |
+| `/stressor generate` | Generate stressors, including absurd ones 🐉 |
+| `/stressor analyze` | Build the impact matrix |
+| `/stressor vulnerabilities` | Find the most exposed actors |
+| `/stressor residues` | Identify residuals to reduce impact |
+| `/stressor iterate` | Re-walk after implementing residuals |
+| `/stressor compliance <pack>` | Inject compliance stressors |
+
+### Design & Documentation
+| Skill | When to use |
+|-------|------------|
+| `/adr create` | Document every significant decision |
+| `/solution-doc hld` | High-Level Design |
+| `/solution-doc complete` | Full documentation set |
+| `/design-review complete` | Validate before building |
+| `/tech-stack recommend` | Technology selection |
+| `/cloud design` | Cloud-native architecture |
+| `/capacity estimate` | Resource sizing |
+
+### Organisational Capabilities (ongoing)
+| Skill | Cadence |
+|-------|---------|
+| `/arch-learning analyze` | Quarterly |
+| `/capability-assessor assess` | Every 6 months |
+| `/patterns evolve` | Quarterly |
+| `/evolve health` | Monthly |
 
 ---
 
 ## Understanding the Philosophy
 
-This toolkit is built on **Residuality Theory**. Skills are designed to transfer capability to you — not create dependency on the tool.
-
-**The measure of success is how little you need the toolkit** because you've internalised the thinking.
+This toolkit is built on **Residuality Theory** — the practice of designing systems that don't just survive unexpected stress, but become stronger because of it.
 
 Key principles:
-- **Antifragility over risk mitigation** — design systems that benefit from stress, not just resist it
-- **Compliance as a byproduct** — good antifragile design addresses regulatory requirements structurally
-- **Capability transfer** — every skill builds a thinking pattern you carry forward
+- **Walk paths, don't just list components** — understanding how intentions flow through actors reveals what diagrams hide
+- **Unknown unknowns matter most** — stressors include the absurd because real surprises are never on the list
+- **Compliance as a byproduct** — regulatory requirements emerge as residuals of antifragile design
+- **Capability transfer** — the measure of success is how little you need the toolkit because the thinking is internalised
+
+→ [Read the full introduction to Residuality Theory](RESIDUALITY.md)
 
 ---
 
@@ -205,48 +206,37 @@ Key principles:
 docs/
   adr/                    # Architecture Decision Records
   architecture/           # HLD.md, LLD-*.md
-  deployment/             # DEPLOYMENT.md
-  operations/             # RUNBOOK.md
+  deployment/             # Deployment guides
+  operations/             # Runbooks
   reviews/                # Design review reports
   technology/             # Tech stack reports
-  stressor-analysis/      # Stressor matrices, residue recommendations
-  cloud/                  # Cloud architecture docs
-  capacity/               # Capacity estimates
+  stressor-analysis/      # Stressor matrices, residual recommendations
+  cloud/                  # Cloud architecture docs and IaC
+  capacity/               # Capacity estimates and forecasts
 ```
-
----
-
-## Tips for Success
-
-1. **Start with what you need today** — don't try all skills at once
-2. **Iterate** — generated docs are starting points, refine them
-3. **Use stressor analysis during design**, not just after
-4. **Link everything** — ADRs → HLD → LLD → code
-5. **Share with your team** — the best architecture thinking is collaborative
 
 ---
 
 ## Getting Help
 
 - 📖 [Residuality Theory](RESIDUALITY.md) — the philosophy behind the toolkit
-- 🔍 [Quick Reference](QUICKREF.md) — all commands at a glance
-- 📚 [Usage Guide](docs/USAGE.md) — detailed examples
+- 🔍 [Quick Reference](QUICKREF.md) — every command at a glance
+- 📚 [Usage Guide](docs/USAGE.md) — detailed examples for every skill
 - 🗺️ [Roadmap](ROADMAP.md) — what's built and what's next
 - 🤝 [Contributing](CONTRIBUTING.md) — how to add compliance packs and skills
 
 ---
 
-## Your First Hour Checklist
+## First Steps Checklist
 
-- [ ] Install the toolkit and verify with `/`
+- [ ] Install and verify (`/` in Claude Code shows the skills)
+- [ ] Read [Introduction to Residuality Theory](RESIDUALITY.md)
+- [ ] Start your first journey (`/journey start`)
+- [ ] Walk your first path (`/stressor walk`)
+- [ ] Generate stressors — include at least one absurd one 🐉
 - [ ] Create your first ADR (`/adr create`)
-- [ ] Get a tech stack recommendation (`/tech-stack recommend`)
-- [ ] Run a stressor analysis — walk your paths, embrace the absurd! (`/stressor walk` then `/stressor analyze`)
-- [ ] Run a design review (`/design-review complete`)
-- [ ] Try a cloud design (`/cloud design`)
-- [ ] Read the [Quick Reference](QUICKREF.md)
 - [ ] Star the repository ⭐
 
 ---
 
-**Welcome to the Solution Architect Toolkit. Let's build antifragile systems together.** 🐉
+**Welcome to the Architect's Journey. Let's build antifragile systems together.** 🐉
