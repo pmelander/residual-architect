@@ -127,7 +127,8 @@ git push origin feature/new-skill-name
 /solution-doc hld                # Solution Documentation
 /tech-stack recommend            # Technology Stack Advisor
 /design-review complete          # Design Review
-/stressor analyze                # Stressor Analysis
+/stressor walk [path-name]       # Walk a path, evaluating each actor in sequence
+/stressor analyze                # Stressor Analysis — build impact matrix
 /stressor compliance <pack>      # Inject compliance stressor pack
 ```
 

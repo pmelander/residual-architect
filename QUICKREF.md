@@ -62,8 +62,8 @@ pip install -r requirements.txt
 /stressor residues                   # Suggest residuals (new actors, intentions, paths)
 /stressor iterate                    # Re-walk after adding residuals
 /stressor workshop                   # Facilitate team stressor workshop
-/stressor import <file> [sheet]  # Import stressor matrix from Excel/CSV
-/stressor compliance <pack>      # Inject compliance stressor pack
+/stressor import <file> [sheet]      # Import stressor matrix from Excel/CSV
+/stressor compliance <pack>          # Inject compliance stressor pack
 ```
 
 ### Cloud Architect
@@ -143,9 +143,12 @@ pip install -r requirements.txt
 1. /tech-stack recommend
 2. /adr create [for each major decision]
 3. /solution-doc hld
-4. /stressor analyze
-5. /design-review architecture
-6. /solution-doc deployment
+4. /stressor walk              # walk primary paths first
+5. /stressor generate          # generate stressors
+6. /stressor analyze           # build impact matrix
+7. /stressor residues          # identify residuals
+8. /design-review architecture
+9. /solution-doc deployment
 ```
 
 ### Pre-Production Review
@@ -178,9 +181,10 @@ pip install -r requirements.txt
 ### Compliance (via Antifragility)
 ```
 1. /stressor compliance <pack>   # Inject regulatory stressors
-2. /stressor analyze             # Map impacts
-3. /stressor residues            # Residues address compliance structurally
-4. /adr create [document residues as decisions]
+2. /stressor walk                # Walk paths under compliance stressors
+3. /stressor analyze             # Build impact matrix
+4. /stressor residues            # Residuals address compliance structurally
+5. /adr create [document residuals as decisions]
 ```
 
 ### Organisational Learning Rhythm
@@ -231,9 +235,10 @@ docs/
 - ✅ Link related ADRs
 
 ### Stressor Analysis
-- ✅ Include absurd stressors — they reveal real gaps
-- ✅ Use compliance packs to let regulatory requirements emerge as residues
-- ✅ Iterate after adding residues to measure improvement
+- ✅ Walk paths before building the impact matrix — actors on paths are the columns
+- ✅ Include absurd stressors — they reveal unknown unknowns
+- ✅ Use compliance packs to let regulatory requirements emerge as residuals
+- ✅ Iterate after adding residuals to measure improvement
 - ✅ Run as a team workshop for shared mental models
 
 ### Cloud Architecture

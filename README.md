@@ -117,11 +117,12 @@ Open Claude Code and type `/` to see your skills.
 
 ### Stressor Analysis
 ```bash
-/stressor generate [count]          # Generate creative stressors
-/stressor analyze                   # Map stressors to components
-/stressor vulnerabilities           # Identify high-impact areas
-/stressor residues                  # Suggest architectural improvements
-/stressor iterate                   # Re-analyse after adding residues
+/stressor walk [path-name]          # Walk a path, evaluating each actor as intentions propagate
+/stressor generate [count]          # Generate creative stressors (including absurd ones)
+/stressor analyze                   # Build impact matrix (actors × stressors)
+/stressor vulnerabilities           # Identify most-impacted actors
+/stressor residues                  # Suggest residuals (new actors, intentions, or paths)
+/stressor iterate                   # Re-walk after adding residuals
 /stressor workshop                  # Facilitate team workshop
 /stressor import <file> [sheet]     # Import stressor matrix from Excel/CSV
 /stressor compliance <pack>         # Inject compliance stressor pack

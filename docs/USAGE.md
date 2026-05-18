@@ -90,21 +90,33 @@ Multi-dimensional architecture review with scored assessment.
 
 ### Stressor Analysis (`/stressor`)
 
-Stress-test your architecture against diverse, creative scenarios to build antifragile systems.
+Walk your system's paths and stress-test each actor to build antifragile systems grounded in Residuality Theory.
+
+**Core vocabulary:**
+- **Actor** — any user, application, or module that acts on an intention
+- **Intention** — the signal that connects actors and drives flow through the system
+- **Path** — a sequence of actors connected by intentions (never forks — forks create new paths)
+- **Walk** — traversing a path to evaluate each actor's behaviour as intentions propagate
+- **Residual** — a new actor, intention, or path introduced in response to a stressor
 
 ```
-/stressor generate 30        # Generate 30 diverse stressors (including absurd ones)
-/stressor analyze            # Map stressors to architecture components
-/stressor vulnerabilities    # Identify most-impacted components
-/stressor residues           # Suggest high-leverage architectural improvements
-/stressor iterate            # Re-analyze after adding residues
-/stressor workshop           # Facilitate team stressor workshop
-/stressor import data.xlsx   # Import existing stressor matrix
+/stressor walk checkout        # Walk the checkout path — map actors, intentions, stateful/stateless
+/stressor generate 30          # Generate 30 diverse stressors (including absurd ones)
+/stressor analyze              # Build impact matrix with actors as columns
+/stressor vulnerabilities      # Identify most-impacted actors across all paths
+/stressor residues             # Suggest residuals — new actors, intentions, or paths
+/stressor iterate              # Re-walk after adding residuals, measure improvement
+/stressor workshop             # Facilitate team stressor workshop
+/stressor import data.xlsx     # Import existing stressor matrix
 ```
 
-**The key insight:** A single architectural residue (e.g. a circuit breaker) protects against many unrelated stressors simultaneously. Iterate until the system becomes antifragile.
+**The right sequence:** Walk paths first → generate stressors → walk under stress → build matrix → identify vulnerabilities → add residuals → re-walk.
 
-**Why include absurd stressors?** Fire-breathing lizards and zombie apocalypses represent *unknown unknowns* — the threats you didn't predict. If your architecture can't conceptually handle the absurd, it probably can't handle real surprises either. 🐉
+**Why walk before generate?** The impact matrix columns are the actors on your paths. Walking first ensures the matrix reflects how intentions actually flow — not an arbitrary component list. Actors later in a path are often more vulnerable because they depend on everything upstream.
+
+**Why include absurd stressors?** Fire-breathing lizards and zombie apocalypses represent *unknown unknowns*. If your architecture can't conceptually handle the absurd, it probably can't handle real surprises. 🐉
+
+**The compound effect:** A single residual — say, an async queue actor added between two services — protects against load spikes, downstream failures, traffic bursts, and more. Residuals compound across iterations.
 
 ---
 
@@ -251,9 +263,10 @@ Compliance is handled through the stressor analysis skill — not a separate che
 ```
 /stressor compliance list      # List available compliance packs
 /stressor compliance gdpr      # Inject GDPR stressor pack
-/stressor analyze              # Run standard stressor analysis
-/stressor residues             # Residues naturally address compliance
-/adr create [document residues as architectural decisions]
+/stressor walk                 # Walk paths under the compliance stressors
+/stressor analyze              # Build impact matrix
+/stressor residues             # Residuals naturally address compliance controls
+/adr create [document residuals as architectural decisions]
 ```
 
 **Available packs:** See `skills/phase-1/compliance-packs/` — contributions welcome.
@@ -268,7 +281,10 @@ Compliance is handled through the stressor analysis skill — not a separate che
 /tech-stack recommend
 /adr create [for each major technology decision]
 /solution-doc hld
-/stressor analyze              # stress-test the design
+/stressor walk                 # walk primary paths — map actors and intentions
+/stressor generate             # generate diverse stressors
+/stressor analyze              # build impact matrix
+/stressor residues             # identify residuals
 /design-review architecture
 /cloud design <system>         # if cloud-hosted
 /cloud dr                      # define DR upfront
@@ -312,9 +328,10 @@ Compliance is handled through the stressor analysis skill — not a separate che
 
 ```
 /stressor compliance gdpr      # inject regulatory stressors
-/stressor analyze              # map to components
-/stressor residues             # residues address compliance structurally
-/adr create [document residues]
+/stressor walk                 # walk paths under compliance stressors
+/stressor analyze              # build impact matrix
+/stressor residues             # residuals address compliance structurally
+/adr create [document residuals]
 ```
 
 ---
@@ -322,9 +339,9 @@ Compliance is handled through the stressor analysis skill — not a separate che
 ## Tips
 
 ### For Architects
-- Use stressor analysis *during* design, not just after — it shapes better decisions
+- Walk paths during design, not just after — it shapes better decisions from the start
 - Create ADRs for decisions *not* to do something — those are often the most important
-- Iterate stressor analysis after adding residues to measure improvement
+- Iterate stressor analysis after adding residuals to measure improvement — watch vulnerability scores drop
 
 ### For Teams
 - Run stressor workshops collaboratively — shared mental models are the output, not just the matrix

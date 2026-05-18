@@ -88,9 +88,12 @@ Generate a comprehensive High-Level Design for your system.
 
 #### 3. Stressor Analysis (10 min)
 ```
-/stressor analyze
+/stressor walk checkout        # map your primary path — actors and intentions
+/stressor generate             # generate diverse stressors including absurd ones
+/stressor analyze              # build the impact matrix
+/stressor residues             # identify high-leverage residuals
 ```
-Stress-test your architecture with creative stressors — including absurd ones. Identify vulnerabilities and high-leverage residues that make your system antifragile.
+Walk your primary path to map actors and intentions, then stress-test it. Identify vulnerabilities and residuals — new actors, intentions, or paths that make your system antifragile.
 
 #### 4. Design Review (10 min)
 ```
@@ -137,7 +140,10 @@ Translate user and load requirements into concrete resource estimates.
 /adr create Use Node.js for backend
 /adr create Use PostgreSQL for database
 /solution-doc hld
-/stressor analyze
+/stressor walk                 # walk your primary paths first
+/stressor generate             # generate stressors
+/stressor analyze              # build impact matrix
+/stressor residues             # identify residuals
 /design-review architecture
 ```
 
@@ -170,9 +176,10 @@ Translate user and load requirements into concrete resource estimates.
 
 ```
 /stressor compliance gdpr     # inject GDPR stressors (when pack available)
-/stressor analyze
-/stressor residues
-/adr create [document key residues]
+/stressor walk                # walk your paths under the compliance stressors
+/stressor analyze             # build impact matrix
+/stressor residues            # residuals address compliance structurally
+/adr create [document key residuals]
 ```
 
 **Result:** Compliance requirements addressed as architectural residues — not a checklist.
@@ -233,7 +240,7 @@ docs/
 - [ ] Install the toolkit and verify with `/`
 - [ ] Create your first ADR (`/adr create`)
 - [ ] Get a tech stack recommendation (`/tech-stack recommend`)
-- [ ] Run a stressor analysis — embrace the absurd! (`/stressor analyze`)
+- [ ] Run a stressor analysis — walk your paths, embrace the absurd! (`/stressor walk` then `/stressor analyze`)
 - [ ] Run a design review (`/design-review complete`)
 - [ ] Try a cloud design (`/cloud design`)
 - [ ] Read the [Quick Reference](QUICKREF.md)
