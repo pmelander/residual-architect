@@ -66,6 +66,16 @@ pip install -r requirements.txt
 /stressor compliance <pack>          # Inject compliance stressor pack
 ```
 
+### Environment Discovery
+```bash
+/discover paths                  # Map paths through an existing system
+/discover actor <name>           # Investigate what an actor actually does
+/discover intentions             # Trace how an intention propagates
+/discover gaps                   # Identify and prioritise confidence gaps
+/discover organisation           # Map organisational resistance as stressors
+/discover confidence             # Assess readiness to proceed to stressor analysis
+```
+
 ### Cloud Architect
 ```bash
 /cloud design <architecture>     # Design cloud-native architecture

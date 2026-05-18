@@ -306,9 +306,13 @@ Phase 2 is successful when:
 
 **Target:** Q1-Q2 2027
 
-**Status:** 🔄 In Progress (1 of 3 complete)
+**Status:** ✅ Complete (3 of 3 complete)
 
 > **Note:** Risk Assessor was removed from Phase 3. Traditional risk management (probability × impact matrices, risk registers) conflicts with the toolkit's Residuality Theory foundation. Antifragile design via `/stressor` is a superset of risk assessment — it covers known and unknown threats. See [ADR-006](docs/adr/ADR-006-exclude-risk-assessor-skill.md) for full rationale.
+>
+> Compliance Checker was replaced by stressor compliance packs. See [ADR-007](docs/adr/ADR-007-compliance-via-stressor-packs.md).
+>
+> Environment Discovery was added — the most common real-world challenge for architects is not greenfield design but navigating existing environments where paths are unknown and dependencies are fragile.
 
 ### Planned Skills
 
@@ -366,6 +370,29 @@ Phase 2 is successful when:
 
 ---
 
+#### 4. Environment Discovery ✅
+
+**Purpose:** Map what actually exists in brownfield, oilfield, and minefield environments before designing any change within them.
+
+**Capabilities:**
+- Discovery walking — tracing paths through unknown environments
+- Actor investigation — confirming what actors actually do vs. what they're documented to do
+- Intention tracing — following signals through a system to find where they degrade or disappear
+- Confidence calibration — knowing when you know enough to act
+- Organisational stressor mapping — translating resistance patterns into stressors for analysis
+
+**Commands:**
+```bash
+/discover paths                 # Map paths through an existing system
+/discover actor <name>          # Investigate what an actor actually does
+/discover intentions            # Trace how an intention propagates
+/discover gaps                  # Identify and prioritise confidence gaps
+/discover organisation          # Map organisational resistance as stressors
+/discover confidence            # Assess readiness to proceed to stressor analysis
+```
+
+---
+
 #### ~~4. Risk Assessor~~ — Removed
 
 > **Excluded by [ADR-006](docs/adr/ADR-006-exclude-risk-assessor-skill.md):** Traditional risk assessment contradicts Residuality Theory. The `/stressor` skill (Phase 1) already provides an antifragility-based alternative that is philosophically consistent and architecturally superior.
@@ -380,6 +407,7 @@ Phase 2 is successful when:
 | Q1 2027 | Compliance → Stressor Packs extension | ✅ Complete |
 | ~~Q1 2027~~ | ~~Compliance Checker~~ | ❌ Replaced (see ADR-007) |
 | Q2 2027 | Capacity Planner | ✅ Complete |
+| Q2 2027 | Environment Discovery | ✅ Complete |
 | ~~Q2 2027~~ | ~~Risk Assessor~~ | ❌ Removed (see ADR-006) |
 | Q2 2027 | Phase 3 release | ✅ Complete |
 

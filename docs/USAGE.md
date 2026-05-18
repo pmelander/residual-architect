@@ -196,6 +196,35 @@ Build the capability to design and maintain architectures that accommodate chang
 
 ---
 
+### Environment Discovery (`/discover`)
+
+Map what actually exists in an existing environment before designing anything new within it. Brownfield, oilfield, and minefield environments rarely match their documentation — discovery produces the confident path maps that feed stressor analysis.
+
+**Discovery walks are different from design walks:**
+- In design walks you validate what you designed
+- In discovery walks you build your understanding from scratch
+- Confidence is earned, not assumed
+
+```
+/discover paths                  # map entry points and trace paths forward
+/discover actor "Payment Service" # what does it actually do — not what docs say
+/discover intentions             # trace how a specific intention propagates
+/discover gaps                   # prioritise what you still don't know
+/discover organisation           # map resistance patterns as stressors
+/discover confidence             # are you ready to hand off to /stressor walk?
+```
+
+**Done condition:** You are confident that paths are correct and you know the intention of each actor. Not certainty — confidence. There's a difference.
+
+**Organisational resistance as stressors:** A product owner who cannot get budget, an EA who blocks vendor choices, a team that resists integration — these are stressors on the architecture, not actors on paths. `/discover organisation` translates them into the stressor list where they belong.
+
+**Feeds directly into:**
+```
+/discover confidence → /stressor walk → /stressor generate → /stressor analyze
+```
+
+---
+
 ## Phase 3: Specialised Tools
 
 ### Cloud Architect (`/cloud`)
@@ -274,6 +303,22 @@ Compliance is handled through the stressor analysis skill — not a separate che
 ---
 
 ## Workflow Examples
+
+### Brownfield / Existing Environment (Before Any Design)
+
+```
+/discover paths                # map what's actually there
+/discover actor <critical>     # investigate opaque or critical actors
+/discover intentions           # trace primary intentions end-to-end
+/discover gaps                 # prioritise what's still unknown
+/discover organisation         # translate resistance into stressors
+/discover confidence           # explicit go/no-go for proceeding
+/stressor walk                 # walk discovered paths
+/stressor generate             # include organisational stressors
+/stressor analyze              # build matrix on real paths
+/stressor residues             # residuals address real vulnerabilities
+/adr create [key discoveries and decisions]
+```
 
 ### New Project (45-60 min)
 
