@@ -229,7 +229,7 @@ Open Claude Code and type `/` to see your skills.
 | Phase 1: Individual Capabilities | ✅ Complete | 5 skills |
 | Utilities | ✅ Complete | 1 skill |
 | Phase 2: Organisational Capabilities | ✅ Complete | 4 skills |
-| Phase 3: Specialised Tools | ✅ Complete | 2 skills |
+| Phase 3: Specialised Tools | ✅ Complete | 4 skills |
 
 **All phases complete.** See [Roadmap](ROADMAP.md) for future considerations.
 
