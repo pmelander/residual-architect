@@ -5,10 +5,7 @@
 ```bash
 git clone <repo-url> solution-architect-toolkit
 cd solution-architect-toolkit
-cp skills/phase-1/*.md ~/.claude/skills/
-cp skills/phase-2/*.md ~/.claude/skills/
-cp skills/phase-3/*.md ~/.claude/skills/
-cp skills/utilities/*.md ~/.claude/skills/
+cp skills/*.md ~/.claude/skills/
 pip install -r requirements.txt
 ```
 

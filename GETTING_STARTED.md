@@ -10,10 +10,7 @@ Welcome! This guide will get you up and running in under 5 minutes.
 ```bash
 git clone <repository-url> solution-architect-toolkit
 cd solution-architect-toolkit
-cp skills/phase-1/*.md ~/.claude/skills/
-cp skills/phase-2/*.md ~/.claude/skills/
-cp skills/phase-3/*.md ~/.claude/skills/
-cp skills/utilities/*.md ~/.claude/skills/
+cp skills/*.md ~/.claude/skills/
 pip install -r requirements.txt
 ```
 
@@ -21,10 +18,7 @@ pip install -r requirements.txt
 ```powershell
 git clone <repository-url> solution-architect-toolkit
 cd solution-architect-toolkit
-Copy-Item -Path "skills\phase-1\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
-Copy-Item -Path "skills\phase-2\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
-Copy-Item -Path "skills\phase-3\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
-Copy-Item -Path "skills\utilities\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
+Copy-Item -Path "skills\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
 pip install -r requirements.txt
 ```
 

@@ -67,10 +67,7 @@ git clone <repo-url> solution-architect-toolkit
 cd solution-architect-toolkit
 
 # Install all skills
-cp skills/phase-1/*.md ~/.claude/skills/
-cp skills/phase-2/*.md ~/.claude/skills/
-cp skills/phase-3/*.md ~/.claude/skills/
-cp skills/utilities/*.md ~/.claude/skills/
+cp skills/*.md ~/.claude/skills/
 
 # Python dependency for Excel reading
 pip install -r requirements.txt
@@ -205,13 +202,8 @@ Open Claude Code and type `/` to see your skills.
 
 ```
 .
-├── skills/
-│   ├── phase-1/            # Individual capability skills
-│   │   ├── compliance-packs/  # Stressor packs for regulatory frameworks
-│   │   └── *.md
-│   ├── phase-2/            # Organisational capability skills
-│   ├── phase-3/            # Specialised skills (cloud, capacity)
-│   └── utilities/          # Infrastructure skills
+├── skills/                 # All skills (flat — copy *.md to ~/.claude/skills/)
+│   └── compliance-packs/  # Stressor packs for regulatory frameworks
 ├── templates/              # Document templates
 ├── examples/               # Example outputs
 ├── helpers/                # Python utilities (Excel reading)
@@ -238,7 +230,7 @@ Open Claude Code and type `/` to see your skills.
 ## 🤝 Contributing
 
 Contributions welcome — especially:
-- 📋 **Compliance packs** for regulatory frameworks (GDPR, HIPAA, PCI DSS, ISO 27001, SOC 2) — see `skills/phase-1/compliance-packs/README.md`
+- 📋 **Compliance packs** for regulatory frameworks (GDPR, HIPAA, PCI DSS, ISO 27001, SOC 2) — see `skills/compliance-packs/README.md`
 - 💡 **New skill ideas** that align with Residuality Theory
 - 📝 **Documentation improvements**
 - 🐛 **Bug fixes and refinements**

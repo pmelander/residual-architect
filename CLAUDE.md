@@ -6,39 +6,33 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is the **Solution Architect Toolkit** — a comprehensive collection of Claude Code skills built on **Residuality Theory**, designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
 
-The toolkit covers three phases of capability building:
-- **Phase 1:** Individual architect capabilities
-- **Phase 2:** Organisational and team capabilities
-- **Phase 3:** Specialised domain tools (cloud, capacity)
-
 ## Architecture
 
 ### Project Structure
 
 ```
 .
-├── skills/
-│   ├── phase-1/                    # Individual capability skills (✅ Complete)
-│   │   ├── adr.md                  # Architecture Decision Records
-│   │   ├── solution-doc.md         # Solution Documentation Generator
-│   │   ├── tech-stack.md           # Technology Stack Advisor
-│   │   ├── design-review.md        # Design Review
-│   │   ├── stressor-analysis.md    # Stressor Analysis (antifragility)
-│   │   └── compliance-packs/       # Regulatory stressor packs (extension point)
-│   │       └── README.md
-│   ├── phase-2/                    # Organisational capability skills (✅ Complete)
-│   │   ├── arch-learning.md        # Architecture Learning Analyzer
-│   │   ├── capability-assessor.md  # Team Capability Assessor
-│   │   ├── pattern-extractor.md    # Pattern Extractor & Institutionalizer
-│   │   └── evolutionary-coach.md   # Evolutionary Architecture Coach
-│   ├── phase-3/                    # Specialised tools (✅ Complete)
-│   │   ├── cloud-architect.md      # Cloud Architect
-│   │   └── capacity-planner.md     # Capacity Planner
-│   └── utilities/                  # Infrastructure skills (✅ Complete)
-│       └── excel-reader.md         # Excel/CSV Reader
+├── skills/                             # All skills (flat — copy *.md to ~/.claude/skills/)
+│   ├── adr.md                          # Architecture Decision Records
+│   ├── solution-doc.md                 # Solution Documentation Generator
+│   ├── tech-stack.md                   # Technology Stack Advisor
+│   ├── design-review.md                # Design Review
+│   ├── stressor-analysis.md            # Stressor Analysis (antifragility)
+│   ├── arch-learning.md                # Architecture Learning Analyzer
+│   ├── capability-assessor.md          # Team Capability Assessor
+│   ├── pattern-extractor.md            # Pattern Extractor & Institutionalizer
+│   ├── evolutionary-coach.md           # Evolutionary Architecture Coach
+│   ├── cloud-architect.md              # Cloud Architect
+│   ├── capacity-planner.md             # Capacity Planner
+│   ├── environment-discovery.md        # Environment Discovery
+│   ├── journey.md                      # Architect's Journey (orchestrator)
+│   ├── excel-reader.md                 # Excel/CSV Reader (utility)
+│   └── compliance-packs/               # Regulatory stressor packs
+│       ├── README.md
+│       └── gdpr.md
 ├── helpers/
-│   └── read_spreadsheet.py         # Python helper for Excel reading
-├── templates/                      # Document templates
+│   └── read_spreadsheet.py             # Python helper for Excel reading
+├── templates/                          # Document templates
 │   ├── adr-template.md
 │   ├── hld-template.md
 │   ├── tech-comparison-template.md
@@ -47,10 +41,10 @@ The toolkit covers three phases of capability building:
 │   ├── pattern-template.md
 │   ├── anti-pattern-template.md
 │   └── fitness-function-template.md
-├── examples/                       # Example outputs
-├── requirements.txt                # Python dependencies (openpyxl)
+├── examples/                           # Example outputs
+├── requirements.txt                    # Python dependencies (openpyxl)
 └── docs/
-    ├── adr/                        # ADRs documenting toolkit decisions
+    ├── adr/                            # ADRs documenting toolkit decisions
     │   ├── ADR-001-incorporate-residuality-theory.md
     │   ├── ADR-002-redesign-phase-2-for-capability-building.md
     │   ├── ADR-003-add-stressor-analysis-skill.md
@@ -58,7 +52,7 @@ The toolkit covers three phases of capability building:
     │   ├── ADR-005-add-architecture-learning-analyzer.md
     │   ├── ADR-006-exclude-risk-assessor-skill.md
     │   └── ADR-007-compliance-via-stressor-packs.md
-    └── ...                         # Generated documentation location
+    └── ...                             # Generated documentation location
 ```
 
 ### Skill Development Pattern
@@ -84,18 +78,18 @@ Skills are **capability transfer tools**, not dependency-creating tools. Every s
 
 ```bash
 # View skill content
-cat skills/phase-1/adr.md
+cat skills/adr.md
 
 # Symlink for development (changes reflected immediately)
-ln -s $(pwd)/skills/phase-1/adr.md ~/.claude/skills/adr.md
+ln -s $(pwd)/skills/adr.md ~/.claude/skills/adr.md
 
-# Copy for stable use
-cp skills/phase-1/*.md ~/.claude/skills/
+# Copy all for stable use
+cp skills/*.md ~/.claude/skills/
 ```
 
 ### Adding New Skills
 
-1. Create skill file in the appropriate phase directory
+1. Create skill file in `skills/`
 2. Follow the naming convention: `skill-name.md`
 3. Include frontmatter: `description` and `model: sonnet`
 4. Follow the Skill Development Pattern above
@@ -104,23 +98,40 @@ cp skills/phase-1/*.md ~/.claude/skills/
 
 ### Adding Compliance Packs
 
-1. Create `skills/phase-1/compliance-packs/<framework>.md`
-2. Follow the pack structure defined in `skills/phase-1/stressor-analysis.md`
+1. Create `skills/compliance-packs/<framework>.md`
+2. Follow the pack structure defined in `skills/stressor-analysis.md`
 3. Each stressor must be a concrete scenario (not a control statement)
 4. Include regulation reference and explanation of the real harm
-5. List common residues that emerge from the analysis
+5. List common residuals that emerge from the analysis
 
 ### Git Workflow
 
 ```bash
 git checkout -b feature/new-skill-name
-git commit -m "feat(phase-N): add skill-name skill"
+git commit -m "feat: add skill-name skill"
 git push origin feature/new-skill-name
 ```
 
 ## Skill Usage
 
-### Phase 1 Skills
+### Journey & Discovery (start here)
+
+```bash
+/journey start           # Begin any engagement — assess terrain, map the route
+/journey where           # Mid-project: where am I, what comes next?
+/journey iterate         # Iterate stressor loop or proceed?
+/journey review          # Journey health check
+/journey cadence         # Establish an ongoing rhythm
+
+/discover paths                  # Map paths through an existing system
+/discover actor <name>           # Investigate what an actor actually does
+/discover intentions             # Trace how an intention propagates
+/discover gaps                   # Identify and prioritise confidence gaps
+/discover organisation           # Map organisational resistance as stressors
+/discover confidence             # Assess readiness to proceed to stressor analysis
+```
+
+### Individual Capabilities
 
 ```bash
 /adr create <title>              # Architecture Decision Records
@@ -132,7 +143,7 @@ git push origin feature/new-skill-name
 /stressor compliance <pack>      # Inject compliance stressor pack
 ```
 
-### Phase 2 Skills
+### Organisational Capabilities
 
 ```bash
 /arch-learning analyze           # Architecture Learning Analyzer
@@ -141,7 +152,7 @@ git push origin feature/new-skill-name
 /evolve assess                   # Evolutionary Architecture Coach
 ```
 
-### Phase 3 Skills
+### Specialised Tools
 
 ```bash
 /cloud design <architecture>     # Cloud Architect
@@ -157,11 +168,7 @@ git push origin feature/new-skill-name
 /capacity load-test
 /capacity forecast
 /capacity right-size
-```
 
-### Utility Skills
-
-```bash
 /excel read <file> [sheet]       # Excel/CSV Reader
 ```
 
@@ -171,7 +178,7 @@ git push origin feature/new-skill-name
 
 1. **Design for unknown unknowns** — not just known risks
 2. **Antifragility over robustness** — systems that benefit from stress
-3. **Residues over mitigations** — architectural improvements that protect against classes of stressors
+3. **Residuals over mitigations** — architectural improvements that protect against classes of stressors
 4. **Compliance as byproduct** — regulatory requirements addressed structurally, not procedurally
 5. **Risk assessment replaced** — stressor analysis covers risk and more
 
@@ -186,27 +193,31 @@ git push origin feature/new-skill-name
 
 ```bash
 # Copy method (stable use)
-cp skills/phase-1/*.md ~/.claude/skills/
-cp skills/phase-2/*.md ~/.claude/skills/
-cp skills/phase-3/*.md ~/.claude/skills/
-cp skills/utilities/*.md ~/.claude/skills/
+cp skills/*.md ~/.claude/skills/
 pip install -r requirements.txt
 
 # Symlink method (development — changes reflected immediately)
-ln -s /path/to/repo/skills/phase-1/*.md ~/.claude/skills/
-ln -s /path/to/repo/skills/phase-2/*.md ~/.claude/skills/
-ln -s /path/to/repo/skills/phase-3/*.md ~/.claude/skills/
-ln -s /path/to/repo/skills/utilities/*.md ~/.claude/skills/
+ln -s /path/to/repo/skills/*.md ~/.claude/skills/
 ```
 
-## Phase Status
+## Skills
 
-| Phase | Status | Skills |
-|-------|--------|--------|
-| Phase 1: Individual Capabilities | ✅ Complete | adr, solution-doc, tech-stack, design-review, stressor-analysis |
-| Utilities | ✅ Complete | excel-reader |
-| Phase 2: Organisational Capabilities | ✅ Complete | arch-learning, capability-assessor, pattern-extractor, evolutionary-coach |
-| Phase 3: Specialised Tools | ✅ Complete | cloud-architect, capacity-planner |
+| Skill | Command | Category |
+|-------|---------|----------|
+| Architect's Journey | `/journey` | Orchestration |
+| Environment Discovery | `/discover` | Discovery |
+| Architecture Decision Records | `/adr` | Individual |
+| Solution Documentation | `/solution-doc` | Individual |
+| Technology Stack Advisor | `/tech-stack` | Individual |
+| Design Review | `/design-review` | Individual |
+| Stressor Analysis | `/stressor` | Individual |
+| Architecture Learning Analyzer | `/arch-learning` | Organisational |
+| Team Capability Assessor | `/capability-assessor` | Organisational |
+| Pattern Extractor | `/patterns` | Organisational |
+| Evolutionary Coach | `/evolve` | Organisational |
+| Cloud Architect | `/cloud` | Specialised |
+| Capacity Planner | `/capacity` | Specialised |
+| Excel Reader | `/excel` | Utility |
 
 ## Contributing
 
