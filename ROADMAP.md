@@ -342,24 +342,26 @@ Phase 2 is successful when:
 
 ---
 
-#### 3. Capacity Planner 💡
+#### 3. Capacity Planner ✅
 
-**Purpose:** Plan resource capacity and scaling strategies.
+**Purpose:** Estimate resource requirements, design scaling strategies, and build capacity thinking capability.
 
 **Capabilities:**
-- Estimate resource requirements
-- Design scaling strategies
-- Load testing scenarios
-- Performance projections
-- Cost projections
-- Capacity reports
+- Back-of-envelope resource estimation from business requirements
+- Scaling strategy design (horizontal, vertical, auto, database, cache, CDN)
+- Bottleneck identification using Little's Law and utilisation modelling
+- Load test strategy design (baseline, load, spike, soak, stress)
+- Growth forecasting across conservative / expected / aggressive scenarios
+- Right-sizing to eliminate over-provisioning waste
 
 **Commands:**
 ```bash
-/capacity estimate              # Estimate requirements
+/capacity estimate              # Estimate resource requirements
 /capacity scale <strategy>      # Design scaling approach
-/capacity load-test             # Load test scenarios
-/capacity forecast              # Forecast future needs
+/capacity bottleneck            # Identify capacity constraints
+/capacity load-test             # Design load testing strategy
+/capacity forecast              # Model future capacity needs
+/capacity right-size            # Identify and reduce over-provisioning
 ```
 
 ---
@@ -377,9 +379,9 @@ Phase 2 is successful when:
 | Q1 2027 | Cloud Architect | ✅ Complete |
 | Q1 2027 | Compliance → Stressor Packs extension | ✅ Complete |
 | ~~Q1 2027~~ | ~~Compliance Checker~~ | ❌ Replaced (see ADR-007) |
-| Q2 2027 | Capacity Planner | 💡 Planned |
+| Q2 2027 | Capacity Planner | ✅ Complete |
 | ~~Q2 2027~~ | ~~Risk Assessor~~ | ❌ Removed (see ADR-006) |
-| Q2 2027 | Phase 3 release | 🔄 In Progress |
+| Q2 2027 | Phase 3 release | ✅ Complete |
 
 ---
 
