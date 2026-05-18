@@ -24,7 +24,7 @@ Compliance controls exist because real harms happened. A compliance pack express
 
 | File | Framework | Status |
 |------|-----------|--------|
-| `gdpr.md` | General Data Protection Regulation | 📋 Planned |
+| `gdpr.md` | General Data Protection Regulation | ✅ Complete |
 | `hipaa.md` | Health Insurance Portability and Accountability Act | 📋 Planned |
 | `pci-dss.md` | Payment Card Industry Data Security Standard | 📋 Planned |
 | `iso27001.md` | ISO/IEC 27001 Information Security | 📋 Planned |
