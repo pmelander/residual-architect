@@ -306,27 +306,30 @@ Phase 2 is successful when:
 
 **Target:** Q1-Q2 2027
 
-**Status:** 💡 Under Consideration
+**Status:** 🔄 In Progress (1 of 3 complete)
+
+> **Note:** Risk Assessor was removed from Phase 3. Traditional risk management (probability × impact matrices, risk registers) conflicts with the toolkit's Residuality Theory foundation. Antifragile design via `/stressor` is a superset of risk assessment — it covers known and unknown threats. See [ADR-006](docs/adr/ADR-006-exclude-risk-assessor-skill.md) for full rationale.
 
 ### Planned Skills
 
-#### 1. Cloud Architect 💡
+#### 1. Cloud Architect ✅
 
-**Purpose:** Generate infrastructure as code and cloud-native architectures.
+**Purpose:** Design cloud-native architectures and generate infrastructure as code.
 
 **Capabilities:**
-- Generate Terraform/CloudFormation
-- Design cloud-native architectures
-- Multi-cloud strategies
-- Cost optimization analysis
-- Well-Architected Framework reviews
-- Disaster recovery planning
+- Design cloud-native architectures (AWS, Azure, GCP)
+- Generate Terraform/CloudFormation/Bicep/CDK
+- Well-Architected Framework reviews (6 pillars)
+- Cost optimization and FinOps thinking
+- Migration planning using the 6 R's framework
+- Disaster recovery strategy (Backup → Active/Active)
 
 **Commands:**
 ```bash
 /cloud design <architecture>    # Design cloud architecture
 /cloud iac <provider>           # Generate IaC templates
-/cloud cost <analysis>          # Cost analysis
+/cloud review                   # Well-Architected review
+/cloud cost                     # Cost analysis and optimization
 /cloud dr                       # Disaster recovery plan
 /cloud migrate <to-cloud>       # Cloud migration strategy
 ```
@@ -378,25 +381,9 @@ Phase 2 is successful when:
 
 ---
 
-#### 4. Risk Assessor 💡
+#### ~~4. Risk Assessor~~ — Removed
 
-**Purpose:** Comprehensive risk assessment and management.
-
-**Capabilities:**
-- Identify architectural risks
-- Create risk registers
-- Mitigation strategies
-- Impact analysis
-- Probability assessment
-- Risk tracking
-
-**Commands:**
-```bash
-/risk identify                  # Identify risks
-/risk assess <risk>             # Assess specific risk
-/risk mitigate                  # Mitigation strategies
-/risk register                  # Generate risk register
-```
+> **Excluded by [ADR-006](docs/adr/ADR-006-exclude-risk-assessor-skill.md):** Traditional risk assessment contradicts Residuality Theory. The `/stressor` skill (Phase 1) already provides an antifragility-based alternative that is philosophically consistent and architecturally superior.
 
 ---
 
@@ -404,11 +391,11 @@ Phase 2 is successful when:
 
 | Quarter | Milestone |
 |---------|-----------|
-| Q1 2027 | Cloud Architect development |
-| Q1 2027 | Compliance Checker development |
-| Q2 2027 | Capacity Planner development |
-| Q2 2027 | Risk Assessor development |
-| Q2 2027 | Phase 3 release |
+| Q1 2027 | Cloud Architect | ✅ Complete |
+| Q1 2027 | Compliance Checker | 💡 Planned |
+| Q2 2027 | Capacity Planner | 💡 Planned |
+| ~~Q2 2027~~ | ~~Risk Assessor~~ | ❌ Removed (see ADR-006) |
+| Q2 2027 | Phase 3 release | 🔄 In Progress |
 
 ---
 
