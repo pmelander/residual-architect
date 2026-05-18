@@ -6,6 +6,7 @@ A collection of Claude Code skills built on **Residuality Theory** — designed 
 
 ## 🚀 Quick Links
 
+- **[Introduction to Residuality Theory](RESIDUALITY.md)** - The philosophy behind this toolkit — start here if you're new to the framework
 - **[Getting Started Guide](GETTING_STARTED.md)** - Get up and running in 5 minutes
 - **[Quick Reference](QUICKREF.md)** - All commands at a glance
 - **[Roadmap](ROADMAP.md)** - What's built and what's next
@@ -228,6 +229,7 @@ See [Contributing Guide](CONTRIBUTING.md) for details.
 
 ## 📚 Documentation
 
+- **[Residuality Theory](RESIDUALITY.md)** — The philosophy behind the toolkit
 - **[Getting Started](GETTING_STARTED.md)** — New user guide
 - **[Quick Reference](QUICKREF.md)** — Command cheatsheet
 - **[Roadmap](ROADMAP.md)** — Development history and future plans

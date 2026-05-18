@@ -228,7 +228,8 @@ docs/
 
 ## Getting Help
 
-- 📖 [Quick Reference](QUICKREF.md) — all commands at a glance
+- 📖 [Residuality Theory](RESIDUALITY.md) — the philosophy behind the toolkit
+- 🔍 [Quick Reference](QUICKREF.md) — all commands at a glance
 - 📚 [Usage Guide](docs/USAGE.md) — detailed examples
 - 🗺️ [Roadmap](ROADMAP.md) — what's built and what's next
 - 🤝 [Contributing](CONTRIBUTING.md) — how to add compliance packs and skills
