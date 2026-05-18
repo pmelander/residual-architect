@@ -1,10 +1,10 @@
 # Getting Started with Solution Architect Toolkit
 
-Welcome! This guide will get you up and running with the Solution Architect Toolkit in under 5 minutes.
+Welcome! This guide will get you up and running in under 5 minutes.
 
-## Quick Start (5 Minutes)
+## Quick Start
 
-### Step 1: Install (1 minute)
+### Step 1: Install
 
 **Linux/Mac:**
 ```bash
@@ -12,6 +12,7 @@ git clone <repository-url> solution-architect-toolkit
 cd solution-architect-toolkit
 cp skills/phase-1/*.md ~/.claude/skills/
 cp skills/phase-2/*.md ~/.claude/skills/
+cp skills/phase-3/*.md ~/.claude/skills/
 cp skills/utilities/*.md ~/.claude/skills/
 pip install -r requirements.txt
 ```
@@ -22,26 +23,40 @@ git clone <repository-url> solution-architect-toolkit
 cd solution-architect-toolkit
 Copy-Item -Path "skills\phase-1\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
 Copy-Item -Path "skills\phase-2\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
+Copy-Item -Path "skills\phase-3\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
 Copy-Item -Path "skills\utilities\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
 pip install -r requirements.txt
 ```
 
-### Step 2: Verify (1 minute)
+### Step 2: Verify
 
-Open Claude Code and type `/` - you should see:
+Open Claude Code and type `/` — you should see:
+
+**Phase 1 — Individual Capabilities:**
 - `/adr`
 - `/solution-doc`
 - `/tech-stack`
 - `/design-review`
 - `/stressor`
+
+**Phase 2 — Organisational Capabilities:**
+- `/arch-learning`
+- `/capability-assessor`
+- `/patterns`
+- `/evolve`
+
+**Phase 3 — Specialised Tools:**
+- `/cloud`
+- `/capacity`
+
+**Utilities:**
 - `/excel`
-- `/arch-learning` (NEW!)
 
-✅ If you see these, installation successful!
+✅ If you see these, installation was successful!
 
-**Note:** Excel reading requires Python and openpyxl. If `/excel` commands fail, run: `pip install -r requirements.txt`
+> **Note:** Excel reading requires Python and openpyxl. If `/excel` commands fail, run: `pip install -r requirements.txt`
 
-### Step 3: Try Your First Command (3 minutes)
+### Step 3: Try Your First Command
 
 Let's create your first Architecture Decision Record:
 
@@ -49,374 +64,181 @@ Let's create your first Architecture Decision Record:
 /adr create Use PostgreSQL for database
 ```
 
-Claude will ask you questions like:
-- What's your current approach?
-- Why PostgreSQL?
-- What are your constraints?
-- What alternatives did you consider?
-
-Answer the questions, and Claude generates a complete ADR saved to `docs/adr/ADR-001-use-postgresql-for-database.md`
+Claude will ask you questions, then generate a complete ADR saved to `docs/adr/ADR-001-use-postgresql-for-database.md`.
 
 **Congratulations!** 🎉 You've just documented your first architecture decision.
 
 ---
 
-## Next Steps (40 Minutes)
+## Your First Hour
 
-### Try All Phase 1 Skills
+### Start with Phase 1 — Individual Capabilities
 
-#### 1. Technology Stack Advisor (5 minutes)
-
-Get technology recommendations:
+#### 1. Technology Stack Advisor (5 min)
 ```
 /tech-stack recommend
 ```
+Answer questions about what you're building, get a complete stack recommendation with justification.
 
-Answer questions about what you're building, and get a complete stack recommendation with justification.
-
-#### 2. Solution Documentation (10 minutes)
-
-Generate architecture documentation:
+#### 2. Solution Documentation (10 min)
 ```
 /solution-doc hld
 ```
+Generate a comprehensive High-Level Design for your system.
 
-Claude analyzes your system and generates comprehensive High-Level Design documentation.
-
-#### 3. Stressor Analysis (10 minutes)
-
-Stress-test your architecture:
+#### 3. Stressor Analysis (10 min)
 ```
 /stressor analyze
 ```
+Stress-test your architecture with creative stressors — including absurd ones. Identify vulnerabilities and high-leverage residues that make your system antifragile.
 
-Generate diverse stressors (including absurd ones!), map impacts to components, and identify high-leverage improvements to build antifragile systems.
-
-#### 4. Design Review (15 minutes)
-
-Review your architecture:
+#### 4. Design Review (10 min)
 ```
 /design-review complete
 ```
+Get a scored review across 8 dimensions with prioritised recommendations.
 
-Get a comprehensive review with:
-- Scored assessment across 8 dimensions
-- Identified issues (critical, moderate, improvements)
-- Prioritized recommendations
-- Best practices validation
+### Explore Phase 2 — Organisational Capabilities
 
-#### 5. Architecture Learning (10 minutes) - NEW!
-
-Learn from your decisions:
+#### Assess your team (5 min)
 ```
-/arch-learning analyze
+/capability-assessor assess
 ```
+Understand where your team's architectural maturity is today and where to focus.
 
-Analyze your ADRs, extract patterns, track outcomes. Build organizational learning capability.
+#### Extract patterns from your decisions (5 min)
+```
+/patterns extract
+```
+Build a pattern library from your ADRs and codebase.
+
+### Try Phase 3 — Specialised Tools
+
+#### Design a cloud architecture (10 min)
+```
+/cloud design <your system>
+```
+Get a cloud-native architecture with Well-Architected review across all 6 pillars.
+
+#### Plan capacity (5 min)
+```
+/capacity estimate
+```
+Translate user and load requirements into concrete resource estimates.
 
 ---
 
 ## Common First Tasks
 
-### Task 1: Document a New Project
+### Document a New Project (30-40 min)
 
-**Time: 30-40 minutes**
+```
+/tech-stack recommend
+/adr create Use Node.js for backend
+/adr create Use PostgreSQL for database
+/solution-doc hld
+/stressor analyze
+/design-review architecture
+```
 
-1. **Choose your stack:**
-   ```
-   /tech-stack recommend
-   ```
+**Result:** Complete architecture documentation with stress-tested resilience.
 
-2. **Document key decisions:**
-   ```
-   /adr create Use Node.js for backend
-   /adr create Use React for frontend
-   /adr create Use PostgreSQL for database
-   ```
+### Review an Existing System (15-20 min)
 
-3. **Create architecture docs:**
-   ```
-   /solution-doc hld
-   ```
+```
+/design-review complete
+/design-review security    # if security was flagged
+/solution-doc runbook
+/solution-doc deployment
+```
 
-4. **Stress-test your design:**
-   ```
-   /stressor analyze
-   ```
-   Generate stressors, identify vulnerabilities, add resilience patterns
+**Result:** Full picture of strengths and improvement areas.
 
-5. **Review your design:**
-   ```
-   /design-review architecture
-   ```
+### Plan a Cloud Migration (20-30 min)
 
-**Result:** Complete architecture documentation with stress-tested resilience!
+```
+/cloud migrate to AWS
+/cloud design <target architecture>
+/cloud review
+/cloud iac terraform
+/cloud dr
+```
 
----
+**Result:** Migration strategy, target architecture, IaC, and DR plan.
 
-### Task 2: Review an Existing System
+### Run a Compliance-Aware Stressor Analysis
 
-**Time: 15-20 minutes**
+```
+/stressor compliance gdpr     # inject GDPR stressors (when pack available)
+/stressor analyze
+/stressor residues
+/adr create [document key residues]
+```
 
-1. **Comprehensive review:**
-   ```
-   /design-review complete
-   ```
-
-2. **Review specific areas if needed:**
-   ```
-   /design-review security
-   /design-review performance
-   ```
-
-3. **Generate operations docs:**
-   ```
-   /solution-doc runbook
-   /solution-doc deployment
-   ```
-
-**Result:** Full understanding of system strengths and areas for improvement!
+**Result:** Compliance requirements addressed as architectural residues — not a checklist.
 
 ---
 
-### Task 3: Evaluate a Technology Migration
+## Understanding the Philosophy
 
-**Time: 15-20 minutes**
+This toolkit is built on **Residuality Theory**. Skills are designed to transfer capability to you — not create dependency on the tool.
 
-1. **Compare technologies:**
-   ```
-   /tech-stack compare MySQL vs PostgreSQL
-   ```
+**The measure of success is how little you need the toolkit** because you've internalised the thinking.
 
-2. **Analyze migration:**
-   ```
-   /tech-stack migrate from MySQL to PostgreSQL
-   ```
-
-3. **Document decision:**
-   ```
-   /adr create Migrate from MySQL to PostgreSQL
-   ```
-
-**Result:** Well-researched migration decision with documentation!
+Key principles:
+- **Antifragility over risk mitigation** — design systems that benefit from stress, not just resist it
+- **Compliance as a byproduct** — good antifragile design addresses regulatory requirements structurally
+- **Capability transfer** — every skill builds a thinking pattern you carry forward
 
 ---
 
-## Understanding the Output
-
-### Where Files Are Saved
-
-All generated documents go to the `docs/` directory:
+## Where Files Are Saved
 
 ```
 docs/
-  adr/                          # Architecture Decision Records
-    ADR-001-*.md
-    ADR-002-*.md
-  architecture/                 # Architecture documentation
-    HLD.md
-    LLD-component.md
-  deployment/                   # Deployment guides
-    DEPLOYMENT.md
-  operations/                   # Operations runbooks
-    RUNBOOK.md
-  reviews/                      # Review reports
-    architecture-review-*.md
-  technology/                   # Technology reports
-    tech-stack-recommendation.md
-  stressor-analysis/            # Stressor analysis results
-    stressor-matrix-*.md
-    impact-analysis-*.md
-    residue-recommendations-*.md
+  adr/                    # Architecture Decision Records
+  architecture/           # HLD.md, LLD-*.md
+  deployment/             # DEPLOYMENT.md
+  operations/             # RUNBOOK.md
+  reviews/                # Design review reports
+  technology/             # Tech stack reports
+  stressor-analysis/      # Stressor matrices, residue recommendations
+  cloud/                  # Cloud architecture docs
+  capacity/               # Capacity estimates
 ```
-
-### Output Quality
-
-Each skill generates **production-ready** documentation:
-- ✅ Follows industry standards
-- ✅ Comprehensive and detailed
-- ✅ Ready to share with team
-- ✅ Can be customized/edited
 
 ---
 
 ## Tips for Success
 
-### 1. Start with What You Know
-Don't try to use all skills at once. Pick one based on your current need:
-- Need to make a decision? → `/adr`
-- Need documentation? → `/solution-doc`
-- Choosing technologies? → `/tech-stack`
-- Stress-testing resilience? → `/stressor`
-- Need validation? → `/design-review`
-
-### 2. Iterate
-Generated docs are starting points. Edit and refine them to match your specific needs.
-
-### 3. Keep Documentation Current
-Use update commands to keep docs in sync:
-```
-/solution-doc update hld
-/adr update 2
-```
-
-### 4. Link Everything
-Reference ADRs in your documentation, link related docs together. Build a knowledge graph.
-
-### 5. Share with Your Team
-Generated docs are great for:
-- Team alignment
-- Onboarding new members
-- Stakeholder communication
-- Technical reviews
-
----
-
-## Common Questions
-
-**Q: Can I customize the output?**
-Yes! Edit `templates/` to match your organization's standards.
-
-**Q: Will this work with my existing codebase?**
-Yes! Skills work with any codebase. Some analyze code, others ask you questions.
-
-**Q: Can I use this for non-software architecture?**
-While designed for software, the principles apply to other domains.
-
-**Q: How do I update the skills?**
-```bash
-cd solution-architect-toolkit
-git pull
-cp skills/phase-1/*.md ~/.claude/skills/
-```
-
-**Q: What if I find a bug?**
-Open an issue on GitHub with details about the problem.
+1. **Start with what you need today** — don't try all skills at once
+2. **Iterate** — generated docs are starting points, refine them
+3. **Use stressor analysis during design**, not just after
+4. **Link everything** — ADRs → HLD → LLD → code
+5. **Share with your team** — the best architecture thinking is collaborative
 
 ---
 
 ## Getting Help
 
-### Documentation
-- 📖 [Full Usage Guide](docs/USAGE.md) - Detailed examples
-- 🔍 [Quick Reference](QUICKREF.md) - Command cheatsheet
-- 📚 [Templates](templates/) - See output formats
-- 💡 [Examples](examples/) - Real-world examples
-
-### Support
-- ❓ Open an issue with the `question` label
-- 🐛 Report bugs with the `bug` label
-- 💬 Join discussions
-- 📧 Contact maintainers
-
----
-
-## What's Next?
-
-### Short Term (This Week)
-1. ✅ Install and verify
-2. ✅ Try all four skills
-3. ✅ Generate real documentation for your project
-4. ✅ Share with your team
-
-### Medium Term (This Month)
-1. Integrate into your workflow
-2. Customize templates for your org
-3. Document all architecture decisions
-4. Conduct regular design reviews
-
-### Long Term (This Quarter)
-1. Contribute improvements or new skills
-2. Share feedback for Phase 2
-3. Help others get started
-4. Become a power user
-
----
-
-## Success Stories (Future)
-
-Once you've used the toolkit, we'd love to hear:
-- How much time did you save?
-- What documentation did you generate?
-- What decisions did you document?
-- What would you like to see added?
-
-Share your success story by opening a discussion!
-
----
-
-## Quick Reference Card
-
-```
-📋 Architecture Decision Records
-   /adr create <title>        Create new ADR
-   /adr list                  List all ADRs
-   /adr update <number>       Update ADR
-
-📄 Solution Documentation
-   /solution-doc hld          High-Level Design
-   /solution-doc lld          Low-Level Design
-   /solution-doc deployment   Deployment Guide
-   /solution-doc runbook      Operations Runbook
-
-🔧 Technology Stack Advisor
-   /tech-stack recommend      Get recommendations
-   /tech-stack evaluate <tech> Evaluate technology
-   /tech-stack compare <A> vs <B> Compare options
-
-🐉 Stressor Analysis
-   /stressor generate         Generate stressors
-   /stressor analyze          Map impacts
-   /stressor vulnerabilities  Find high-impact areas
-   /stressor residues         Suggest improvements
-   /stressor iterate          Re-analyze after changes
-   /stressor workshop         Team workshop
-
-✅ Design Review
-   /design-review complete    Full review
-   /design-review security    Security review
-   /design-review performance Performance review
-```
+- 📖 [Quick Reference](QUICKREF.md) — all commands at a glance
+- 📚 [Usage Guide](docs/USAGE.md) — detailed examples
+- 🗺️ [Roadmap](ROADMAP.md) — what's built and what's next
+- 🤝 [Contributing](CONTRIBUTING.md) — how to add compliance packs and skills
 
 ---
 
 ## Your First Hour Checklist
 
-- [ ] Install the toolkit
-- [ ] Verify installation (type `/` in Claude Code)
-- [ ] Create your first ADR
-- [ ] Generate a tech stack recommendation
-- [ ] Create architecture documentation
-- [ ] Run a stressor analysis (embrace the absurd!)
-- [ ] Run a design review
-- [ ] Read the [Usage Guide](docs/USAGE.md)
-- [ ] Bookmark the [Quick Reference](QUICKREF.md)
-- [ ] Join the community discussions
+- [ ] Install the toolkit and verify with `/`
+- [ ] Create your first ADR (`/adr create`)
+- [ ] Get a tech stack recommendation (`/tech-stack recommend`)
+- [ ] Run a stressor analysis — embrace the absurd! (`/stressor analyze`)
+- [ ] Run a design review (`/design-review complete`)
+- [ ] Try a cloud design (`/cloud design`)
+- [ ] Read the [Quick Reference](QUICKREF.md)
 - [ ] Star the repository ⭐
 
 ---
 
-## Ready to Dive Deeper?
-
-**Advanced Topics:**
-- [Complete Usage Guide](docs/USAGE.md)
-- [Contributing Guide](CONTRIBUTING.md)
-- [Roadmap](ROADMAP.md)
-- [Project Summary](PROJECT_SUMMARY.md)
-
-**Get Started:**
-```bash
-# If you haven't already
-git clone <repository-url> solution-architect-toolkit
-cd solution-architect-toolkit
-cp skills/phase-1/*.md ~/.claude/skills/
-
-# Start using it!
-# Open Claude Code and type: /adr create My First Decision
-```
-
----
-
-**Welcome to the Solution Architect Toolkit community! Let's build amazing architectures together.** 🚀
-
-For questions or help, open an issue or start a discussion. We're here to help!
+**Welcome to the Solution Architect Toolkit. Let's build antifragile systems together.** 🐉

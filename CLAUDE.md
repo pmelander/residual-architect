@@ -4,7 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the **Solution Architect Toolkit** - a comprehensive collection of Claude Code skills designed to enhance Solution Architect capabilities. The toolkit provides specialized skills for architecture design, documentation, analysis, and implementation guidance.
+This is the **Solution Architect Toolkit** — a comprehensive collection of Claude Code skills built on **Residuality Theory**, designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
+
+The toolkit covers three phases of capability building:
+- **Phase 1:** Individual architect capabilities
+- **Phase 2:** Organisational and team capabilities
+- **Phase 3:** Specialised domain tools (cloud, capacity)
 
 ## Architecture
 
@@ -12,235 +17,200 @@ This is the **Solution Architect Toolkit** - a comprehensive collection of Claud
 
 ```
 .
-├── skills/           # Claude Code skills (*.md files)
-│   ├── phase-1/     # Capability-building skills (✅ Complete)
+├── skills/
+│   ├── phase-1/                    # Individual capability skills (✅ Complete)
 │   │   ├── adr.md                  # Architecture Decision Records
 │   │   ├── solution-doc.md         # Solution Documentation Generator
 │   │   ├── tech-stack.md           # Technology Stack Advisor
 │   │   ├── design-review.md        # Design Review
-│   │   └── stressor-analysis.md    # Stressor Analysis
-│   ├── phase-2/     # Organizational capabilities (🔄 In Progress)
-│   │   └── arch-learning.md        # Architecture Learning Analyzer
-│   ├── utilities/   # Infrastructure skills (✅ Complete)
-│   │   └── excel-reader.md         # Excel/CSV Reader
-│   └── phase-3/     # Specialized tools (🔄 Planned)
-├── helpers/          # Python utilities
-│   └── read_spreadsheet.py         # Excel/CSV reading helper
-├── templates/        # Document templates
+│   │   ├── stressor-analysis.md    # Stressor Analysis (antifragility)
+│   │   └── compliance-packs/       # Regulatory stressor packs (extension point)
+│   │       └── README.md
+│   ├── phase-2/                    # Organisational capability skills (✅ Complete)
+│   │   ├── arch-learning.md        # Architecture Learning Analyzer
+│   │   ├── capability-assessor.md  # Team Capability Assessor
+│   │   ├── pattern-extractor.md    # Pattern Extractor & Institutionalizer
+│   │   └── evolutionary-coach.md   # Evolutionary Architecture Coach
+│   ├── phase-3/                    # Specialised tools (✅ Complete)
+│   │   ├── cloud-architect.md      # Cloud Architect
+│   │   └── capacity-planner.md     # Capacity Planner
+│   └── utilities/                  # Infrastructure skills (✅ Complete)
+│       └── excel-reader.md         # Excel/CSV Reader
+├── helpers/
+│   └── read_spreadsheet.py         # Python helper for Excel reading
+├── templates/                      # Document templates
 │   ├── adr-template.md
 │   ├── hld-template.md
 │   ├── tech-comparison-template.md
-│   └── stressor-analysis-template.md
-├── examples/         # Example outputs
-├── requirements.txt  # Python dependencies
-└── docs/            # Generated documentation location
-    ├── adr/         # Architecture Decision Records
-    ├── arch-learning/ # Learning analysis outputs
-    └── ...
+│   ├── stressor-analysis-template.md
+│   ├── capability-assessment-template.md
+│   ├── pattern-template.md
+│   ├── anti-pattern-template.md
+│   └── fitness-function-template.md
+├── examples/                       # Example outputs
+├── requirements.txt                # Python dependencies (openpyxl)
+└── docs/
+    ├── adr/                        # ADRs documenting toolkit decisions
+    │   ├── ADR-001-incorporate-residuality-theory.md
+    │   ├── ADR-002-redesign-phase-2-for-capability-building.md
+    │   ├── ADR-003-add-stressor-analysis-skill.md
+    │   ├── ADR-004-add-excel-reading-utility.md
+    │   ├── ADR-005-add-architecture-learning-analyzer.md
+    │   ├── ADR-006-exclude-risk-assessor-skill.md
+    │   └── ADR-007-compliance-via-stressor-packs.md
+    └── ...                         # Generated documentation location
 ```
 
 ### Skill Development Pattern
 
 Each skill follows this structure:
-1. **Frontmatter**: YAML with description and model
-2. **Role Definition**: Clear description of the skill's purpose
-3. **Commands**: Available slash commands and their usage
-4. **Templates**: Document templates and formats
-5. **Best Practices**: Guidelines for effective use
-6. **Workflow**: Step-by-step process the skill follows
+1. **Frontmatter** — YAML with `description` and `model: sonnet`
+2. **Role Definition** — clear statement of the skill's purpose
+3. **Capability Being Built** — what thinking the skill transfers to the architect
+4. **Residuality Goal** — what success looks like when the capability is internalised
+5. **Core Concept** — the key idea and compound effect
+6. **Commands** — slash commands with capability focus for each
+7. **Templates/Reference** — frameworks, patterns, and output formats
+8. **Workflow** — step-by-step process
+9. **Reflection Prompts** — questions that build the capability
+
+### Key Design Principle
+
+Skills are **capability transfer tools**, not dependency-creating tools. Every skill should build thinking that architects carry forward independently. The measure of success is how rarely the skill needs to be invoked because the thinking has been internalised.
 
 ## Development Commands
 
 ### Testing Skills
 
-To test a skill locally (before installing to ~/.claude/skills):
 ```bash
 # View skill content
 cat skills/phase-1/adr.md
 
-# Test by creating a symlink (optional)
+# Symlink for development (changes reflected immediately)
 ln -s $(pwd)/skills/phase-1/adr.md ~/.claude/skills/adr.md
+
+# Copy for stable use
+cp skills/phase-1/*.md ~/.claude/skills/
 ```
 
 ### Adding New Skills
 
-1. Create skill file in appropriate phase directory
+1. Create skill file in the appropriate phase directory
 2. Follow the naming convention: `skill-name.md`
-3. Include frontmatter with description and model
-4. Test the skill with Claude Code
-5. Add documentation to README.md
+3. Include frontmatter: `description` and `model: sonnet`
+4. Follow the Skill Development Pattern above
+5. Document any significant design decisions as an ADR in `docs/adr/`
+6. Update `README.md`, `QUICKREF.md`, `GETTING_STARTED.md`, and `CLAUDE.md`
+
+### Adding Compliance Packs
+
+1. Create `skills/phase-1/compliance-packs/<framework>.md`
+2. Follow the pack structure defined in `skills/phase-1/stressor-analysis.md`
+3. Each stressor must be a concrete scenario (not a control statement)
+4. Include regulation reference and explanation of the real harm
+5. List common residues that emerge from the analysis
 
 ### Git Workflow
 
 ```bash
-# Create feature branch
 git checkout -b feature/new-skill-name
-
-# Commit with descriptive messages
-git commit -m "feat(phase-1): add new-skill-name skill"
-
-# Push and create PR
+git commit -m "feat(phase-N): add skill-name skill"
 git push origin feature/new-skill-name
 ```
 
 ## Skill Usage
 
-### Phase 1 Skills (Available Now)
+### Phase 1 Skills
 
-**Architecture Decision Records**
 ```bash
-/adr create <title>        # Create new ADR
-/adr list                  # List all ADRs
-/adr update <number>       # Update existing ADR
-/adr search <term>         # Search ADRs
+/adr create <title>              # Architecture Decision Records
+/solution-doc hld                # Solution Documentation
+/tech-stack recommend            # Technology Stack Advisor
+/design-review complete          # Design Review
+/stressor analyze                # Stressor Analysis
+/stressor compliance <pack>      # Inject compliance stressor pack
 ```
 
-**Solution Documentation**
+### Phase 2 Skills
+
 ```bash
-/solution-doc hld          # Generate High-Level Design
-/solution-doc lld          # Generate Low-Level Design
-/solution-doc deployment   # Generate Deployment Guide
-/solution-doc runbook      # Generate Operations Runbook
-/solution-doc complete     # Generate all documentation
+/arch-learning analyze           # Architecture Learning Analyzer
+/capability-assessor assess      # Team Capability Assessor
+/patterns extract                # Pattern Extractor
+/evolve assess                   # Evolutionary Architecture Coach
 ```
 
-**Technology Stack Advisor**
+### Phase 3 Skills
+
 ```bash
-/tech-stack recommend      # Recommend complete tech stack
-/tech-stack evaluate <tech> # Evaluate specific technology
-/tech-stack compare <tech1> vs <tech2>  # Compare technologies
-/tech-stack migrate from <old> to <new> # Analyze migration
-/tech-stack report         # Generate selection report
+/cloud design <architecture>     # Cloud Architect
+/cloud iac <provider>
+/cloud review
+/cloud cost
+/cloud migrate <to-cloud>
+/cloud dr
+
+/capacity estimate               # Capacity Planner
+/capacity scale <strategy>
+/capacity bottleneck
+/capacity load-test
+/capacity forecast
+/capacity right-size
 ```
 
-**Design Review**
+### Utility Skills
+
 ```bash
-/design-review architecture   # Review system architecture
-/design-review api           # Review API design
-/design-review data          # Review data architecture
-/design-review security      # Security-focused review
-/design-review performance   # Performance-focused review
-/design-review complete      # Comprehensive review
+/excel read <file> [sheet]       # Excel/CSV Reader
 ```
-
-**Stressor Analysis**
-```bash
-/stressor generate [count]        # Generate creative stressors
-/stressor analyze                 # Map impacts to components
-/stressor vulnerabilities         # Identify high-impact areas
-/stressor residues                # Suggest improvements
-/stressor iterate                 # Re-analyze after changes
-/stressor workshop                # Facilitate team workshop
-/stressor import <file> [sheet]   # Import from Excel/CSV
-```
-
-### Utility Skills (Available Now)
-
-**Excel Reader**
-```bash
-/excel read <file> [sheet]        # Read spreadsheet as markdown
-/excel preview <file> [rows]      # Preview first N rows
-/excel sheets <file>              # List available sheets
-/excel convert <file> [sheet]     # Save to docs/imports/
-```
-
-**Helper Script** (advanced usage):
-```bash
-python helpers/read_spreadsheet.py data.xlsx
-python helpers/read_spreadsheet.py data.xlsx --sheet "Sheet2"
-python helpers/read_spreadsheet.py data.xlsx --rows 10
-python helpers/read_spreadsheet.py data.xlsx --list-sheets
-```
-
-### Phase 2 Skills (Available Now)
-
-**Architecture Learning Analyzer**
-```bash
-/arch-learning analyze            # Analyze ADR history
-/arch-learning patterns           # Extract patterns from decisions
-/arch-learning outcomes           # Review decision outcomes
-/arch-learning retrospective      # Facilitate team retrospective
-/arch-learning lessons            # Generate lessons learned report
-/arch-learning trends             # Identify trends over time
-```
-
-**Capability:** Builds organizational learning from architectural history, extracts patterns, tracks outcomes, creates feedback loops
 
 ## Key Principles
 
-### For Solution Architect Work
+### Residuality Theory Foundation
 
-1. **Document Decisions**: Use ADRs for significant architectural decisions
-2. **Context First**: Always start with business context and requirements
-3. **Trade-offs Matter**: Document pros, cons, and alternatives
-4. **Think Long-term**: Consider maintainability, scalability, evolution
-5. **Be Specific**: Avoid vague statements, provide concrete recommendations
-6. **Link Everything**: Reference related ADRs, docs, and resources
+1. **Design for unknown unknowns** — not just known risks
+2. **Antifragility over robustness** — systems that benefit from stress
+3. **Residues over mitigations** — architectural improvements that protect against classes of stressors
+4. **Compliance as byproduct** — regulatory requirements addressed structurally, not procedurally
+5. **Risk assessment replaced** — stressor analysis covers risk and more
 
 ### For Skill Development
 
-1. **Clear Commands**: Skills should have clear slash commands
-2. **Ask Questions**: Skills should gather context through questions
-3. **Use Templates**: Provide consistent, high-quality output formats
-4. **Be Thorough**: Skills should be comprehensive but focused
-5. **Include Examples**: Show users what good looks like
-6. **Consider Workflow**: Skills should follow natural work patterns
+1. **Capability first** — every command should build a thinking skill, not just produce output
+2. **Clear residuality goal** — state what success looks like when the skill is no longer needed
+3. **Reflection prompts** — include questions that deepen the thinking
+4. **Consistent philosophy** — new skills must align with Residuality Theory; if a skill would train architects to think in checklists or registers, reconsider the approach
 
 ## Installation
 
-Users can install these skills by:
+```bash
+# Copy method (stable use)
+cp skills/phase-1/*.md ~/.claude/skills/
+cp skills/phase-2/*.md ~/.claude/skills/
+cp skills/phase-3/*.md ~/.claude/skills/
+cp skills/utilities/*.md ~/.claude/skills/
+pip install -r requirements.txt
 
-1. **Symlink Method** (for development):
-   ```bash
-   ln -s /path/to/this/repo/skills/phase-1/*.md ~/.claude/skills/
-   ln -s /path/to/this/repo/skills/phase-2/*.md ~/.claude/skills/
-   ln -s /path/to/this/repo/skills/utilities/*.md ~/.claude/skills/
-   pip install -r requirements.txt
-   ```
+# Symlink method (development — changes reflected immediately)
+ln -s /path/to/repo/skills/phase-1/*.md ~/.claude/skills/
+ln -s /path/to/repo/skills/phase-2/*.md ~/.claude/skills/
+ln -s /path/to/repo/skills/phase-3/*.md ~/.claude/skills/
+ln -s /path/to/repo/skills/utilities/*.md ~/.claude/skills/
+```
 
-2. **Copy Method** (for stable use):
-   ```bash
-   cp /path/to/this/repo/skills/phase-1/*.md ~/.claude/skills/
-   cp /path/to/this/repo/skills/phase-2/*.md ~/.claude/skills/
-   cp /path/to/this/repo/skills/utilities/*.md ~/.claude/skills/
-   pip install -r requirements.txt
-   ```
+## Phase Status
 
-3. **Git Clone Method**:
-   ```bash
-   cd ~/.claude
-   mkdir -p skills
-   cd skills
-   git clone <repo-url> solution-architect-toolkit
-   ln -s solution-architect-toolkit/skills/phase-1/*.md .
-   ```
-
-## Phase Roadmap
-
-### Phase 1: Immediate Impact ✅
-- [x] Architecture Decision Records
-- [x] Solution Documentation Generator
-- [x] Technology Stack Advisor
-- [x] Design Review
-
-### Phase 2: Deep Analysis 🔄
-- [ ] Tech Debt Analyzer
-- [ ] System Mapper
-- [ ] Migration Planner
-- [ ] API Designer
-
-### Phase 3: Specialized 🔄
-- [ ] Cloud Architect
-- [ ] Compliance Checker
-- [ ] Capacity Planner
-- [ ] Risk Assessor
+| Phase | Status | Skills |
+|-------|--------|--------|
+| Phase 1: Individual Capabilities | ✅ Complete | adr, solution-doc, tech-stack, design-review, stressor-analysis |
+| Utilities | ✅ Complete | excel-reader |
+| Phase 2: Organisational Capabilities | ✅ Complete | arch-learning, capability-assessor, pattern-extractor, evolutionary-coach |
+| Phase 3: Specialised Tools | ✅ Complete | cloud-architect, capacity-planner |
 
 ## Contributing
 
 When adding new skills:
-1. Follow existing skill patterns
-2. Include comprehensive templates
-3. Add examples to examples/ directory
-4. Update README.md with new skill
-5. Test thoroughly before committing
-6. Create ADR for significant decisions
+1. Follow existing skill patterns — especially the Capability Being Built and Residuality Goal sections
+2. Create an ADR in `docs/adr/` for any significant design decision (including decisions *not* to build something)
+3. Update all documentation files: README.md, QUICKREF.md, GETTING_STARTED.md, CLAUDE.md
+4. Test thoroughly before committing
