@@ -336,26 +336,9 @@ Phase 2 is successful when:
 
 ---
 
-#### 2. Compliance Checker 💡
+#### ~~2. Compliance Checker~~ — Replaced by Stressor Compliance Packs
 
-**Purpose:** Validate architectures against compliance frameworks.
-
-**Capabilities:**
-- Check GDPR compliance
-- Validate HIPAA requirements
-- SOC 2 assessment
-- ISO 27001 validation
-- PCI DSS verification
-- Generate compliance reports
-- Gap analysis
-
-**Commands:**
-```bash
-/compliance check <framework>   # Check against framework
-/compliance gaps                # Identify gaps
-/compliance report              # Generate compliance report
-/compliance remediate           # Remediation suggestions
-```
+> **Replaced by [ADR-007](docs/adr/ADR-007-compliance-via-stressor-packs.md):** A standalone Compliance Checker would train architects to think in checklists, conflicting with Residuality Theory. Instead, compliance frameworks are expressed as **stressor packs** that feed into the existing `/stressor` skill. Compliance becomes a byproduct of antifragile design. The `/stressor compliance <pack>` command and extension point have been added to the Stressor Analysis skill.
 
 ---
 
@@ -392,7 +375,8 @@ Phase 2 is successful when:
 | Quarter | Milestone |
 |---------|-----------|
 | Q1 2027 | Cloud Architect | ✅ Complete |
-| Q1 2027 | Compliance Checker | 💡 Planned |
+| Q1 2027 | Compliance → Stressor Packs extension | ✅ Complete |
+| ~~Q1 2027~~ | ~~Compliance Checker~~ | ❌ Replaced (see ADR-007) |
 | Q2 2027 | Capacity Planner | 💡 Planned |
 | ~~Q2 2027~~ | ~~Risk Assessor~~ | ❌ Removed (see ADR-006) |
 | Q2 2027 | Phase 3 release | 🔄 In Progress |

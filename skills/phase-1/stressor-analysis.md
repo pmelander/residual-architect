@@ -95,6 +95,38 @@ Facilitate a stressor analysis workshop.
 
 **Capability Focus:** Builds team-level resilience thinking and shared mental models.
 
+### `/stressor compliance <pack>`
+Inject a compliance stressor pack into the current analysis.
+
+A **compliance pack** is a curated set of stressors derived from a regulatory framework. By treating compliance requirements as stressors, the residues that emerge from the analysis naturally satisfy the framework's controls — without training architects to think in checklists.
+
+**Key principle:** Compliance is a *byproduct* of good antifragile design, not a separate process.
+
+**Usage:**
+```
+/stressor compliance list              # List available compliance packs
+/stressor compliance gdpr              # Inject GDPR stressor pack (when available)
+/stressor compliance hipaa             # Inject HIPAA stressor pack (when available)
+/stressor compliance pci-dss           # Inject PCI DSS stressor pack (when available)
+```
+
+**What it does:**
+1. Loads the named compliance pack's stressor set
+2. Merges them into the current stressor list (or starts a new analysis if none active)
+3. Tags each stressor with its source pack for traceability
+4. Runs the standard stressor analysis flow
+5. After residues are identified, notes which compliance controls they address
+
+**Why this approach:**
+- Architects keep thinking in stressors and residues — the consistent mental model
+- Residues that emerge protect against *both* compliance scenarios *and* unknown stressors
+- A circuit breaker added because of a "regulatory audit during outage" stressor also protects against cascading failures, traffic spikes, and fire-breathing lizards
+- Compliance becomes evidence of architectural quality, not a separate audit exercise
+
+**Capability Focus:** Builds understanding that compliance controls exist because real harms happened — and that antifragile architecture addresses those harms structurally, not procedurally.
+
+---
+
 ### `/stressor import <file> [sheet]`
 Import a stressor matrix from Excel or CSV.
 - Read spreadsheet using excel-reader utility
@@ -115,6 +147,91 @@ Import a stressor matrix from Excel or CSV.
 ```
 
 **Capability Focus:** Enables importing existing analyses, collaboration with Excel users.
+
+## Compliance Packs 📋
+
+Compliance packs are curated stressor sets derived from regulatory frameworks. They plug directly into the standard stressor analysis flow — no separate compliance process, no checklists.
+
+### Philosophy
+
+Every compliance control exists because something went wrong. GDPR exists because personal data was misused. PCI DSS exists because payment card data was stolen. HIPAA exists because medical records were exposed. Understanding *why* a control exists is more valuable than knowing *what* it requires.
+
+When architects understand the harm behind a control, they design architecture that makes that harm structurally impossible — which is deeper than compliance and more durable than a checkbox.
+
+### Pack Structure
+
+Each compliance pack follows this structure:
+
+```markdown
+## [Framework Name] Compliance Pack
+
+**Framework:** [Full name + version/year]
+**Jurisdiction:** [Geographic scope]
+**Applies to:** [What types of systems/data/organisations]
+
+**Why this pack exists:**
+[1-2 sentences on what harms the framework was created to prevent]
+
+**Stressors:**
+
+| # | Stressor | Regulation Ref | Why it matters |
+|---|----------|---------------|----------------|
+| 1 | [Concrete scenario, phrased as a stressor] | [Article/Section] | [The real harm this prevents] |
+| 2 | ... | ... | ... |
+
+**Common residues that address this pack:**
+[List of architectural patterns that emerge as high-leverage residues
+when this pack's stressors are run through a standard analysis]
+
+**Traceability note:**
+[How to map residues back to compliance evidence if required for audit]
+```
+
+### Available Packs
+
+| Pack | Framework | Status |
+|------|-----------|--------|
+| `gdpr` | General Data Protection Regulation | 📋 Planned |
+| `hipaa` | Health Insurance Portability and Accountability Act | 📋 Planned |
+| `pci-dss` | Payment Card Industry Data Security Standard | 📋 Planned |
+| `iso27001` | ISO/IEC 27001 Information Security | 📋 Planned |
+| `soc2` | SOC 2 Trust Services Criteria | 📋 Planned |
+
+> **Adding a new pack:** Follow the pack structure above. Each stressor must be phrased as a concrete scenario (not a control statement), include a regulation reference, and explain the real harm it prevents. Submit as a PR to `skills/phase-1/compliance-packs/`.
+
+### Example Pack Skeleton
+
+```markdown
+## [FRAMEWORK] Compliance Pack
+
+**Framework:** [Full name]
+**Jurisdiction:** [e.g., EU, US, Global]
+**Applies to:** [e.g., Any system processing personal data of EU residents]
+
+**Why this pack exists:**
+[The harms this regulation was created to prevent, in plain language]
+
+**Stressors:**
+
+| # | Stressor | Regulation Ref | Why it matters |
+|---|----------|---------------|----------------|
+| 1 | A user requests deletion of all their personal data and we cannot locate or purge it from all systems within the required timeframe | Art. X.X | Data subjects must control their own data; uncontrolled data becomes a liability |
+| 2 | A data breach exposes personal records and we cannot identify what was taken, when, or who was affected | Art. Y.Y | Inability to notify affected parties compounds the original harm |
+| 3 | A third-party processor we share data with suffers a breach | Art. Z.Z | Liability extends beyond your own systems to your data supply chain |
+
+**Common residues that address this pack:**
+- Data inventory / classification layer (know where all data lives)
+- Soft-delete + purge pipeline (enable right-to-erasure)
+- Audit log with immutable record of data access and changes
+- Data lineage tracking (know what moved where)
+- Third-party data processing agreements + monitoring
+
+**Traceability note:**
+When auditors request evidence, each residue maps to one or more controls.
+Document this mapping in your ADR when implementing residues from this analysis.
+```
+
+---
 
 ## Stressor Analysis Matrix Format
 
@@ -367,6 +484,7 @@ Step 7: Let's prioritize and create action items!
 - **Tech Stack** - Evaluate technologies for resilience properties
 - **Solution Doc** - Document stressor analysis results and residues
 - **Excel Reader** - Import existing stressor matrices from Excel/CSV
+- **Compliance Packs** - Inject regulatory stressors so compliance emerges as a byproduct of antifragile design
 
 **Workflow:**
 1. Run stressor analysis (or `/stressor import` from Excel)
