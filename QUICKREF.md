@@ -157,17 +157,35 @@ pip install -r requirements.txt
 
 ## Common Workflows
 
-### New Project
+### New Project (Greenfield)
 ```
-1. /tech-stack recommend
-2. /adr create [for each major decision]
-3. /solution-doc hld
-4. /stressor walk              # walk primary paths first
-5. /stressor generate          # generate stressors
-6. /stressor analyze           # build impact matrix
-7. /stressor residues          # identify residuals
-8. /design-review architecture
-9. /solution-doc deployment
+1. /journey start              # assess terrain, map the route
+2. /tech-stack recommend
+3. /adr create [for each major decision]
+4. /solution-doc hld
+5. /stressor walk              # walk primary paths first
+6. /stressor generate          # generate stressors
+7. /stressor analyze           # build impact matrix
+8. /stressor residues          # identify residuals
+9. /journey iterate            # proceed or loop?
+10. /design-review architecture
+11. /solution-doc deployment
+```
+
+### Existing System (Brownfield / Minefield)
+```
+1. /journey start              # assess terrain, map the route
+2. /discover paths             # map what's actually there
+3. /discover actor <critical>  # investigate opaque actors
+4. /discover gaps              # prioritise unknowns
+5. /discover organisation      # translate resistance into stressors
+6. /discover confidence        # explicit go/no-go before walking
+7. /stressor walk              # walk discovered paths
+8. /stressor generate          # generate stressors
+9. /stressor analyze           # build matrix on real paths
+10. /stressor residues         # identify residuals
+11. /journey iterate           # proceed or loop?
+12. /adr create [key decisions]
 ```
 
 ### Pre-Production Review
@@ -209,9 +227,9 @@ pip install -r requirements.txt
 ### Organisational Learning Rhythm
 ```
 Monthly:
+  /evolve health
   /arch-learning analyze
   /patterns effectiveness
-  /evolve health
 
 Quarterly:
   /capability-assessor assess
@@ -219,6 +237,7 @@ Quarterly:
   /arch-learning retrospective
   /patterns evolve
   /evolve assess
+  /journey cadence               # review and refresh ongoing rhythm
 ```
 
 ---
@@ -287,6 +306,6 @@ docs/
 | Phase 1: Individual Capabilities | ADR, Solution Doc, Tech Stack, Design Review, Stressor Analysis | ✅ Complete |
 | Utilities | Excel Reader | ✅ Complete |
 | Phase 2: Organisational Capabilities | Arch Learning, Capability Assessor, Pattern Extractor, Evolutionary Coach | ✅ Complete |
-| Phase 3: Specialised Tools | Cloud Architect, Capacity Planner | ✅ Complete |
+| Phase 3: Specialised Tools | Cloud Architect, Capacity Planner, Environment Discovery, Architect's Journey | ✅ Complete |
 
 > **Note:** Risk Assessor excluded (covered by Residuality/Stressor Analysis — ADR-006). Compliance Checker replaced by `/stressor compliance` packs (ADR-007).
