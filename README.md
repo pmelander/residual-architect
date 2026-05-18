@@ -54,6 +54,7 @@ Domain-specific capabilities for cloud, capacity, and existing environments.
 | Cloud Architect | `/cloud` | Cloud-native thinking, IaC discipline, Well-Architected mindset |
 | Capacity Planner | `/capacity` | Demand modelling, scaling intuition, bottleneck identification |
 | Environment Discovery | `/discover` | Confident path mapping in brownfield, oilfield, and minefield environments |
+| Architect's Journey | `/journey` | Sequencing, orchestration, and iteration across the full architectural journey |
 
 > **Note on Risk and Compliance:** A standalone Risk Assessor and Compliance Checker were considered and deliberately excluded. Residuality Theory covers risk through antifragility thinking (`/stressor`) — risk registers create false confidence in enumerated threats. Compliance is handled through **stressor compliance packs** (`/stressor compliance <pack>`), so regulatory requirements emerge as residues of antifragile design rather than a separate checklist process. See [ADR-006](docs/adr/ADR-006-exclude-risk-assessor-skill.md) and [ADR-007](docs/adr/ADR-007-compliance-via-stressor-packs.md).
 
@@ -148,6 +149,15 @@ Open Claude Code and type `/` to see your skills.
 /capacity load-test                 # Design load testing strategy
 /capacity forecast                  # Model future capacity needs
 /capacity right-size                # Identify and reduce over-provisioning
+```
+
+### Architect's Journey
+```bash
+/journey start           # Begin a new journey — assess terrain, map the route
+/journey where           # Where am I in the journey? What comes next?
+/journey iterate         # Should I iterate stressor analysis or proceed?
+/journey review          # Journey health check — completeness and quality
+/journey cadence         # Establish an ongoing iteration rhythm
 ```
 
 ### Environment Discovery

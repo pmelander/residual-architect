@@ -66,6 +66,15 @@ pip install -r requirements.txt
 /stressor compliance <pack>          # Inject compliance stressor pack
 ```
 
+### Architect's Journey
+```bash
+/journey start           # Begin a new journey — assess terrain, map the route
+/journey where           # Where am I? What comes next?
+/journey iterate         # Iterate stressor loop or proceed?
+/journey review          # Journey health check — completeness and quality
+/journey cadence         # Establish an ongoing iteration rhythm
+```
+
 ### Environment Discovery
 ```bash
 /discover paths                  # Map paths through an existing system

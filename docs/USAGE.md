@@ -196,6 +196,34 @@ Build the capability to design and maintain architectures that accommodate chang
 
 ---
 
+## Phase 3: Specialised Tools
+
+### Architect's Journey (`/journey`)
+
+The orchestrating skill — knows which tools to use, when, and in what sequence. Start here when beginning a new engagement, or when you're mid-journey and unsure what comes next.
+
+```
+/journey start           # assess terrain (greenfield/brownfield/minefield), map the route
+/journey where           # where am I? what have I done? what comes next?
+/journey iterate         # is stressor impact low enough to proceed, or iterate again?
+/journey review          # health check — what's been skipped, what's at risk?
+/journey cadence         # establish an ongoing rhythm for a live system
+```
+
+**The three terrains:**
+- **Greenfield** — blank canvas, design your paths then walk them
+- **Brownfield** — existing system, discover then walk
+- **Minefield** — high fragility and complexity, discover extensively before touching anything
+
+**The stressor iteration loop** — the heartbeat of every journey:
+```
+walk → generate → analyze → residuals → implement → re-walk → is impact low enough? → loop or proceed
+```
+
+Iterate until impact is *sufficiently low* — not zero, but low enough given the system's aspiration and the cost of further improvement. `/journey iterate` helps you make that judgment explicitly.
+
+---
+
 ### Environment Discovery (`/discover`)
 
 Map what actually exists in an existing environment before designing anything new within it. Brownfield, oilfield, and minefield environments rarely match their documentation — discovery produces the confident path maps that feed stressor analysis.

@@ -393,7 +393,25 @@ Phase 2 is successful when:
 
 ---
 
-#### ~~4. Risk Assessor~~ — Removed
+#### 5. Architect's Journey ✅
+
+**Purpose:** Orchestrate the full architectural journey — sequencing skills, managing iteration, and knowing when enough is enough.
+
+**Capabilities:**
+- Terrain assessment (greenfield / brownfield / minefield) and route mapping
+- Mid-journey positioning — where am I, what comes next, what has been skipped?
+- Stressor iteration loop management — explicit iterate vs. proceed decisions
+- Journey health checks — completeness and quality assessment
+- Ongoing cadence design for live systems
+
+**Commands:**
+```bash
+/journey start           # Begin a new journey — assess terrain, map the route
+/journey where           # Where am I in the journey? What comes next?
+/journey iterate         # Should I iterate stressor analysis or proceed?
+/journey review          # Journey health check — completeness and quality
+/journey cadence         # Establish an ongoing iteration rhythm
+```
 
 > **Excluded by [ADR-006](docs/adr/ADR-006-exclude-risk-assessor-skill.md):** Traditional risk assessment contradicts Residuality Theory. The `/stressor` skill (Phase 1) already provides an antifragility-based alternative that is philosophically consistent and architecturally superior.
 
@@ -408,6 +426,7 @@ Phase 2 is successful when:
 | ~~Q1 2027~~ | ~~Compliance Checker~~ | ❌ Replaced (see ADR-007) |
 | Q2 2027 | Capacity Planner | ✅ Complete |
 | Q2 2027 | Environment Discovery | ✅ Complete |
+| Q2 2027 | Architect's Journey | ✅ Complete |
 | ~~Q2 2027~~ | ~~Risk Assessor~~ | ❌ Removed (see ADR-006) |
 | Q2 2027 | Phase 3 release | ✅ Complete |
 
