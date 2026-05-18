@@ -55,12 +55,13 @@ pip install -r requirements.txt
 
 ### Stressor Analysis
 ```bash
-/stressor generate [count]       # Generate creative stressors
-/stressor analyze                # Map impacts to components
-/stressor vulnerabilities        # Identify high-impact areas
-/stressor residues               # Suggest architectural improvements
-/stressor iterate                # Re-analyze after changes
-/stressor workshop               # Facilitate team workshop
+/stressor walk [path-name]           # Traverse a path, evaluating each actor in sequence
+/stressor generate [count]           # Generate creative stressors
+/stressor analyze                    # Build impact matrix (actors × stressors)
+/stressor vulnerabilities            # Identify most-impacted actors
+/stressor residues                   # Suggest residuals (new actors, intentions, paths)
+/stressor iterate                    # Re-walk after adding residuals
+/stressor workshop                   # Facilitate team stressor workshop
 /stressor import <file> [sheet]  # Import stressor matrix from Excel/CSV
 /stressor compliance <pack>      # Inject compliance stressor pack
 ```

@@ -1,5 +1,5 @@
 ---
-description: Stress-test architecture against random/unexpected stressors to build antifragile systems
+description: Walk paths, stress-test actors against stressors, and build antifragile systems using Residuality Theory
 model: sonnet
 ---
 
@@ -24,20 +24,86 @@ This skill builds the following persistent capabilities:
 
 **Residuality Goal:** After using this skill, architects naturally design for unknown unknowns and build systems that become stronger under stress, not just resistant to known threats.
 
+## Residuality Theory Vocabulary 📖
+
+Understanding the precise terms keeps analysis grounded in the theory:
+
+**Aspiration** — the overarching goal a stakeholder communicates to the architect. It reflects strategic intent and is broken down into underlying motives and actionable purposes.
+
+**Intention** — a signal that defines what should happen next. Intentions connect actors and guide the flow of change through the system. They are the building blocks of how systems respond to and propagate change.
+
+**Actor** — any user, application, module, or system component that acts upon an intention to change. An actor may update its internal state and/or propagate the intention onward. Actors can be stateful or stateless.
+
+**Path** — a sequence of actors connected by intentions. A path always starts and ends with a single actor. Paths never fork — when forking occurs, a new path is created. Each path ends when the intention is fully resolved.
+
+**Stressor** — any fact or external influence on a system that is outside our current understanding. Stressors identify fault lines, reveal weak spots, and highlight slow reactions in the architecture.
+
+**Residual (Residue)** — a specific addition, removal, or modification introduced to the system in response to a stressor. It is a localised, discrete change that persists after the stressor has been addressed. A residual may be:
+- A new actor introduced to the system
+- A new intention to communicate or manage state changes
+- A new path created to handle specific interactions
+
+**Walk** — the act of traversing a path to analyse the state and behaviour of each actor as the intention propagates through the system. During a walk, the architect evaluates changes triggered at each step, identifies where paths might need to fork, and uncovers opportunities for refinement. Walks are iterative — performed regularly as stressors evolve.
+
+---
+
 ## Core Concept 💡
 
 **Stressor Analysis** is a technique for discovering architectural resilience needs by:
 
-1. **Generate diverse stressors** - Random, creative, even absurd scenarios (Fire breathing lizards! 🐉)
-2. **Map impacts** - Which architecture components are affected?
-3. **Calculate vulnerability** - Which components are hit by the most stressors?
-4. **Add residues** - Make architectural improvements to high-impact areas
-5. **Re-analyze** - Watch total system impact decrease
-6. **Iterate** - As you add residues, MORE stressors become harmless
+1. **Map paths** — identify the actors and intentions that form each significant path through your system
+2. **Walk paths** — traverse each path, evaluating actor behaviour and state under normal conditions
+3. **Generate diverse stressors** — random, creative, even absurd scenarios (Fire breathing lizards! 🐉)
+4. **Walk under stress** — re-traverse each path under each stressor, identifying which actors are affected
+5. **Calculate vulnerability** — which actors are hit by the most stressors across all paths?
+6. **Add residuals** — introduce new actors, intentions, or paths that reduce vulnerability
+7. **Re-walk** — repeat the walk to watch total system impact decrease
+8. **Iterate** — as residuals are added, MORE stressors become harmless
 
-**The Magic:** Architectural changes made for one stressor often protect against MANY unrelated stressors. The system becomes increasingly antifragile.
+**The Magic:** A residual introduced for one stressor — say, a queuing actor added to handle load spikes — often protects against MANY unrelated stressors (dependency failures, traffic bursts, downstream slowness). The system becomes increasingly antifragile.
 
 ## Commands
+
+### `/stressor walk [path-name]`
+Traverse a path through the system, evaluating each actor as an intention propagates — either under normal conditions or under a specific stressor.
+
+**This is the foundational step before building the impact matrix.** A walk makes the path explicit — who the actors are, what intentions connect them, and where the system is stateful vs. stateless.
+
+**Process:**
+1. **Define the path:** Ask — what aspiration does this path serve? What intention triggers it? Where does it start and end?
+2. **List the actors in sequence:** Every hop from entry to resolution is an actor (API Gateway → Auth Service → Order Service → Inventory DB → Payment Gateway → Notification Queue, etc.)
+3. **Characterise each actor:**
+   - Stateful or stateless?
+   - What intention does it receive? What does it propagate?
+   - What is its failure mode?
+4. **Walk under a stressor (optional):** Apply a specific stressor and evaluate each actor in sequence — does this actor fail, degrade, or propagate the stressor onward?
+5. **Identify fork points:** Where does the path branch? Each fork creates a new path to walk separately.
+6. **Capture residual opportunities:** At each actor where the stressor causes harm, note what new actor, intention, or path could be introduced as a residual.
+
+**Why paths before the matrix?**
+The impact matrix columns should be the actors on your paths — not an arbitrary component list. Walking the path first ensures the matrix reflects how intentions actually flow through the system. Actors later in the path are often more vulnerable because they depend on everything upstream.
+
+**Output:** A path map showing actors in sequence, their stateful/stateless nature, the intentions connecting them, and (if a stressor was applied) which actors were affected and how.
+
+**Capability Focus:** Builds the habit of thinking in paths and intentions rather than component inventories. Reveals cascade effects in sequence — how a stressor affecting an early actor propagates through to all downstream actors.
+
+**Example:**
+```
+/stressor walk checkout
+→ Maps: Browser → API Gateway → Auth Service → Order Service
+        → Inventory DB → Payment Gateway → Email Queue → Notification Service
+
+/stressor walk checkout "payment provider goes offline"
+→ Walks the same path, evaluating each actor under the stressor
+→ Finds: Order Service fails loudly at Payment Gateway hop
+→ Residual opportunity: introduce async payment queue actor + retry path
+```
+
+**Multiple paths:** Most systems have several significant paths (happy path, error path, async path, admin path). Walk each separately — they often expose different vulnerabilities.
+
+**Capability Focus:** Builds path thinking and the discipline of understanding system behaviour as flowing intentions, not just component diagrams.
+
+---
 
 ### `/stressor generate [count]`
 Generate creative stressors for stress-testing.
@@ -312,16 +378,19 @@ TOTAL          |    4    | 2  |   3   |   2   |  4  |    3    |
 
 **Why absurd stressors?** They force creative thinking beyond normal failure modes and often reveal architectural weaknesses you'd never consider otherwise!
 
-## Workflow
+## Workflow 📋
 
-1. **Understand System** - Identify major architecture components
-2. **Generate Stressors** - Create diverse list (20-50 stressors)
-3. **Map Impacts** - For each stressor, mark affected components
-4. **Calculate Scores** - Total impact per stressor, vulnerability per component
-5. **Identify Vulnerabilities** - Which components need attention?
-6. **Suggest Residues** - Architectural improvements for high-impact areas
-7. **Iterate** - Add residues, re-analyze, observe improvement
-8. **Capture Learning** - What patterns emerged? What surprised you?
+1. **Understand the Aspiration** - What is the system trying to achieve? What do stakeholders want?
+2. **Map Paths** - Identify the significant paths (sequences of actors connected by intentions)
+3. **Walk Paths** - Traverse each path under normal conditions; characterise each actor (`/stressor walk`)
+4. **Generate Stressors** - Create a diverse list of stressors (20-50) (`/stressor generate`)
+5. **Walk Under Stress** - Re-traverse paths under each stressor; mark affected actors (`/stressor walk <path> <stressor>`)
+6. **Build Impact Matrix** - Actors as columns, stressors as rows; the walk results populate it (`/stressor analyze`)
+7. **Calculate Scores** - Total impact per stressor, vulnerability per actor
+8. **Identify Vulnerabilities** - Which actors need attention? (`/stressor vulnerabilities`)
+9. **Suggest Residuals** - New actors, intentions, or paths that reduce vulnerability (`/stressor residues`)
+10. **Iterate** - Add residuals, re-walk, observe improvement (`/stressor iterate`)
+11. **Capture Learning** - What patterns emerged? What surprised you?
 
 ## Reflection Prompts 🤔
 
@@ -440,40 +509,58 @@ Each iteration reduces vulnerability. Keep going until marginal improvements dim
 ```
 Architect: /stressor workshop
 
-Claude: Let's run a Stressor Analysis workshop! 
+Claude: Let's run a Stressor Analysis workshop!
 
-Step 1: What system are we analyzing?
-[User describes their system]
+Step 1: What aspiration does this system serve?
+[User describes the strategic goal — e.g. "process mortgage applications end-to-end"]
 
-Step 2: What are the major architecture components?
-[Help identify: API, Database, Cache, Queue, Auth, etc.]
+Step 2: What are the significant paths?
+Let's identify the main flows — the sequences of actors connected by intentions.
+Example paths: Application submission, Credit check, Document verification, Approval & offer
 
-Step 3: Let's brainstorm stressors! 
+Step 3: Let's walk the primary path.
+/stressor walk "application submission"
+Actor 1: Applicant (stateless) → intention: submit application
+Actor 2: API Gateway (stateless) → intention: route + authenticate
+Actor 3: Application Service (stateful) → intention: validate + persist
+Actor 4: Document Store (stateful) → intention: store documents
+Actor 5: Notification Queue (stateless) → intention: trigger confirmation
+Actor 6: Email Service (stateless) → intention: send confirmation
+
+Step 4: Now let's brainstorm stressors!
 I'll get us started with a few, then you add yours:
-- Earthquake destroys data center
-- Traffic increases 100x overnight  
-- Database vendor discontinues product
-- Fire breathing Lizards attack infrastructure 🐉
+- Document store goes offline mid-submission
+- Email provider rate-limits our notification queue
+- Applicant uploads a 500MB file
+- Fire breathing Lizards attack the data centre 🐉
 - [User adds 15-20 more]
 
-Step 4: For each stressor, let's mark which components are affected...
-[Build impact matrix collaboratively]
+Step 5: Walk each stressor through the path.
+For "Document store goes offline": which actors are affected?
+→ API Gateway: unaffected
+→ Application Service: fails — cannot persist document → stressor propagates
+→ Document Store: direct failure
+→ Notification Queue: never reached — applicant gets no confirmation
+→ Total actors affected: 3
 
-Step 5: Let's calculate vulnerability...
-Components ranked by impact:
-1. API Gateway - 12 stressors
-2. Database - 8 stressors
-3. Cache - 6 stressors
+Step 6: Build the impact matrix from our walks.
+[Actors as columns, stressors as rows]
+
+Step 7: Calculate vulnerability scores.
+Actors ranked by stressor impact:
+1. Application Service — 11 stressors
+2. Document Store — 8 stressors
+3. Notification Queue — 6 stressors
 ...
 
-Step 6: What residues could reduce vulnerability?
-For API Gateway, consider:
-- Circuit breakers (protects against: X, Y, Z)
-- Rate limiting (protects against: A, B, C)
-- Redundancy (protects against: D, E, F)
+Step 8: What residuals could reduce vulnerability?
+For Application Service, consider:
+- Async intake queue (new actor) — decouples submission from downstream processing
+- Idempotency store (new actor) — allows safe retries
+- Offline-first path (new path) — accepts submission even when downstream is degraded
 ...
 
-Step 7: Let's prioritize and create action items!
+Step 9: Re-walk with residuals. Observe improvement.
 ```
 
 ## Integration with Other Skills
