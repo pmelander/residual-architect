@@ -1,4 +1,4 @@
-# Contributing to Solution Architect Toolkit
+# Contributing to Residual Architecture Skill Set
 
 Thank you for your interest in contributing! This toolkit is designed to evolve with the needs of Solution Architects using Claude Code.
 

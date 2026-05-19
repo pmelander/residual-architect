@@ -263,7 +263,7 @@ when this pack's stressors are run through a standard analysis]
 | `iso27001` | ISO/IEC 27001 Information Security | 📋 Planned |
 | `soc2` | SOC 2 Trust Services Criteria | 📋 Planned |
 
-> **Adding a new pack:** Follow the pack structure above. Each stressor must be phrased as a concrete scenario (not a control statement), include a regulation reference, and explain the real harm it prevents. Submit as a PR to `skills/phase-1/compliance-packs/`.
+> **Adding a new pack:** Follow the pack structure above. Each stressor must be phrased as a concrete scenario (not a control statement), include a regulation reference, and explain the real harm it prevents. Submit as a PR to `skills/stressor/compliance-packs/`.
 
 ### Example Pack Skeleton
 

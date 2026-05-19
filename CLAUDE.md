@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the **Solution Architect Toolkit** — a comprehensive collection of Claude Code skills built on **Residuality Theory**, designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
+This is the **Residual Architecture Skill Set** — a comprehensive collection of Claude Code skills built on **Residuality Theory**, designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
 
 ## Architecture
 
@@ -12,24 +12,38 @@ This is the **Solution Architect Toolkit** — a comprehensive collection of Cla
 
 ```
 .
-├── skills/                             # All skills (flat — copy *.md to ~/.claude/skills/)
-│   ├── adr.md                          # Architecture Decision Records
-│   ├── solution-doc.md                 # Solution Documentation Generator
-│   ├── tech-stack.md                   # Technology Stack Advisor
-│   ├── design-review.md                # Design Review
-│   ├── stressor-analysis.md            # Stressor Analysis (antifragility)
-│   ├── arch-learning.md                # Architecture Learning Analyzer
-│   ├── capability-assessor.md          # Team Capability Assessor
-│   ├── pattern-extractor.md            # Pattern Extractor & Institutionalizer
-│   ├── evolutionary-coach.md           # Evolutionary Architecture Coach
-│   ├── cloud-architect.md              # Cloud Architect
-│   ├── capacity-planner.md             # Capacity Planner
-│   ├── environment-discovery.md        # Environment Discovery
-│   ├── journey.md                      # Architect's Journey (orchestrator)
-│   ├── excel-reader.md                 # Excel/CSV Reader (utility)
-│   └── compliance-packs/               # Regulatory stressor packs
-│       ├── README.md
-│       └── gdpr.md
+├── skills/                             # Claude Code layout: skills/<name>/SKILL.md
+│   ├── adr/
+│   │   └── SKILL.md                    # /adr
+│   ├── solution-doc/
+│   │   └── SKILL.md                    # /solution-doc
+│   ├── tech-stack/
+│   │   └── SKILL.md                    # /tech-stack
+│   ├── design-review/
+│   │   └── SKILL.md                    # /design-review
+│   ├── stressor/
+│   │   ├── SKILL.md                    # /stressor
+│   │   └── compliance-packs/           # Regulatory stressor packs
+│   │       ├── README.md
+│   │       └── gdpr.md
+│   ├── excel/
+│   │   └── SKILL.md                    # /excel
+│   ├── arch-learning/
+│   │   └── SKILL.md                    # /arch-learning
+│   ├── capability-assessor/
+│   │   └── SKILL.md                    # /capability-assessor
+│   ├── patterns/
+│   │   └── SKILL.md                    # /patterns
+│   ├── evolve/
+│   │   └── SKILL.md                    # /evolve
+│   ├── cloud/
+│   │   └── SKILL.md                    # /cloud
+│   ├── capacity/
+│   │   └── SKILL.md                    # /capacity
+│   ├── discover/
+│   │   └── SKILL.md                    # /discover
+│   └── journey/
+│       └── SKILL.md                    # /journey
 ├── helpers/
 │   └── read_spreadsheet.py             # Python helper for Excel reading
 ├── templates/                          # Document templates
@@ -78,13 +92,13 @@ Skills are **capability transfer tools**, not dependency-creating tools. Every s
 
 ```bash
 # View skill content
-cat skills/adr.md
+cat skills/adr/SKILL.md
 
 # Symlink for development (changes reflected immediately)
-ln -s $(pwd)/skills/adr.md ~/.claude/skills/adr.md
+ln -s "$(pwd)/skills/adr" ~/.claude/skills/adr
 
 # Copy all for stable use
-cp skills/*.md ~/.claude/skills/
+cp -R skills/* ~/.claude/skills/
 ```
 
 ### Adding New Skills
@@ -98,8 +112,8 @@ cp skills/*.md ~/.claude/skills/
 
 ### Adding Compliance Packs
 
-1. Create `skills/compliance-packs/<framework>.md`
-2. Follow the pack structure defined in `skills/stressor-analysis.md`
+1. Create `skills/stressor/compliance-packs/<framework>.md`
+2. Follow the pack structure defined in `skills/stressor/SKILL.md`
 3. Each stressor must be a concrete scenario (not a control statement)
 4. Include regulation reference and explanation of the real harm
 5. List common residuals that emerge from the analysis
@@ -193,11 +207,11 @@ git push origin feature/new-skill-name
 
 ```bash
 # Copy method (stable use)
-cp skills/*.md ~/.claude/skills/
+cp -R skills/* ~/.claude/skills/
 pip install -r requirements.txt
 
 # Symlink method (development — changes reflected immediately)
-ln -s /path/to/repo/skills/*.md ~/.claude/skills/
+ln -s /path/to/repo/skills/* ~/.claude/skills/
 ```
 
 ## Skills

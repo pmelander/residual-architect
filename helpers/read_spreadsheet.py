@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Excel/CSV Reader Utility for Solution Architect Toolkit
+Excel/CSV Reader Utility for Residual Architecture Skill Set
 
 Reads Excel (.xlsx, .xls) and CSV files and outputs markdown tables.
 Used by the excel-reader skill in skills/utilities/

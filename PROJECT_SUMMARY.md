@@ -1,8 +1,8 @@
-# Solution Architect Toolkit — Project Summary
+# Residual Architecture Skill Set — Project Summary
 
 ## Overview
 
-The **Solution Architect Toolkit** is a collection of Claude Code skills built on **Residuality Theory** — designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
+The **Residual Architecture Skill Set** is a collection of Claude Code skills built on **Residuality Theory** — designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
 
 **Philosophy:** Skills transfer capability to architects, not create dependency on tools. The measure of success is how rarely you need the toolkit, because the thinking has been internalised.
 
@@ -22,24 +22,36 @@ solution-architect-toolkit/
 ├── CONTRIBUTING.md
 │
 ├── skills/
-│   ├── phase-1/                    # Individual capability skills
-│   │   ├── adr.md
-│   │   ├── solution-doc.md
-│   │   ├── tech-stack.md
-│   │   ├── design-review.md
-│   │   ├── stressor-analysis.md
-│   │   └── compliance-packs/       # Extension point for regulatory stressor packs
-│   │       └── README.md
-│   ├── phase-2/                    # Organisational capability skills
-│   │   ├── arch-learning.md
-│   │   ├── capability-assessor.md
-│   │   ├── pattern-extractor.md
-│   │   └── evolutionary-coach.md
-│   ├── phase-3/                    # Specialised tools
-│   │   ├── cloud-architect.md
-│   │   └── capacity-planner.md
-│   └── utilities/
-│       └── excel-reader.md
+│   ├── adr/
+│   │   └── SKILL.md
+│   ├── solution-doc/
+│   │   └── SKILL.md
+│   ├── tech-stack/
+│   │   └── SKILL.md
+│   ├── design-review/
+│   │   └── SKILL.md
+│   ├── stressor/
+│   │   ├── SKILL.md
+│   │   └── compliance-packs/
+│   │       └── gdpr.md
+│   ├── excel/
+│   │   └── SKILL.md
+│   ├── arch-learning/
+│   │   └── SKILL.md
+│   ├── capability-assessor/
+│   │   └── SKILL.md
+│   ├── patterns/
+│   │   └── SKILL.md
+│   ├── evolve/
+│   │   └── SKILL.md
+│   ├── cloud/
+│   │   └── SKILL.md
+│   ├── capacity/
+│   │   └── SKILL.md
+│   ├── discover/
+│   │   └── SKILL.md
+│   └── journey/
+│       └── SKILL.md
 │
 ├── templates/                      # Document templates
 ├── examples/                       # Example outputs
@@ -141,7 +153,7 @@ ADR-006 and ADR-007 are particularly important: they show the toolkit's philosop
 
 The most valuable open contribution area is **compliance packs** — curated stressor sets for GDPR, HIPAA, PCI DSS, ISO 27001, and SOC 2. These require regulatory expertise and make the toolkit immediately useful for compliance-heavy organisations without compromising its philosophical consistency.
 
-See `skills/phase-1/compliance-packs/README.md` for the pack structure.
+See `skills/stressor/compliance-packs/README.md` for the pack structure.
 
 Other contributions: new Phase 4 skills, examples, template refinements. See [CONTRIBUTING.md](../CONTRIBUTING.md).
 

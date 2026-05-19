@@ -7,7 +7,7 @@
 
 ## 🎉 Mission Accomplished!
 
-Successfully integrated Barry O'Reilly's Residuality Theory into the entire Solution Architect Toolkit, transforming it from a tool-centric approach to a capability-building platform.
+Successfully integrated Barry O'Reilly's Residuality Theory into the entire Residual Architecture Skill Set, transforming it from a tool-centric approach to a capability-building platform.
 
 ---
 
@@ -336,10 +336,10 @@ The most successful tool is one that becomes less necessary as users internalize
 5. **Residuality Measurement Framework** - How to measure success
 
 ### Skills (Refactored)
-1. **skills/phase-1/adr.md** - Decision-making capability
-2. **skills/phase-1/solution-doc.md** - Communication capability
-3. **skills/phase-1/tech-stack.md** - Strategic thinking capability
-4. **skills/phase-1/design-review.md** - Critical evaluation capability
+1. **skills/adr/SKILL.md** - Decision-making capability
+2. **skills/solution-doc/SKILL.md** - Communication capability
+3. **skills/tech-stack/SKILL.md** - Strategic thinking capability
+4. **skills/design-review/SKILL.md** - Critical evaluation capability
 
 ### Supporting Docs
 - **ROADMAP.md** - Updated with Phase 2 vision
@@ -389,7 +389,7 @@ We've created something genuinely different - a toolkit that explicitly aims to 
 
 **Status: READY FOR RELEASE** 🚀
 
-The Solution Architect Toolkit is now a true capability-building platform, designed from the ground up with residuality principles. Every skill teaches, every interaction builds capability, and success is measured by what persists, not what's produced.
+The Residual Architecture Skill Set is now a true capability-building platform, designed from the ground up with residuality principles. Every skill teaches, every interaction builds capability, and success is measured by what persists, not what's produced.
 
 ---
 

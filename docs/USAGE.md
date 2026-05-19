@@ -1,6 +1,6 @@
 # Usage Guide
 
-Detailed examples and best practices for the Solution Architect Toolkit.
+Detailed examples and best practices for the Residual Architecture Skill Set.
 
 ## Table of Contents
 
@@ -326,7 +326,7 @@ Compliance is handled through the stressor analysis skill — not a separate che
 /adr create [document residuals as architectural decisions]
 ```
 
-**Available packs:** See `skills/compliance-packs/` — contributions welcome.
+**Available packs:** See `skills/stressor/compliance-packs/` — contributions welcome.
 
 ---
 

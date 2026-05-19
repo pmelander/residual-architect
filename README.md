@@ -1,4 +1,4 @@
-# Solution Architect Toolkit for Claude Code
+# Residual Architecture Skill Set for Claude Code
 
 A collection of Claude Code skills built on **Residuality Theory** — designed to build antifragile systems thinking and Solution Architect capabilities that compound over time.
 

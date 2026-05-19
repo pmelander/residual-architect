@@ -1,6 +1,6 @@
 # Installation Guide
 
-This guide will help you install the Solution Architect Toolkit skills for Claude Code.
+This guide will help you install the Residual Architecture Skill Set skills for Claude Code.
 
 ## Prerequisites
 
@@ -19,18 +19,19 @@ This method copies the skills directly to your Claude Code skills directory.
 git clone <repository-url> solution-architect-toolkit
 cd solution-architect-toolkit
 
-# Copy Phase 1 skills to Claude Code
-cp skills/phase-1/*.md ~/.claude/skills/
+# Copy all skills to Claude Code (Claude Code expects skills/<name>/SKILL.md)
+cp -R skills/* ~/.claude/skills/
 
 # Verify installation
 ls ~/.claude/skills/
 ```
 
-**Result:** You should see:
-- `adr.md`
-- `solution-doc.md`
-- `tech-stack.md`
-- `design-review.md`
+**Result:** You should see skill folders like:
+- `adr/`
+- `solution-doc/`
+- `tech-stack/`
+- `design-review/`
+(each containing a `SKILL.md`)
 
 ### Method 2: Symlink Installation (For Developers)
 
@@ -41,11 +42,21 @@ This method creates symbolic links, so updates to the repository automatically r
 git clone <repository-url> solution-architect-toolkit
 cd solution-architect-toolkit
 
-# Create symlinks for Phase 1 skills
-ln -s "$(pwd)/skills/phase-1/adr.md" ~/.claude/skills/adr.md
-ln -s "$(pwd)/skills/phase-1/solution-doc.md" ~/.claude/skills/solution-doc.md
-ln -s "$(pwd)/skills/phase-1/tech-stack.md" ~/.claude/skills/tech-stack.md
-ln -s "$(pwd)/skills/phase-1/design-review.md" ~/.claude/skills/design-review.md
+# Create symlinks for skills
+ln -s "$(pwd)/skills/adr" ~/.claude/skills/adr
+ln -s "$(pwd)/skills/solution-doc" ~/.claude/skills/solution-doc
+ln -s "$(pwd)/skills/tech-stack" ~/.claude/skills/tech-stack
+ln -s "$(pwd)/skills/design-review" ~/.claude/skills/design-review
+ln -s "$(pwd)/skills/stressor" ~/.claude/skills/stressor
+ln -s "$(pwd)/skills/excel" ~/.claude/skills/excel
+ln -s "$(pwd)/skills/arch-learning" ~/.claude/skills/arch-learning
+ln -s "$(pwd)/skills/capability-assessor" ~/.claude/skills/capability-assessor
+ln -s "$(pwd)/skills/patterns" ~/.claude/skills/patterns
+ln -s "$(pwd)/skills/evolve" ~/.claude/skills/evolve
+ln -s "$(pwd)/skills/cloud" ~/.claude/skills/cloud
+ln -s "$(pwd)/skills/capacity" ~/.claude/skills/capacity
+ln -s "$(pwd)/skills/discover" ~/.claude/skills/discover
+ln -s "$(pwd)/skills/journey" ~/.claude/skills/journey
 
 # Verify installation
 ls -la ~/.claude/skills/
@@ -62,8 +73,8 @@ For Windows users without symlink support:
 git clone <repository-url> solution-architect-toolkit
 cd solution-architect-toolkit
 
-# Copy Phase 1 skills to Claude Code
-Copy-Item -Path "skills\phase-1\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
+# Copy all skills to Claude Code (Claude Code expects skills\<name>\SKILL.md)
+Copy-Item -Recurse -Path "skills\*" -Destination "$env:USERPROFILE\.claude\skills\"
 
 # Verify installation
 dir "$env:USERPROFILE\.claude\skills\"
@@ -96,10 +107,14 @@ Claude should start asking you questions to fill in the ADR template.
 ```
 ~/.claude/
   skills/
-    adr.md                  # ✅ Installed
-    solution-doc.md         # ✅ Installed
-    tech-stack.md           # ✅ Installed
-    design-review.md        # ✅ Installed
+    adr/
+      SKILL.md              # ✅ Installed
+    solution-doc/
+      SKILL.md              # ✅ Installed
+    tech-stack/
+      SKILL.md              # ✅ Installed
+    design-review/
+      SKILL.md              # ✅ Installed
     [other existing skills]
 ```
 
@@ -110,7 +125,7 @@ Claude should start asking you questions to fill in the ADR template.
 ```bash
 cd solution-architect-toolkit
 git pull origin main
-cp skills/phase-1/*.md ~/.claude/skills/
+cp -R skills/* ~/.claude/skills/
 ```
 
 ### For Symlink Installation
@@ -127,19 +142,19 @@ To remove the skills:
 
 ```bash
 # Remove Phase 1 skills
-rm ~/.claude/skills/adr.md
-rm ~/.claude/skills/solution-doc.md
-rm ~/.claude/skills/tech-stack.md
-rm ~/.claude/skills/design-review.md
+rm -rf ~/.claude/skills/adr
+rm -rf ~/.claude/skills/solution-doc
+rm -rf ~/.claude/skills/tech-stack
+rm -rf ~/.claude/skills/design-review
 ```
 
 Or on Windows:
 
 ```powershell
-Remove-Item "$env:USERPROFILE\.claude\skills\adr.md"
-Remove-Item "$env:USERPROFILE\.claude\skills\solution-doc.md"
-Remove-Item "$env:USERPROFILE\.claude\skills\tech-stack.md"
-Remove-Item "$env:USERPROFILE\.claude\skills\design-review.md"
+Remove-Item -Recurse "$env:USERPROFILE\.claude\skills\adr"
+Remove-Item -Recurse "$env:USERPROFILE\.claude\skills\solution-doc"
+Remove-Item -Recurse "$env:USERPROFILE\.claude\skills\tech-stack"
+Remove-Item -Recurse "$env:USERPROFILE\.claude\skills\design-review"
 ```
 
 ## Troubleshooting
@@ -168,7 +183,7 @@ Remove-Item "$env:USERPROFILE\.claude\skills\design-review.md"
 
 1. **Check the skill file has proper frontmatter:**
    ```bash
-   head -5 ~/.claude/skills/adr.md
+   head -5 ~/.claude/skills/adr/SKILL.md
    ```
    Should show YAML frontmatter with `---` delimiters.
 
@@ -189,7 +204,7 @@ If you use a different skills directory, adjust the paths accordingly:
 
 ```bash
 # If your skills are in ~/my-skills/
-cp skills/phase-1/*.md ~/my-skills/
+cp -R skills/* ~/my-skills/
 ```
 
 ### Selective Installation
@@ -198,10 +213,10 @@ Install only the skills you need:
 
 ```bash
 # Install only ADR skill
-cp skills/phase-1/adr.md ~/.claude/skills/
+cp -R skills/adr ~/.claude/skills/
 
 # Install only documentation skills
-cp skills/phase-1/solution-doc.md ~/.claude/skills/
+cp -R skills/solution-doc ~/.claude/skills/
 ```
 
 ## Next Steps

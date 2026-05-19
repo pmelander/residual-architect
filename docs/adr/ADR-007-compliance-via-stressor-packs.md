@@ -4,7 +4,7 @@
 
 **Date:** 2026-05-18
 
-**Deciders:** Solution Architect Toolkit maintainers
+**Deciders:** Residual Architecture Skill Set maintainers
 
 **Technical Story:** Phase 3 planning — evaluating Compliance Checker skill
 
@@ -12,7 +12,7 @@
 
 **Implemented Date:** 2026-05-18
 
-**Implemented By:** Solution Architect Toolkit team
+**Implemented By:** Residual Architecture Skill Set team
 
 **Review Date:** 2026-11-18
 

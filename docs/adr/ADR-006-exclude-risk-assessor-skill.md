@@ -4,7 +4,7 @@
 
 **Date:** 2026-05-18
 
-**Deciders:** Solution Architect Toolkit maintainers
+**Deciders:** Residual Architecture Skill Set maintainers
 
 **Technical Story:** Phase 3 planning — evaluating which specialized skills to build
 
@@ -12,13 +12,13 @@
 
 **Implemented Date:** 2026-05-18
 
-**Implemented By:** Solution Architect Toolkit team
+**Implemented By:** Residual Architecture Skill Set team
 
 **Review Date:** 2026-11-18
 
 ## Context
 
-Phase 3 of the Solution Architect Toolkit originally planned a **Risk Assessor** skill to help architects identify architectural risks, build risk registers, define mitigation strategies, and track risk over time.
+Phase 3 of the Residual Architecture Skill Set originally planned a **Risk Assessor** skill to help architects identify architectural risks, build risk registers, define mitigation strategies, and track risk over time.
 
 This was a carry-over from conventional Solution Architect practice, where risk management typically involves:
 - Probability × Impact matrices

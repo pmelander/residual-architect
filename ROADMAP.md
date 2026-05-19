@@ -1,8 +1,8 @@
-# Solution Architect Toolkit - Roadmap
+# Residual Architecture Skill Set - Roadmap
 
 ## Overview
 
-This roadmap outlines the planned development of the Solution Architect Toolkit across three phases, designed to progressively enhance Solution Architect capabilities with Claude Code.
+This roadmap outlines the planned development of the Residual Architecture Skill Set across three phases, designed to progressively enhance Solution Architect capabilities with Claude Code.
 
 ## Status Legend
 
@@ -566,4 +566,4 @@ For roadmap questions or suggestions:
 - Start a discussion
 - Contact maintainers
 
-**Let's build the best Solution Architect toolkit together!** 🚀
+**Let's build the best Residual Architecture skill set together!** 🚀

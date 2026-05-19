@@ -1,4 +1,4 @@
-# Getting Started with Solution Architect Toolkit
+# Getting Started with Residual Architecture Skill Set
 
 Welcome! This guide will get you up and running in under 5 minutes.
 
@@ -10,7 +10,7 @@ Welcome! This guide will get you up and running in under 5 minutes.
 ```bash
 git clone <repository-url> solution-architect-toolkit
 cd solution-architect-toolkit
-cp skills/*.md ~/.claude/skills/
+cp -R skills/* ~/.claude/skills/
 pip install -r requirements.txt
 ```
 
@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ```powershell
 git clone <repository-url> solution-architect-toolkit
 cd solution-architect-toolkit
-Copy-Item -Path "skills\*.md" -Destination "$env:USERPROFILE\.claude\skills\"
+Copy-Item -Recurse -Path "skills\*" -Destination "$env:USERPROFILE\.claude\skills\"
 pip install -r requirements.txt
 ```
 

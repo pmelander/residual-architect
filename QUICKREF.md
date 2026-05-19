@@ -1,11 +1,11 @@
-# Solution Architect Toolkit - Quick Reference
+# Residual Architecture Skill Set - Quick Reference
 
 ## Installation
 
 ```bash
 git clone <repo-url> solution-architect-toolkit
 cd solution-architect-toolkit
-cp skills/*.md ~/.claude/skills/
+cp -R skills/* ~/.claude/skills/
 pip install -r requirements.txt
 ```
 

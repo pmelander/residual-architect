@@ -11,7 +11,7 @@ Compliance controls exist because real harms happened. A compliance pack express
 ## Adding a Pack
 
 1. Create a new file: `<framework-name>.md` (e.g., `gdpr.md`, `hipaa.md`)
-2. Follow the pack structure defined in `stressor-analysis.md`
+2. Follow the pack structure defined in `skills/stressor/SKILL.md`
 3. Each stressor must:
    - Be phrased as a **concrete scenario** (not a control statement)
    - Include a **regulation reference** (article, section, or control ID)
