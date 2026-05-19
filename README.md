@@ -14,49 +14,51 @@ A collection of Claude Code skills built on **Residuality Theory** — designed 
 
 ---
 
+## Start Your Journey
+
+The first thing to do with any new engagement isn't to open a specific skill — it's to understand where you are and what the terrain demands.
+
+```
+/journey start
+```
+
+Tell Claude about the system you're working on — what you're trying to achieve, what exists today, and any constraints. It will assess the terrain and map your recommended skill sequence from there.
+
+The journey looks different depending on the terrain:
+
+- **Greenfield** — design paths, walk and stress them, then build what survives
+- **Brownfield** — discover what exists before changing anything
+- **Minefield** — discover extensively before touching anything
+
+At the heart of every journey is an iteration loop, not a straight line:
+
+```
+walk paths → generate stressors → build matrix → find residuals
+     ↑                                                  ↓
+  re-walk ←← implement residuals ←← impact low enough? ←←
+```
+
+You keep iterating until the system's vulnerability is sufficiently low — not zero, but low enough given the aspiration and the cost of further improvement.
+
+→ [Full Getting Started Guide](GETTING_STARTED.md) · [All commands](QUICKREF.md)
+
+---
+
 ## Skills
 
-### Phase 1: Individual Capabilities ✅
+14 skills spanning the full architectural journey:
 
-Build the core thinking skills of a Solution Architect.
+| Category | Skills |
+|----------|--------|
+| Orchestration | `/journey` |
+| Discovery | `/discover` |
+| Stressor Analysis | `/stressor` |
+| Design & Documentation | `/adr` `/solution-doc` `/tech-stack` `/design-review` |
+| Cloud & Infrastructure | `/cloud` `/capacity` |
+| Organisational Capabilities | `/arch-learning` `/capability-assessor` `/patterns` `/evolve` |
+| Utilities | `/excel` |
 
-| Skill | Command | What it builds |
-|-------|---------|---------------|
-| Architecture Decision Records | `/adr` | Structured decision-making and trade-off thinking |
-| Solution Documentation | `/solution-doc` | Systems thinking and communication capability |
-| Technology Stack Advisor | `/tech-stack` | Objective technology evaluation without hype |
-| Design Review | `/design-review` | Self-assessment and pattern recognition |
-| Stressor Analysis | `/stressor` | Antifragility thinking and resilience design |
-
-### Utilities ✅
-
-| Skill | Command | What it does |
-|-------|---------|-------------|
-| Excel Reader | `/excel` | Import Excel/CSV stressor matrices and data into markdown workflows |
-
-### Phase 2: Organisational Capabilities ✅
-
-Build team and organisational meta-capabilities that compound over time.
-
-| Skill | Command | What it builds |
-|-------|---------|---------------|
-| Architecture Learning Analyzer | `/arch-learning` | Systematic learning from past decisions |
-| Team Capability Assessor | `/capability-assessor` | Team architectural maturity and growth |
-| Pattern Extractor | `/patterns` | Institutional knowledge and pattern libraries |
-| Evolutionary Coach | `/evolve` | Continuous architecture improvement mindset |
-
-### Phase 3: Specialised Tools ✅
-
-Domain-specific capabilities for cloud, capacity, and existing environments.
-
-| Skill | Command | What it builds |
-|-------|---------|---------------|
-| Cloud Architect | `/cloud` | Cloud-native thinking, IaC discipline, Well-Architected mindset |
-| Capacity Planner | `/capacity` | Demand modelling, scaling intuition, bottleneck identification |
-| Environment Discovery | `/discover` | Confident path mapping in brownfield, oilfield, and minefield environments |
-| Architect's Journey | `/journey` | Sequencing, orchestration, and iteration across the full architectural journey |
-
-> **Note on Risk and Compliance:** A standalone Risk Assessor and Compliance Checker were considered and deliberately excluded. Residuality Theory covers risk through antifragility thinking (`/stressor`) — risk registers create false confidence in enumerated threats. Compliance is handled through **stressor compliance packs** (`/stressor compliance <pack>`), so regulatory requirements emerge as residues of antifragile design rather than a separate checklist process. See [ADR-006](docs/adr/ADR-006-exclude-risk-assessor-skill.md) and [ADR-007](docs/adr/ADR-007-compliance-via-stressor-packs.md).
+> **Note on Risk and Compliance:** A standalone Risk Assessor and Compliance Checker were deliberately excluded. Residuality Theory covers risk through antifragility thinking (`/stressor`) — risk registers create false confidence in enumerated threats. Compliance is handled through **stressor compliance packs** (`/stressor compliance <pack>`), so regulatory requirements emerge as residues of antifragile design rather than a separate checklist process. See [ADR-006](docs/adr/ADR-006-exclude-risk-assessor-skill.md) and [ADR-007](docs/adr/ADR-007-compliance-via-stressor-packs.md).
 
 ---
 
@@ -76,125 +78,6 @@ pip install -r requirements.txt
 Open Claude Code and type `/` to see your skills.
 
 📖 See [Installation Guide](docs/INSTALLATION.md) for detailed setup and troubleshooting.
-
----
-
-## 📖 Command Reference
-
-### Architecture Decisions
-```bash
-/adr create <title>          # Create a new ADR
-/adr list                    # List all ADRs
-/adr update <number>         # Update an existing ADR
-/adr search <term>           # Search ADRs
-```
-
-### Documentation
-```bash
-/solution-doc hld            # High-Level Design
-/solution-doc lld            # Low-Level Design
-/solution-doc deployment     # Deployment Guide
-/solution-doc runbook        # Operations Runbook
-/solution-doc complete       # All documentation
-```
-
-### Technology Evaluation
-```bash
-/tech-stack recommend        # Recommend a tech stack
-/tech-stack evaluate <tech>  # Evaluate a specific technology
-/tech-stack compare <a> vs <b>  # Compare two technologies
-/tech-stack migrate from <old> to <new>  # Migration analysis
-```
-
-### Design Review
-```bash
-/design-review architecture  # Review system architecture
-/design-review api           # Review API design
-/design-review security      # Security-focused review
-/design-review performance   # Performance-focused review
-/design-review complete      # Comprehensive review
-```
-
-### Stressor Analysis
-```bash
-/stressor walk [path-name]          # Walk a path, evaluating each actor as intentions propagate
-/stressor generate [count]          # Generate creative stressors (including absurd ones)
-/stressor analyze                   # Build impact matrix (actors × stressors)
-/stressor vulnerabilities           # Identify most-impacted actors
-/stressor residues                  # Suggest residuals (new actors, intentions, or paths)
-/stressor iterate                   # Re-walk after adding residuals
-/stressor workshop                  # Facilitate team workshop
-/stressor import <file> [sheet]     # Import stressor matrix from Excel/CSV
-/stressor compliance <pack>         # Inject compliance stressor pack
-```
-
-### Cloud Architecture
-```bash
-/cloud design <architecture>        # Design cloud-native architecture
-/cloud iac <provider>               # Generate Terraform/CloudFormation/Bicep/CDK
-/cloud review                       # Well-Architected review (6 pillars)
-/cloud cost                         # Cost analysis and optimisation
-/cloud migrate <to-cloud>           # Migration strategy using the 6 R's
-/cloud dr                           # Disaster recovery strategy
-```
-
-### Capacity Planning
-```bash
-/capacity estimate                  # Estimate resource requirements
-/capacity scale <strategy>          # Design scaling approach
-/capacity bottleneck                # Identify capacity constraints
-/capacity load-test                 # Design load testing strategy
-/capacity forecast                  # Model future capacity needs
-/capacity right-size                # Identify and reduce over-provisioning
-```
-
-### Architect's Journey
-```bash
-/journey start           # Begin a new journey — assess terrain, map the route
-/journey where           # Where am I in the journey? What comes next?
-/journey iterate         # Should I iterate stressor analysis or proceed?
-/journey review          # Journey health check — completeness and quality
-/journey cadence         # Establish an ongoing iteration rhythm
-```
-
-### Environment Discovery
-```bash
-/discover paths                     # Map paths through an existing system
-/discover actor <name>              # Investigate what an actor actually does
-/discover intentions                # Trace how an intention propagates
-/discover gaps                      # Identify and prioritise confidence gaps
-/discover organisation              # Map organisational resistance as stressors
-/discover confidence                # Assess readiness to proceed to stressor analysis
-```
-
-```bash
-/arch-learning analyze              # Analyse decision history
-/arch-learning patterns             # Extract decision patterns
-/arch-learning retrospective        # Facilitate team retrospective
-/arch-learning lessons              # Generate lessons learned report
-
-/capability-assessor assess         # Assess team capability maturity
-/capability-assessor gaps           # Identify capability gaps
-/capability-assessor roadmap        # Generate development roadmap
-
-/patterns extract                   # Extract patterns from codebase/decisions
-/patterns catalog                   # View pattern catalog
-/patterns suggest <scenario>        # Suggest patterns for a situation
-/patterns anti-patterns             # Document what doesn't work
-
-/evolve assess                      # Assess evolutionary readiness
-/evolve fitness-functions           # Define architectural fitness functions
-/evolve brittleness                 # Identify brittle areas
-/evolve increment                   # Plan incremental improvements
-```
-
-### Excel / Data
-```bash
-/excel read <file> [sheet]          # Read spreadsheet as markdown
-/excel preview <file> [rows]        # Preview first N rows
-/excel sheets <file>                # List available sheets
-/excel convert <file> [sheet]       # Save to docs/imports/
-```
 
 ---
 
@@ -244,16 +127,19 @@ Open Claude Code and type `/` to see your skills.
 
 ---
 
-## 📊 Project Status
+## 📊 Skills
 
-| Phase | Status | Skills |
-|-------|--------|--------|
-| Phase 1: Individual Capabilities | ✅ Complete | 5 skills |
-| Utilities | ✅ Complete | 1 skill |
-| Phase 2: Organisational Capabilities | ✅ Complete | 4 skills |
-| Phase 3: Specialised Tools | ✅ Complete | 4 skills |
+| Category | Count |
+|----------|-------|
+| Orchestration & Discovery | 2 |
+| Stressor Analysis | 1 |
+| Design & Documentation | 4 |
+| Cloud & Infrastructure | 2 |
+| Organisational Capabilities | 4 |
+| Utilities | 1 |
+| **Total** | **14** |
 
-**All phases complete.** See [Roadmap](ROADMAP.md) for future considerations.
+See [Roadmap](ROADMAP.md) for future considerations.
 
 ---
 

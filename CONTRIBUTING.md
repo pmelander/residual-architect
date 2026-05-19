@@ -241,25 +241,13 @@ common scenarios like technology comparison and migration planning.
 - ✅ Templates are well-formatted
 - ✅ Commit messages follow convention
 
-## Skill Phase Guidelines
+## Skill Guidelines
 
-### Phase 1: Immediate Impact
-Skills that provide immediate value to any Solution Architect:
-- Widely applicable
-- Simple to use
-- Clear, immediate benefit
+When contributing a new skill, consider where it fits:
 
-### Phase 2: Deep Analysis
-Skills that require deeper analysis or codebase understanding:
-- More complex analysis
-- Require multiple steps
-- Integrate with existing systems
-
-### Phase 3: Specialized
-Skills for specific scenarios or technologies:
-- Domain-specific
-- Advanced features
-- Integration with external tools
+- **Widely applicable** — useful to any architect on any engagement (e.g. stressor analysis, ADRs)
+- **Deep analysis** — requires multiple steps or integrates with existing artefacts (e.g. capability assessment, pattern extraction)
+- **Specialised** — domain-specific or scenario-specific (e.g. cloud architecture, compliance packs)
 
 ## Documentation Standards
 

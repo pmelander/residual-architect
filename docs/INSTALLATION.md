@@ -141,7 +141,7 @@ git pull origin main
 To remove the skills:
 
 ```bash
-# Remove Phase 1 skills
+# Remove skills
 rm -rf ~/.claude/skills/adr
 rm -rf ~/.claude/skills/solution-doc
 rm -rf ~/.claude/skills/tech-stack
@@ -235,7 +235,4 @@ For issues or questions:
 
 ## What's Next?
 
-- **Phase 2 Skills** (Coming Soon): Tech Debt Analyzer, System Mapper, Migration Planner, API Designer
-- **Phase 3 Skills** (Planned): Cloud Architect, Compliance Checker, Capacity Planner, Risk Assessor
-
-Check the repository regularly for updates!
+See [ROADMAP.md](../ROADMAP.md) for future considerations and contributing opportunities.

@@ -30,14 +30,20 @@ pip install -r requirements.txt
 
 Open Claude Code and type `/` — you should see:
 
-**Phase 1 — Individual Capabilities:**
-`/adr` `/solution-doc` `/tech-stack` `/design-review` `/stressor`
+**Orchestration & Discovery:**
+`/journey` `/discover`
 
-**Phase 2 — Organisational Capabilities:**
+**Stressor Analysis:**
+`/stressor`
+
+**Design & Documentation:**
+`/adr` `/solution-doc` `/tech-stack` `/design-review`
+
+**Cloud & Infrastructure:**
+`/cloud` `/capacity`
+
+**Organisational Capabilities:**
 `/arch-learning` `/capability-assessor` `/patterns` `/evolve`
-
-**Phase 3 — Specialised Tools:**
-`/journey` `/discover` `/cloud` `/capacity`
 
 **Utilities:**
 `/excel`

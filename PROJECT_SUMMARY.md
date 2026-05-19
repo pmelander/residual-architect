@@ -66,11 +66,24 @@ solution-architect-toolkit/
 
 ---
 
-## Skills by Phase
+## Skills
 
-### Phase 1: Individual Capabilities ✅
+### Orchestration & Discovery
 
-Build the core thinking skills every Solution Architect needs.
+| Skill | Command | Capability Built |
+|-------|---------|-----------------|
+| Architect's Journey | `/journey` | Sequencing, orchestration, and iteration across the full architectural journey |
+| Environment Discovery | `/discover` | Confident path mapping in brownfield and minefield environments |
+
+### Stressor Analysis
+
+| Skill | Command | Capability Built |
+|-------|---------|-----------------|
+| Stressor Analysis | `/stressor` | Antifragility thinking and resilience design |
+
+**Extension:** `/stressor compliance <pack>` injects regulatory frameworks as stressor sets, so compliance requirements emerge as architectural residues rather than a checklist process.
+
+### Design & Documentation
 
 | Skill | Command | Capability Built |
 |-------|---------|-----------------|
@@ -78,19 +91,15 @@ Build the core thinking skills every Solution Architect needs.
 | Solution Documentation | `/solution-doc` | Systems thinking and communication |
 | Technology Stack Advisor | `/tech-stack` | Objective evaluation without hype |
 | Design Review | `/design-review` | Self-assessment and pattern recognition |
-| Stressor Analysis | `/stressor` | Antifragility thinking and resilience design |
 
-**Stressor Analysis extension:** `/stressor compliance <pack>` injects regulatory frameworks as stressor sets, so compliance requirements emerge as architectural residues rather than a checklist process.
+### Cloud & Infrastructure
 
-### Utilities ✅
+| Skill | Command | Capability Built |
+|-------|---------|-----------------|
+| Cloud Architect | `/cloud` | Cloud-native thinking, IaC discipline, Well-Architected mindset |
+| Capacity Planner | `/capacity` | Demand modelling, scaling intuition, bottleneck identification |
 
-| Skill | Command | Purpose |
-|-------|---------|---------|
-| Excel Reader | `/excel` | Import stressor matrices and data from Excel/CSV |
-
-### Phase 2: Organisational Capabilities ✅
-
-Build team and organisational meta-capabilities that compound over time.
+### Organisational Capabilities
 
 | Skill | Command | Capability Built |
 |-------|---------|-----------------|
@@ -99,14 +108,11 @@ Build team and organisational meta-capabilities that compound over time.
 | Pattern Extractor | `/patterns` | Institutional knowledge and pattern libraries |
 | Evolutionary Coach | `/evolve` | Continuous architecture improvement mindset |
 
-### Phase 3: Specialised Tools ✅
+### Utilities
 
-Domain-specific capabilities for common SA specialisms.
-
-| Skill | Command | Capability Built |
-|-------|---------|-----------------|
-| Cloud Architect | `/cloud` | Cloud-native thinking, IaC discipline, Well-Architected mindset |
-| Capacity Planner | `/capacity` | Demand modelling, scaling intuition, bottleneck identification |
+| Skill | Command | Purpose |
+|-------|---------|---------|
+| Excel Reader | `/excel` | Import stressor matrices and data from Excel/CSV |
 
 ---
 
@@ -117,7 +123,7 @@ Seven ADRs document the significant decisions made while building this toolkit:
 | ADR | Decision |
 |-----|---------|
 | ADR-001 | Incorporate Residuality Theory as the foundation |
-| ADR-002 | Redesign Phase 2 for capability-building (not tool-centric) |
+| ADR-002 | Redesign organisational capabilities for capability-building (not tool-centric) |
 | ADR-003 | Add Stressor Analysis skill |
 | ADR-004 | Add Excel reading utility |
 | ADR-005 | Add Architecture Learning Analyzer |
@@ -128,14 +134,16 @@ ADR-006 and ADR-007 are particularly important: they show the toolkit's philosop
 
 ---
 
-## Phase Status
+## Skill Status
 
-| Phase | Status | Completion |
-|-------|--------|-----------|
-| Phase 1: Individual Capabilities | ✅ Complete | 2026-05-17 |
-| Utilities | ✅ Complete | 2026-05-17 |
-| Phase 2: Organisational Capabilities | ✅ Complete | 2026-05-18 |
-| Phase 3: Specialised Tools | ✅ Complete | 2026-05-18 |
+| Category | Status | Count |
+|----------|--------|-------|
+| Orchestration & Discovery | ✅ Complete | 2 |
+| Stressor Analysis | ✅ Complete | 1 |
+| Design & Documentation | ✅ Complete | 4 |
+| Cloud & Infrastructure | ✅ Complete | 2 |
+| Organisational Capabilities | ✅ Complete | 4 |
+| Utilities | ✅ Complete | 1 |
 
 ---
 
