@@ -33,7 +33,7 @@ cd solution-architect-toolkit
 git checkout -b feature/your-feature-name
 
 # Install skills locally for testing
-ln -s $(pwd)/skills/phase-1/*.md ~/.claude/skills/
+ln -s "$(pwd)/skills"/* ~/.claude/skills/
 ```
 
 ## Skill Development Guidelines
@@ -114,9 +114,11 @@ Before starting work, create an issue describing:
 **For New Skills:**
 
 ```bash
-# Create the skill file
-touch skills/phase-X/skill-name.md
+# Create the skill directory and file
+mkdir -p skills/skill-name
+cp templates/skill-template.md skills/skill-name/SKILL.md
 
+# Note: Claude Code expects skills/<name>/SKILL.md structure
 # Follow the skill structure template
 # Include frontmatter, commands, templates, etc.
 
@@ -124,7 +126,7 @@ touch skills/phase-X/skill-name.md
 mkdir examples/skill-name
 touch examples/skill-name/example-output.md
 
-# Update README.md to list the new skill
+# Update README.md, QUICKREF.md, GETTING_STARTED.md, and CLAUDE.md to list the new skill
 ```
 
 **For Improvements:**
